@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>The Portfolio of Nicholas Wolch</title>
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/theme-switcher.css" />
+    <script src="https://kit.fontawesome.com/849300a45d.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <p>Hey there! Welcome to the</p>
+    <h1>The Portfolio of Nicholas Wolch</h1>
+    <div class="theme-switcher-menu">
+        <button aria-haspopup="menu" type="button" class="button action has-icon theme-switcher-button small">
+            <span class="button-wrap">
+              <i class="fa-solid fa-circle-half-stroke"></i>
+                Theme
+            </span>
+        </button>
+        <ul class="submenu themes-menu  inline-submenu-lg" aria-labelledby="themes-menu-button">
+          <li class=" ">
+            <button type="button" class="button primary has-icon active-menu-item">
+              <span class="button-wrap">
+                <i class="fa-solid fa-circle-half-stroke"></i> OS Default
+              </span>
+            </button>
+          </li>
+          <li class=" ">
+            <button type="button" class="button primary has-icon">
+              <span class="button-wrap">
+                <i class="fa-solid fa-sun"></i> Light
+              </span>
+            </button>
+          </li>
+          <li class=" ">
+            <button type="button" class="button primary has-icon">
+              <span class="button-wrap">
+                <i class="fa-solid fa-moon"></i> Dark
+              </span>
+            </button>
+          </li>
+        </ul>
+    </div>
+    <script>
+      const themeSwitcherWrapper = document.querySelector('.theme-switcher-menu');
+      
+
+    </script>
+    <script src="theme-switcher.js"></script>
+  </body>
+</html>
