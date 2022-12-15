@@ -1,14 +1,23 @@
-// Dark mode toggle
-const bodyClassList = document.body.classList;
-const btn = document.querySelector('.dark-mode__toggle');
-const darkModeLabel = document.querySelector('.dark-mode__label');
+const htmlElement = document.querySelector('html');
+const subMenuWrapper = document.querySelector('.submenu');
+const themeSwitcherButton = document.querySelector('.theme-switcher-button');
 
+const osDefaultButton = document.getElementById('os-default-theme');
+const lightButton = document.getElementById('light-theme');
+const darkButton = document.getElementById('dark-theme');
 
-btn.addEventListener('click', () => {
-    bodyClassList.toggle('dark-theme'); 
-    darkModeLabel.toggle = `Click for dark theme` 
+// Open submenu on click
+themeSwitcherButton.addEventListener('click', () => {
+    subMenuWrapper.classList.toggle("show");
+    themeSwitcherButton.toggleAttribute('aria-expanded');
 });
 
-
-
-
+// Add class to body on click
+lightButton.addEventListener('click', () => {
+    htmlElement.classList = '';
+    htmlElement.classList.add("light-theme");
+});
+darkButton.addEventListener('click', () => {
+    htmlElement.classList = '';
+    htmlElement.classList.add("dark-theme");
+});

@@ -18,23 +18,16 @@
                 Theme
             </span>
         </button>
-        <ul class="submenu themes-menu  inline-submenu-lg" aria-labelledby="themes-menu-button">
+        <ul class="submenu themes-menu inline-submenu-lg" aria-labelledby="themes-menu-button">
           <li class=" ">
-            <button type="button" class="button primary has-icon active-menu-item">
-              <span class="button-wrap">
-                <i class="fa-solid fa-circle-half-stroke"></i> OS Default
-              </span>
-            </button>
-          </li>
-          <li class=" ">
-            <button type="button" class="button primary has-icon">
+            <button id="light-theme" type="button" class="button primary has-icon">
               <span class="button-wrap">
                 <i class="fa-solid fa-sun"></i> Light
               </span>
             </button>
           </li>
           <li class=" ">
-            <button type="button" class="button primary has-icon">
+            <button id="dark-theme" type="button" class="button primary has-icon">
               <span class="button-wrap">
                 <i class="fa-solid fa-moon"></i> Dark
               </span>
@@ -42,11 +35,6 @@
           </li>
         </ul>
     </div>
-    <script>
-      const themeSwitcherWrapper = document.querySelector('.theme-switcher-menu');
-      
-
-    </script>
     <script src="theme-switcher.js"></script>
   </body>
 </html>

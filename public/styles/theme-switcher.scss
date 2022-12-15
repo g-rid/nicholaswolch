@@ -1,7 +1,7 @@
 .theme-switcher-menu {
   position: fixed;
   bottom: 2vh;
-  right: 2vw;
+  right: 2rem;
 
   button {
     font-size: 1.2rem;
@@ -12,11 +12,19 @@
   }
 
   ul {
-    border: 2px solid var(--grey);
-    border-radius: 2rem;
-    padding-left: 0;
     position: absolute;
-    bottom: 0;
+    bottom: 100%;
+    right: 0;
+    width: 11rem;
+    padding-left: 0;
+    margin-bottom: 1rem;
+    border: 2px solid var(--secondary-color);
+    border-radius: 0.75rem;
+    display: none;
+
+    &.show {
+      display: block;
+    }
 
     li {
       list-style: none;
