@@ -5,6 +5,7 @@ html.light-theme {
   background-color: var(--primary-color);
   color: var(--secondary-color);
   border-color: var(--secondary-color);
+  transition: all 500ms;
 }
 
 html.dark-theme {
@@ -12,6 +13,7 @@ html.dark-theme {
   --secondary-color: white;
   background-color: var(--primary-color);
   color: var(--secondary-color);
+  transition: all 500ms;
 }
 
 html {
@@ -25,6 +27,7 @@ html {
   --green: #61e846;
   --text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
   --box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
+  --gutter-spacing: max(3rem, 4vmin);
   font-size: 62.5%;
   font-family: "Poppins", Helvetica, sans-serif;
   box-sizing: border-box;
@@ -48,12 +51,6 @@ body {
 details,
 main {
   display: block;
-}
-
-.gutters {
-  margin: 4rem;
-  padding: 4rem;
-  border: 2px solid var(--secondary-color);
 }
 
 button,
@@ -279,7 +276,6 @@ input[type=button] {
   background-color: inherit;
   padding: 1rem;
   border: 2px solid var(--secondary-color);
-  border-radius: 0.75rem;
   text-decoration: none;
   font-weight: 600;
   font-size: 2rem;

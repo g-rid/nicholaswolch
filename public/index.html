@@ -6,40 +6,33 @@
     <title>The Portfolio of Nicholas Wolch</title>
     <link rel="stylesheet" href="styles/base.css" />
     <link rel="stylesheet" href="styles/theme-switcher.css" />
+    <link rel="stylesheet" href="styles/gutters.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/849300a45d.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <div class="gutters">
-      <main>
-          <p>Hey there! Welcome to...</p>
-          <h1>The Portfolio of Nicholas Wolch</h1>
-          <p>I'm a web developer who's currently looking for work. I need a place to display some skills. So here it goes.</p>
-      </main>
+      <div class="line line-top"></div>
+      <div class="line line-right"></div>
+      <div class="line line-bottom"></div>
+      <div class="line line-left"></div>
     </div>
-    <div class="theme-switcher-menu">
-        <button aria-haspopup="menu" type="button" class="button action has-icon theme-switcher-button small">
-            <span class="button-wrap">
-              <i class="fa-solid fa-circle-half-stroke"></i>
-                Theme
-            </span>
-        </button>
-        <ul class="submenu themes-menu inline-submenu-lg" aria-labelledby="themes-menu-button">
-          <li class=" ">
-            <button id="light-theme" type="button" class="button primary has-icon">
-              <span class="button-wrap">
-                <i class="fa-solid fa-sun"></i> Light
-              </span>
-            </button>
-          </li>
-          <li class=" ">
-            <button id="dark-theme" type="button" class="button primary has-icon">
-              <span class="button-wrap">
-                <i class="fa-solid fa-moon"></i> Dark
-              </span>
-            </button>
-          </li>
-        </ul>
+    <main>
+        <h1>Nicholas Wolch</h1>
+        <h5>Web Developer</h5>
+        <p>Hi there. You've stumbled onto my portfolio site. It's still in progress. Check back for more soon.. In the meantime feel free to reach out - <a href="mailto: hey@nicholaswolch.com">hey@nicholaswolch.com</a></p>
+    </main>
+    <div class="theme-switcher-buttons">
+      <button id="light-theme" type="button" class="button primary has-icon">
+        <span class="button-wrap">
+          <i class="fa-solid fa-sun"></i> Light
+        </span>
+      </button>
+      <button id="dark-theme" type="button" class="button primary has-icon">
+        <span class="button-wrap">
+          <i class="fa-solid fa-moon"></i> Dark
+        </span>
+      </button>
     </div>
     <script src="theme-switcher.js"></script>
   </body>
