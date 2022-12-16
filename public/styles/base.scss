@@ -1,4 +1,4 @@
-// @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
+/* normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 // Color Variables
 
@@ -19,7 +19,48 @@ html.dark-theme {
   color: var(--secondary-color);
 }
 
-/* normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+html {
+  --grey: #cecece;
+  --gray: var(--grey);
+  --blue: #0072b9;
+  --pink: #d60087;
+  --yellow: #ffc600;
+  --black: #2e2e2e;
+  --red: #c73737;
+  --green: #61e846;
+  --text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+  --box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
+  font-size: 62.5%;
+  font-family: "Poppins", Helvetica, sans-serif;
+  box-sizing: border-box;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 2rem;
+  line-height: 1.5;
+  background-size: 15px;
+  margin: 0;
+}
+
+details,
+main {
+  display: block;
+}
+
+.gutters {
+  margin: 4rem;
+  padding: 4rem;
+  border: 2px solid var(--secondary-color);
+}
+
 button,
 hr,
 input {
@@ -39,28 +80,34 @@ legend {
   padding: 0;
 }
 
-html {
-  line-height: 1.15;
-  -webkit-text-size-adjust: 100%;
-}
-
-body {
-  margin: 0;
-}
-
-details,
-main {
-  display: block;
-}
-
-.main-wrapper {
-  max-width: 600px;
-  margin: auto;
-}
+// START Type styles
 
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
+  font-weight: 500;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--prmary-color);
+  margin-top: 0;
+  line-height: 1;
+  text-shadow: var(--text-shadow);
+}
+
+.wrapper h1,
+.wrapper h2,
+.wrapper h3,
+.wrapper h4,
+.wrapper h5,
+.wrapper h6 {
+  color: var(--primary-color);
+  text-shadow: none;
 }
 
 hr {
@@ -80,11 +127,20 @@ a {
   background-color: transparent;
 }
 
-abbr[title] {
-  border-bottom: none;
-  text-decoration: underline;
-  -webkit-text-decoration: underline dotted;
-  text-decoration: underline dotted;
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+button,
+select {
+  text-transform: none;
 }
 
 b,
@@ -94,6 +150,15 @@ strong {
 
 small {
   font-size: 80%;
+}
+
+// END Type Styles
+
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  -webkit-text-decoration: underline dotted;
+  text-decoration: underline dotted;
 }
 
 sub,
@@ -115,21 +180,7 @@ img {
   border-style: none;
 }
 
-button,
-input,
-optgroup,
-select,
-textarea {
-  font-family: inherit;
-  font-size: 100%;
-  line-height: 1.15;
-  margin: 0;
-}
-
-button,
-select {
-  text-transform: none;
-}
+// START Button Styling
 
 [type="button"],
 [type="reset"],
@@ -153,6 +204,8 @@ button::-moz-focus-inner {
 button:-moz-focusring {
   outline: ButtonText dotted 1px;
 }
+
+// END Button Styling
 
 fieldset {
   padding: 0.35em 0.75em 0.625em;
@@ -198,35 +251,7 @@ template {
   display: none;
 }
 
-html {
-  --grey: #cecece;
-  --gray: var(--grey);
-  --blue: #0072b9;
-  --pink: #d60087;
-  --yellow: #ffc600;
-  --black: #2e2e2e;
-  --red: #c73737;
-  --green: #61e846;
-  --text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
-  --box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
-  font-size: 62.5%;
-  font-family: "Poppins", Helvetica, sans-serif;
-  box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
-body {
-  font-size: 2rem;
-  line-height: 1.5;
-  background-size: 15px;
-}
-
-/* Table Styles */
+// START Table Styles
 table {
   border-radius: 5px;
   overflow: hidden;
@@ -239,6 +264,8 @@ th {
   border: 1px solid var(--secondary-color);
   padding: 0.5rem;
 }
+
+// END Table Styles
 
 /* Helper Divs */
 .wrapper {
@@ -272,10 +299,6 @@ input[type="button"] {
   font-size: 2rem;
 }
 
-// :focus {
-//   outline-color: var(--pink);
-// }
-
 fieldset {
   border: 1px solid var(--primary-color);
 }
@@ -291,25 +314,3 @@ select {
 .success {
   border: 1px solid var(--secondary-color);
 }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--prmary-color);
-  margin-top: 0;
-  line-height: 1;
-  text-shadow: var(--text-shadow);
-}
-
-.wrapper h1,
-.wrapper h2,
-.wrapper h3,
-.wrapper h4,
-.wrapper h5,
-.wrapper h6 {
-  color: var(--primary-color);
-  text-shadow: none;
-} /*# sourceMappingURL=base.css.map */
