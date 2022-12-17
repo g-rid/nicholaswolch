@@ -2,6 +2,8 @@
 html.light-theme {
   --primary-color: white;
   --secondary-color: black;
+  --primary-text-shadow: rgba(255, 255, 255, 0.7);
+  --secondary-text-shadow: rgba(0, 0, 0, 0.7);
   background-color: var(--primary-color);
   color: var(--secondary-color);
   border-color: var(--secondary-color);
@@ -11,6 +13,8 @@ html.light-theme {
 html.dark-theme {
   --primary-color: black;
   --secondary-color: white;
+  --primary-text-shadow: rgba(0, 0, 0, 0.7);
+  --secondary-text-shadow: rgba(255, 255, 255, 0.7);
   background-color: var(--primary-color);
   color: var(--secondary-color);
   transition: all 500ms;
@@ -25,8 +29,8 @@ html {
   --black: #2e2e2e;
   --red: #c73737;
   --green: #61e846;
-  --text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
-  --box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
+  --text-shadow: 1px 1px 2px var(--primary-text-shadow);
+  --box-shadow: 0 0 5px 5px var(--primary-text-shadow);
   --gutter-spacing: max(3rem, 4vmin);
   font-size: 62.5%;
   font-family: "Poppins", Helvetica, sans-serif;
@@ -48,8 +52,12 @@ body {
   margin: 0;
 }
 
-details,
 main {
+  position: relative;
+  height: 100vh;
+}
+
+details {
   display: block;
 }
 
@@ -60,6 +68,7 @@ main {
   font-size: 1.8rem;
   width: 228px;
   text-align: right;
+  text-shadow: 1px 1px 1px var(--primary-text-shadow);
 }
 
 button,

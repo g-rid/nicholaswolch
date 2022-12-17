@@ -8,6 +8,7 @@ main {
   right: var(--gutter-spacing);
   bottom: var(--gutter-spacing);
   left: var(--gutter-spacing);
+  z-index: 0;
 }
 
 .line {
