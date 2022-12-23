@@ -22,6 +22,16 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.cube-position-wrapper .click-indicator {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 1rem;
+  color: var(--secondary-color);
+}
 
 .cube {
   position: relative;

@@ -350,11 +350,15 @@ select {
   flex-grow: 1;
 }
 
-.clear-button {
+.hidden,
+.displayed {
   transition: all 200ms ease;
+}
+
+.hidden {
   display: none;
 }
 
-.display {
+.displayed {
   display: block;
 }
