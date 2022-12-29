@@ -53,6 +53,7 @@
   border: 1px solid var(--primary-color);
   background-color: var(--secondary-color);
   transform-style: preserve-3d;
+  box-shadow: 0 0 1em var(--primary-text-shadow) inset;
 }
 .cube .left,
 .cube .right,
@@ -60,7 +61,6 @@
 .cube .back {
   width: 100%;
   height: 100%;
-  box-shadow: 0 0 0.5em var(--secondary-color) inset;
 }
 .cube .front {
   transform: translateZ(2.5em);

@@ -1,13 +1,14 @@
-const root = document.querySelector('html') as HTMLHtmlElement;
+const rootHTML = document.querySelector('html') as HTMLHtmlElement;
+const main = document.querySelector('main') as HTMLElement;
 const cubeWrapper = document.querySelector('.cube-background-frame') as HTMLDivElement;
 const clearButton = document.getElementById("clear-button") as HTMLDivElement;
 const clickIndicator = document.querySelector('.click-indicator') as HTMLDivElement;
 let clickCounter = 0 as number;
 
 // Get mouse X and Y positions
-root.addEventListener("mousemove", e => {
-  root.style.setProperty('--mouse-x', e.clientX + "deg");
-  root.style.setProperty('--mouse-y', e.clientY + "deg");
+rootHTML.addEventListener("mousemove", e => {
+  rootHTML.style.setProperty('--mouse-x', e.clientX + "deg");
+  rootHTML.style.setProperty('--mouse-y', e.clientY + "deg");
 });
 
 // Generate cubes in random positions when the DOM is clicked
@@ -28,24 +29,27 @@ function addCubes() {
   `;
   cubeWrapper.innerHTML += cubeMarkup;
   clickCounter++;
-  if (clickCounter > 4) {
+  if (clickCounter > 7) {
     clearButton.classList.remove("hidden");
     clearButton.classList.add("displayed");
   }
 }
 
-root.addEventListener("click", addCubes);
+main.addEventListener("click", addCubes);
 
 // Remove generated cubes when clear button is clicked
 clearButton.addEventListener("click", () => {
-  const generatedCubes = document.querySelectorAll(".generated-cube") as object;
-  for(const cube of generatedCubes) {
-    cube.remove();
+  const generatedCubes = document.querySelectorAll(".generated-cube");
+  console.log(generatedCubes);
+  console.log(typeof generatedCubes);
+  console.log(generatedCubes.length);
+  for (let i = 0; i < generatedCubes.length; i++) {
+    generatedCubes[i].remove();
   }
   clearButton.classList.remove("displayed");
   clearButton.classList.add("hidden");
   clickCounter = 0;
-}); 
+});
 
 // Show click indicator after 10 seconds and remove after 20 
 setTimeout(() => {
