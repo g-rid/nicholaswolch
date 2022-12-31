@@ -342,6 +342,10 @@ select {
   border: 2px solid var(--grey);
 }
 
+.click-indicator {
+  display: none;
+}
+
 .success {
   border: 2px solid var(--secondary-color);
 }
