@@ -1,0 +1,36 @@
+h2, h3 {
+    padding: 2.0rem 0;
+}
+
+h3 {
+    color: black;
+}
+
+.form-wrapper {
+    background: white;
+    border-radius: 20px;
+    width: 80vw;
+    padding: 2rem;
+    margin: 2rem;
+}
+
+.meal-item {
+    width: 33%;
+    text-align: center;
+}
+
+ul {
+    padding-left: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+output {
+    display: block;
+}
+
+button {
+    margin: 2.0rem 0;
+}

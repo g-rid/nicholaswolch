@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" href="./styles/styles.css">
+  
+</head>
+
+<body>
+<div class="w-60 d-flex align-items-center justify-content-center flex-wrap">
+    <h2>Wolch Family Weeknight Dinners!</h2>
+    <section class="output form-wrapper d-flex align-items-center justify-content-center flex-column">
+        <form class="w-100">
+          <h3 class="w-100 text-center py-4">Click the button to get a generated meal</h3>
+          <div class="meal-items-wrapper d-flex align-items-start justify-content-center w-100">
+            <div class="meal-item proteins">
+              <label><b>Proteins</b></label>
+              <output></output>
+            </div>
+            <div class="meal-item veggies">
+              <label><b>Veggies (x3)</b></label>
+              <output></output>
+            </div>
+            <div class="meal-item grains">
+              <label><b>Grains</b></label>
+              <output></output>
+            </div>
+          </div>
+        </form>
+        <button type="button" class="text-center" id="randomize">Click for a random meal!</button>
+    </section>
+    <section class="food-list form-wrapper d-flex align-items-center justify-content-center flex-column">
+      <div class="w-100">
+        <h3 class="text-center">Add a new food:</h3>
+          <form>
+            <div class="new-foods-wrapper d-flex align-items-center justify-content-center">
+              <input type="text" id="food-input" value="Add your food here">
+              <select name="Types of Food" id="food-type">
+                <option value="default">Select Food Type</option>
+                <option value="proteins">Proteins</option>
+                <option value="veggies">Veggie</option>
+                <option value="grains">Grain</option>
+              </select>
+              <input type="button" class="text-center" id="new-food-submit" value="Submit">
+            </div>
+          </form>
+        <h3 class="w-100 text-center py-4">Current food in your lists:</h3>
+        <div class="meal-items-wrapper d-flex align-items-start justify-content-center w-100">
+          <div class="meal-item proteins">
+            <label><b>Proteins</b></label>
+            <ul id="proteins-output"></ul>
+          </div>
+          <div class="meal-item veggies">
+            <label><b>Veggies</b></label>
+            <ul id="veggies-output"></ul>
+          </div>
+          <div class="meal-item grains">
+            <label><b>Grains</b></label>
+            <ul id="grains-output"></ul>
+          </div>
+        </div>
+      </div>
+      <input type="button" class="text-center" id="remove-foods" value="Remove All Lists">
+  </section>
+</div>
+<script type="text/javascript" language="javascript" src="./scripts/theme-switcher.js"></script>
+</body>
+
+</html>
