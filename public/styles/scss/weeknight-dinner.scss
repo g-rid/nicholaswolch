@@ -1,0 +1,41 @@
+h2,
+h3 {
+  padding: 2rem 0;
+}
+
+h3 {
+  color: var(--primary-color);
+}
+
+.form-wrapper {
+  background: white;
+  border-radius: 20px;
+  width: 80vw;
+  padding: 2rem;
+  margin: 2rem;
+}
+
+.meal-item {
+  width: 33%;
+  text-align: center;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+output {
+  display: block;
+}
+
+button {
+  margin: 2rem 0;
+}
+
+body {
+  background-color: blue;
+}
