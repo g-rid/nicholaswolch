@@ -1,8 +1,7 @@
 const rootHTML = document.querySelector('html') as HTMLHtmlElement;
-const main = document.querySelector('main') as HTMLElement;
 const cubeWrapper = document.querySelector('.cube-background-frame') as HTMLDivElement;
-const clearButton = document.getElementById("clear-button") as HTMLDivElement;
-const clickIndicator = document.querySelector('.click-indicator') as HTMLSpanElement;
+const mainElement = document.querySelector('main') as HTMLElement;
+const clearButton = document.getElementById('clear-button') as HTMLDivElement;
 let clickCount = 0 as number;
 
 // Get mouse X and Y positions
@@ -11,8 +10,37 @@ rootHTML.addEventListener("mousemove", e => {
   rootHTML.style.setProperty('--mouse-y', e.clientY + "deg");
 });
 
+// Add click indicator
+function addClickIndicator() {
+  const clickIndicatorCube = document.querySelector('.initial-cube .cube') as HTMLSpanElement;
+  const spanElement = document.createElement('span') as HTMLSpanElement;
+  spanElement.innerHTML = 'Try clicking?';
+  spanElement.classList.add('click-indicator');
+  clickIndicatorCube.insertAdjacentElement('afterend', spanElement);
+  console.log(clickIndicatorCube);
+}
+
+// Remove click indicator
+function removeClickIndicator() {
+  const clickIndicator = document.querySelector('.click-indicator') as HTMLSpanElement;
+  clickIndicator.remove();
+  clickCount = 0;
+}
+
+// Reset click indicator
+function resetClickIndicator() {
+  removeClickIndicator();
+  setTimeout(addClickIndicator, 7000);
+}
+
+function displayClearButton() {
+    clearButton.classList.remove("hidden");
+    clearButton.classList.add("displayed");
+}
+
 // Generate cubes in random positions when the Main element is clicked
 function addCubes() {
+  clickCount++;
   const randomYPosition = Math.floor(Math.random() * 101);
   const randomXPosition = Math.floor(Math.random() * 101);
   const cubeMarkup = `
@@ -28,17 +56,13 @@ function addCubes() {
   </div>
   `;
   cubeWrapper.innerHTML += cubeMarkup;
-  clickCount++;
-  clickIndicator.classList.add("hidden");
-  console.log(clickIndicator.className);
-  if (clickCount > 6) {
-    clearButton.classList.remove("hidden");
-    clearButton.classList.add("displayed");
+  if (clickCount >= 6) {
+    displayClearButton();
+    resetClickIndicator();
   }
-  clickCounter();
 }
 
-main.addEventListener("click", addCubes);
+mainElement.addEventListener("click", addCubes);
 
 // Remove generated cubes when clear button is clicked
 clearButton.addEventListener("click", () => {
@@ -48,16 +72,8 @@ clearButton.addEventListener("click", () => {
   }
   clearButton.classList.remove("displayed");
   clearButton.classList.add("hidden");
-  clickCount = 0;
+  resetClickIndicator();
 });
 
-function clickCounter() {
-// If site hasn't been clicked show click indicator after 10 seconds and remove after 20 
-    console.log("Zero Seconds", clickIndicator.classList);
-    setTimeout(() => {
-      clickIndicator.classList.add("displayed");
-      console.log("Three Seconds", clickIndicator.className);
-    }, 3000)
-}
-
-clickCounter();
+// Add click indicator 5 seconds after page
+setTimeout(addClickIndicator, 5000);
