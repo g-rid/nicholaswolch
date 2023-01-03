@@ -58,7 +58,8 @@ function displayLists() {
     proteins.forEach(function (protein) {
         var li = document.createElement('li');
         li.innerHTML = "".concat(protein, " <button type=\"button\" onclick=\"removeItemFromList()\">X</button>");
-        li.dataset = protein;
+        console.log(li.dataset);
+        // li.dataset = protein;
         proteinsList.appendChild(li);
     });
     veggies.forEach(function (veggie) {
@@ -72,9 +73,9 @@ function displayLists() {
         grainsList.appendChild(li);
     });
 }
-function removeItemFromList(event) {
-    console.log(event);
-}
+// function removeItemFromList(event) {
+//         console.log(event);
+// }
 function destroyLists() {
     proteinsList.innerHTML = '';
     veggiesList.innerHTML = '';
@@ -85,16 +86,17 @@ randomButton.addEventListener('click', randomizeButton);
 removeFoodSubmitButton.addEventListener('click', destroyLists);
 newFoodSubmitButton.addEventListener('click', function () {
     destroyLists();
-    var foodInput = document.getElementById('food-input').value;
+    var foodInput = document.getElementById('food-input');
+    var foodInputValue = foodInput.value;
     var selectedFoodType = foodTypeInput.value;
     if (selectedFoodType === 'proteins') {
-        proteins.push(foodInput);
+        proteins.push(foodInputValue);
     }
     if (selectedFoodType === 'veggies') {
-        veggies.push(foodInput);
+        veggies.push(foodInputValue);
     }
     if (selectedFoodType === 'grains') {
-        grains.push(foodInput);
+        grains.push(foodInputValue);
     }
     if (selectedFoodType === 'default') {
         alert('Please select a food type');

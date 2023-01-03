@@ -29,7 +29,7 @@ const proteinsList = document.getElementById('proteins-output') as HTMLDivElemen
 const veggiesList = document.getElementById('veggies-output') as HTMLDivElement;
 const grainsList = document.getElementById('grains-output') as HTMLDivElement;
 
-const foodTypeInput = document.getElementById('food-type') as HTMLDivElement;
+const foodTypeInput = document.getElementById('food-type') as HTMLInputElement;
 const newFoodSubmitButton = document.getElementById('new-food-submit') as HTMLDivElement;
 const removeFoodSubmitButton = document.getElementById('remove-foods') as HTMLDivElement;
 
@@ -57,7 +57,8 @@ function displayLists() {
         proteins.forEach((protein) => {
                 const li = document.createElement('li');
                 li.innerHTML = `${protein} <button type="button" onclick="removeItemFromList()">X</button>`;
-                li.dataset = protein;
+                console.log(li.dataset);
+                // li.dataset = protein;
                 proteinsList.appendChild(li);
         });
         veggies.forEach((veggie) => {
@@ -72,9 +73,9 @@ function displayLists() {
         });
 }
 
-function removeItemFromList(event) {
-        console.log(event);
-}
+// function removeItemFromList(event) {
+//         console.log(event);
+// }
 
 function destroyLists() {
         proteinsList.innerHTML = '';
@@ -87,16 +88,17 @@ randomButton.addEventListener('click', randomizeButton);
 removeFoodSubmitButton.addEventListener('click', destroyLists);
 newFoodSubmitButton.addEventListener('click', () => {
         destroyLists();
-        const foodInput = document.getElementById('food-input').value;
+        const foodInput = document.getElementById('food-input');
+        const foodInputValue = (foodInput as HTMLInputElement).value;
         const selectedFoodType = foodTypeInput.value;
         if (selectedFoodType === 'proteins') {
-                proteins.push(foodInput);
+                proteins.push(foodInputValue);
         }
         if (selectedFoodType === 'veggies') {
-                veggies.push(foodInput);
+                veggies.push(foodInputValue);
         }
         if (selectedFoodType === 'grains') {
-                grains.push(foodInput);
+                grains.push(foodInputValue);
         }
         if (selectedFoodType === 'default') {
                 alert('Please select a food type');

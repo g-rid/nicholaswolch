@@ -2,8 +2,8 @@ const rootHTML = document.querySelector('html') as HTMLHtmlElement;
 const main = document.querySelector('main') as HTMLElement;
 const cubeWrapper = document.querySelector('.cube-background-frame') as HTMLDivElement;
 const clearButton = document.getElementById("clear-button") as HTMLDivElement;
-const clickIndicator = document.querySelector('.click-indicator') as HTMLDivElement;
-let clickCounter = 0 as number;
+const clickIndicator = document.querySelector('.click-indicator') as HTMLSpanElement;
+let clickCount = 0 as number;
 
 // Get mouse X and Y positions
 rootHTML.addEventListener("mousemove", e => {
@@ -28,12 +28,14 @@ function addCubes() {
   </div>
   `;
   cubeWrapper.innerHTML += cubeMarkup;
-  clickCounter++;
-  clickIndicator.classList.remove("displayed");
-  if (clickCounter > 6) {
+  clickCount++;
+  clickIndicator.classList.add("hidden");
+  console.log(clickIndicator.className);
+  if (clickCount > 6) {
     clearButton.classList.remove("hidden");
     clearButton.classList.add("displayed");
   }
+  clickCounter();
 }
 
 main.addEventListener("click", addCubes);
@@ -46,16 +48,16 @@ clearButton.addEventListener("click", () => {
   }
   clearButton.classList.remove("displayed");
   clearButton.classList.add("hidden");
-  clickCounter = 0;
+  clickCount = 0;
 });
 
- // If site hasn't been clicked show click indicator after 10 seconds and remove after 20 
-if (clickCounter === 0) {
-  setTimeout(() => {
-    clickIndicator.classList.add("displayed");
-  }, 5000)
-
-  setTimeout(() => {
-    clickIndicator.classList.remove("displayed");
-  }, 10000)
+function clickCounter() {
+// If site hasn't been clicked show click indicator after 10 seconds and remove after 20 
+    console.log("Zero Seconds", clickIndicator.classList);
+    setTimeout(() => {
+      clickIndicator.classList.add("displayed");
+      console.log("Three Seconds", clickIndicator.className);
+    }, 3000)
 }
+
+clickCounter();
