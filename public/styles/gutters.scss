@@ -1,5 +1,8 @@
 main {
   padding: calc(var(--gutter-spacing) * 2);
+  @media (max-width: 480px) {
+    padding: calc(var(--gutter-spacing) * 1.6);
+  }
 }
 
 .gutters {

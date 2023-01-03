@@ -1,6 +1,11 @@
 main {
   padding: calc(var(--gutter-spacing) * 2);
 }
+@media (max-width: 480px) {
+  main {
+    padding: calc(var(--gutter-spacing) * 1.6);
+  }
+}
 
 .gutters {
   position: fixed;
