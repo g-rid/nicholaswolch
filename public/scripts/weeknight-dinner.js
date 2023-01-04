@@ -1,36 +1,42 @@
 "use strict";
-var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
-    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
-        if (ar || !(i in from)) {
-            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-            ar[i] = from[i];
-        }
-    }
-    return to.concat(ar || Array.prototype.slice.call(from));
-};
-var proteins = ['Pork', 'Chicken', 'Salmon', 'Beef', 'Tofu', 'Shrimp'];
-var veggies = ['Sweet Potato', 'Potato', 'Brussel Sprouts', 'Broccoli', 'Carrots', 'Green Beans', 'Zucchini', 'Spinich', 'Cauliflower', 'Squash', 'Beets', 'Parsnips', 'Peas', 'Corn'];
-var grains = ['White Rice', 'Brown Rice', 'Farro', 'Lentils', 'Quinoua', 'Cous Cous'];
-var randomButton = document.getElementById('randomize__button');
-var proteinsOutput = document.querySelector('.proteins output');
-var veggiesOutput = document.querySelector('.veggies output');
-var grainsOutput = document.querySelector('.grains output');
-var proteinsList = document.getElementById('proteins-list');
-var veggiesList = document.getElementById('veggies-list');
-var grainsList = document.getElementById('grains-list');
-var foodTypeInput = document.getElementById('food-type');
-var newFoodSubmitButton = document.getElementById('new-food-submit');
-var removeFoodSubmitButton = document.getElementById('remove-all-foods__button');
+// import * as dotenv from 'dotenv' // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
+// dotenv.config()
+const proteins = ['Pork', 'Chicken', 'Salmon', 'Beef', 'Tofu', 'Shrimp'];
+const veggies = ['Sweet Potato', 'Potato', 'Brussel Sprouts', 'Broccoli', 'Carrots', 'Green Beans', 'Zucchini', 'Spinich', 'Cauliflower', 'Squash', 'Beets', 'Parsnips', 'Peas', 'Corn'];
+const grains = ['White Rice', 'Brown Rice', 'Farro', 'Lentils', 'Quinoua', 'Cous Cous'];
+const randomButton = document.getElementById('randomize__button');
+const proteinsOutput = document.querySelector('.proteins output');
+const veggiesOutput = document.querySelector('.veggies output');
+const grainsOutput = document.querySelector('.grains output');
+const proteinsList = document.getElementById('proteins-list');
+const veggiesList = document.getElementById('veggies-list');
+const grainsList = document.getElementById('grains-list');
+const foodTypeInput = document.getElementById('food-type');
+const newFoodSubmitButton = document.getElementById('new-food-submit');
+const removeFoodSubmitButton = document.getElementById('remove-all-foods__button');
+// const UsdaKey = process.env.USDA_API_KEY;
+async function getUsdaData() {
+    // Make an HTTP GET request to the USDA's Food Composition API
+    const response = await fetch(`https://api.nal.usda.gov/fdc/v1/foods/search?query=apple&pageSize=2&api_key=USDA_API_KEY`);
+    // Convert the response to JSON
+    const data = await response.json();
+    // Loop through the list of foods and print their macros
+    data.foods.forEach((food) => {
+        console.log(`Food: ${food.description}`);
+        console.log(`Protein: ${food.foodNutrients[0].amount}g`);
+        console.log(`Carbs: ${food.foodNutrients[1].amount}g`);
+        console.log(`Fat: ${food.foodNutrients[2].amount}g`);
+    });
+}
 function randomizeButton() {
     function randomProtein() {
         return proteins[Math.floor(Math.random() * proteins.length)];
     }
     // eslint-disable-next-line no-shadow
-    function randomVeggies(veggies, num) {
-        if (num === void 0) { num = 3; }
-        var shuffled = __spreadArray([], veggies, true).sort(function () { return 0.5 - Math.random(); });
-        var veggieArray = shuffled.slice(0, num);
-        return veggieArray.join("<br>");
+    function randomVeggies(veggies, num = 3) {
+        const shuffled = [...veggies].sort(() => 0.5 - Math.random());
+        const veggieArray = shuffled.slice(0, num);
+        return veggieArray.join(`<br>`);
     }
     function randomGrain() {
         return grains[Math.floor(Math.random() * grains.length)];
@@ -40,24 +46,24 @@ function randomizeButton() {
     grainsOutput.innerHTML = randomGrain();
 }
 function displayLists() {
-    proteins.forEach(function (protein) {
-        var li = document.createElement('li');
+    proteins.forEach((protein) => {
+        const li = document.createElement('li');
         li.classList.add('food-item');
-        li.innerHTML = "".concat(protein, " <button type=\"button\" onclick=\"removeItemFromList()\">X</button>");
+        li.innerHTML = `${protein} <button type="button" onclick="removeItemFromList()">X</button>`;
         // console.log(li.dataset);
         // li.dataset = protein;
         proteinsList.appendChild(li);
     });
-    veggies.forEach(function (veggie) {
-        var li = document.createElement('li');
+    veggies.forEach((veggie) => {
+        const li = document.createElement('li');
         li.classList.add('food-item');
-        li.innerHTML = "".concat(veggie, " <button type=\"button\" onclick=\"removeItemFromList()\">X</button>");
+        li.innerHTML = `${veggie} <button type="button" onclick="removeItemFromList()">X</button>`;
         veggiesList.appendChild(li);
     });
-    grains.forEach(function (grain) {
-        var li = document.createElement('li');
+    grains.forEach((grain) => {
+        const li = document.createElement('li');
         li.classList.add('food-item');
-        li.innerHTML = "".concat(grain, " <button type=\"button\" onclick=\"removeItemFromList()\">X</button>");
+        li.innerHTML = `${grain} <button type="button" onclick="removeItemFromList()">X</button>`;
         grainsList.appendChild(li);
     });
 }
@@ -69,11 +75,11 @@ function destroyLists() {
 displayLists();
 randomButton.addEventListener('click', randomizeButton);
 removeFoodSubmitButton.addEventListener('click', destroyLists);
-newFoodSubmitButton.addEventListener('click', function () {
+newFoodSubmitButton.addEventListener('click', () => {
     destroyLists();
-    var foodInput = document.getElementById('food-input');
-    var foodInputValue = foodInput.value;
-    var selectedFoodType = foodTypeInput.value;
+    const foodInput = document.getElementById('food-input');
+    const foodInputValue = foodInput.value;
+    const selectedFoodType = foodTypeInput.value;
     if (selectedFoodType === 'proteins') {
         proteins.push(foodInputValue);
     }
@@ -88,3 +94,4 @@ newFoodSubmitButton.addEventListener('click', function () {
     }
     displayLists();
 });
+getUsdaData();

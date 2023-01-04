@@ -1,3 +1,6 @@
+// import * as dotenv from 'dotenv' // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
+// dotenv.config()
+
 const proteins = ['Pork', 'Chicken', 'Salmon', 'Beef', 'Tofu', 'Shrimp'];
 const veggies = [ 'Sweet Potato', 'Potato', 'Brussel Sprouts', 'Broccoli', 'Carrots', 'Green Beans', 'Zucchini', 'Spinich', 'Cauliflower', 'Squash', 'Beets', 'Parsnips', 'Peas', 'Corn'];
 const grains = ['White Rice', 'Brown Rice', 'Farro', 'Lentils', 'Quinoua', 'Cous Cous'];
@@ -15,6 +18,25 @@ const grainsList = document.getElementById('grains-list') as HTMLDivElement;
 const foodTypeInput = document.getElementById('food-type') as HTMLInputElement;
 const newFoodSubmitButton = document.getElementById('new-food-submit') as HTMLDivElement;
 const removeFoodSubmitButton = document.getElementById('remove-all-foods__button') as HTMLDivElement;
+
+
+// const UsdaKey = process.env.USDA_API_KEY;
+
+async function getUsdaData() {
+    // Make an HTTP GET request to the USDA's Food Composition API
+    const response = await fetch(
+        `https://api.nal.usda.gov/fdc/v1/foods/search?query=apple&pageSize=2&api_key=USDA_API_KEY`
+    );
+    // Convert the response to JSON
+    const data = await response.json();
+    // Loop through the list of foods and print their macros
+    data.foods.forEach((food: { description: any; foodNutrients: { amount: any; }[]; }) => {
+        console.log(`Food: ${food.description}`);
+        console.log(`Protein: ${food.foodNutrients[0].amount}g`);
+        console.log(`Carbs: ${food.foodNutrients[1].amount}g`);
+        console.log(`Fat: ${food.foodNutrients[2].amount}g`);
+    });
+} 
 
 function randomizeButton() {
         function randomProtein() {
@@ -87,3 +109,5 @@ newFoodSubmitButton.addEventListener('click', () => {
         }
         displayLists();
 });
+
+getUsdaData();

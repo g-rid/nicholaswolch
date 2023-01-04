@@ -1,18 +1,18 @@
 "use strict";
-var rootHTML = document.querySelector('html');
-var cubeWrapper = document.querySelector('.cube-background-frame');
-var mainElement = document.querySelector('main');
-var clearButton = document.getElementById('clear-button');
-var clickCount = 0;
+const rootHTML = document.querySelector('html');
+const cubeWrapper = document.querySelector('.cube-background-frame');
+const mainElement = document.querySelector('main');
+const clearButton = document.getElementById('clear-button');
+let clickCount = 0;
 // Get mouse X and Y positions
-rootHTML.addEventListener("mousemove", function (e) {
+rootHTML.addEventListener("mousemove", e => {
     rootHTML.style.setProperty('--mouse-x', e.clientX + "deg");
     rootHTML.style.setProperty('--mouse-y', e.clientY + "deg");
 });
 // Add click indicator
 function addClickIndicator() {
-    var clickIndicatorCube = document.querySelector('.initial-cube .cube');
-    var spanElement = document.createElement('span');
+    const clickIndicatorCube = document.querySelector('.initial-cube .cube');
+    const spanElement = document.createElement('span');
     spanElement.innerHTML = 'Try clicking?';
     spanElement.classList.add('click-indicator');
     clickIndicatorCube.insertAdjacentElement('afterend', spanElement);
@@ -20,7 +20,7 @@ function addClickIndicator() {
 }
 // Remove click indicator
 function removeClickIndicator() {
-    var clickIndicator = document.querySelector('.click-indicator');
+    const clickIndicator = document.querySelector('.click-indicator');
     clickIndicator.remove();
     clickCount = 0;
 }
@@ -36,9 +36,20 @@ function displayClearButton() {
 // Generate cubes in random positions when the Main element is clicked
 function addCubes() {
     clickCount++;
-    var randomYPosition = Math.floor(Math.random() * 101);
-    var randomXPosition = Math.floor(Math.random() * 101);
-    var cubeMarkup = "\n  <div class=\"cube-position-wrapper generated-cube\" style=\"top: ".concat(randomYPosition, "%; left: ").concat(randomXPosition, "%\">\n    <div class=\"cube\">\n      <div class=\"front\"></div>\n      <div class=\"back\"></div>\n      <div class=\"left\"></div>\n      <div class=\"right\"></div>\n      <div class=\"top\"></div>\n      <div class=\"bottom\"></div>\n    </div>\n  </div>\n  ");
+    const randomYPosition = Math.floor(Math.random() * 101);
+    const randomXPosition = Math.floor(Math.random() * 101);
+    const cubeMarkup = `
+  <div class="cube-position-wrapper generated-cube" style="top: ${randomYPosition}%; left: ${randomXPosition}%">
+    <div class="cube">
+      <div class="front"></div>
+      <div class="back"></div>
+      <div class="left"></div>
+      <div class="right"></div>
+      <div class="top"></div>
+      <div class="bottom"></div>
+    </div>
+  </div>
+  `;
     cubeWrapper.innerHTML += cubeMarkup;
     if (clickCount >= 6) {
         displayClearButton();
@@ -47,9 +58,9 @@ function addCubes() {
 }
 mainElement.addEventListener("click", addCubes);
 // Remove generated cubes when clear button is clicked
-clearButton.addEventListener("click", function () {
-    var generatedCubes = document.querySelectorAll(".generated-cube");
-    for (var i = 0; i < generatedCubes.length; i++) {
+clearButton.addEventListener("click", () => {
+    const generatedCubes = document.querySelectorAll(".generated-cube");
+    for (let i = 0; i < generatedCubes.length; i++) {
         generatedCubes[i].remove();
     }
     clearButton.classList.remove("displayed");
