@@ -1,22 +1,5 @@
 const proteins = ['Pork', 'Chicken', 'Salmon', 'Beef', 'Tofu', 'Shrimp'];
-
-const veggies = [
-        'Sweet Potato',
-        'Potato',
-        'Brussel Sprouts',
-        'Broccoli',
-        'Carrots',
-        'Green Beans',
-        'Zucchini',
-        'Spinich',
-        'Cauliflower',
-        'Squash',
-        'Beets',
-        'Parsnips',
-        'Peas',
-        'Corn',
-];
-
+const veggies = [ 'Sweet Potato', 'Potato', 'Brussel Sprouts', 'Broccoli', 'Carrots', 'Green Beans', 'Zucchini', 'Spinich', 'Cauliflower', 'Squash', 'Beets', 'Parsnips', 'Peas', 'Corn'];
 const grains = ['White Rice', 'Brown Rice', 'Farro', 'Lentils', 'Quinoua', 'Cous Cous'];
 
 const randomButton = document.getElementById('randomize') as HTMLDivElement;
@@ -57,7 +40,7 @@ function displayLists() {
         proteins.forEach((protein) => {
                 const li = document.createElement('li');
                 li.innerHTML = `${protein} <button type="button" onclick="removeItemFromList()">X</button>`;
-                console.log(li.dataset);
+                // console.log(li.dataset);
                 // li.dataset = protein;
                 proteinsList.appendChild(li);
         });
@@ -72,10 +55,6 @@ function displayLists() {
                 grainsList.appendChild(li);
         });
 }
-
-// function removeItemFromList(event) {
-//         console.log(event);
-// }
 
 function destroyLists() {
         proteinsList.innerHTML = '';

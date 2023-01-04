@@ -1,5 +1,5 @@
 .theme-switcher-buttons {
-  position: absolute;
+  position: fixed;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -13,6 +13,7 @@
   padding: 0.9rem;
   transition: all 300ms ease-in-out;
   height: var(--gutter-spacing);
+  margin: 0;
 }
 .theme-switcher-buttons #dark-theme {
   margin-right: 1px;

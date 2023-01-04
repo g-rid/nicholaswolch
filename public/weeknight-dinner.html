@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark-theme weeknight-dinner">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title></title>
+  <title>Weeknight Dinner App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   <link rel="stylesheet" href="./styles/css/styles.css">
-  
+  <script src="https://kit.fontawesome.com/849300a45d.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-<div class="w-60 d-flex align-items-center justify-content-center flex-wrap">
-    <h2>Wolch Family Weeknight Dinners!</h2>
+<div class="w-60 d-flex align-items-center justify-content-center flex-wrap flex-column">
+    <h2>Weeknight Dinner App</h2>
     <section class="output form-wrapper d-flex align-items-center justify-content-center flex-column">
         <form class="w-100">
           <h3 class="w-100 text-center py-4">Click the button to get a generated meal</h3>
@@ -31,43 +32,57 @@
             </div>
           </div>
         </form>
-        <button type="button" class="text-center" id="randomize">Click for a random meal!</button>
+        <button type="button" class="text-center" id="randomize">Randomize Meal</button>
     </section>
-    <section class="food-list form-wrapper d-flex align-items-center justify-content-center flex-column">
-      <div class="w-100">
-        <h3 class="text-center">Add a new food:</h3>
-          <form>
-            <div class="new-foods-wrapper d-flex align-items-center justify-content-center">
-              <input type="text" id="food-input" value="Add your food here">
-              <select name="Types of Food" id="food-type">
-                <option value="default">Select Food Type</option>
-                <option value="proteins">Proteins</option>
-                <option value="veggies">Veggie</option>
-                <option value="grains">Grain</option>
-              </select>
-              <input type="button" class="text-center" id="new-food-submit" value="Submit">
+    <input type="button" class="accordion" value="Add/Remove Food Items">
+      <section class="accordion-panel-wrapper food-list form-wrapper align-items-center justify-content-center flex-column">
+        <div class="w-100 accordian-panel">
+            <form>
+              <div class="new-foods-wrapper d-flex align-items-center justify-content-center">
+                <input type="text" id="food-input" value="Add your food here">
+                <select name="Types of Food" id="food-type">
+                  <option value="default">Select Food Type</option>
+                  <option value="proteins">Proteins</option>
+                  <option value="veggies">Veggie</option>
+                  <option value="grains">Grain</option>
+                </select>
+                <input type="button" class="text-center" id="new-food-submit" value="Submit">
+              </div>
+            </form>
+          <h3 class="w-100 text-center py-4">Current food in your lists:</h3>
+          <div class="meal-items-wrapper d-flex align-items-start justify-content-center w-100">
+            <div class="meal-item proteins">
+              <label><b>Proteins</b></label>
+              <ul id="proteins-output"></ul>
             </div>
-          </form>
-        <h3 class="w-100 text-center py-4">Current food in your lists:</h3>
-        <div class="meal-items-wrapper d-flex align-items-start justify-content-center w-100">
-          <div class="meal-item proteins">
-            <label><b>Proteins</b></label>
-            <ul id="proteins-output"></ul>
-          </div>
-          <div class="meal-item veggies">
-            <label><b>Veggies</b></label>
-            <ul id="veggies-output"></ul>
-          </div>
-          <div class="meal-item grains">
-            <label><b>Grains</b></label>
-            <ul id="grains-output"></ul>
+            <div class="meal-item veggies">
+              <label><b>Veggies</b></label>
+              <ul id="veggies-output"></ul>
+            </div>
+            <div class="meal-item grains">
+              <label><b>Grains</b></label>
+              <ul id="grains-output"></ul>
+            </div>
           </div>
         </div>
-      </div>
-      <input type="button" class="text-center" id="remove-foods" value="Remove All Lists">
-  </section>
+        <input type="button" class="text-center" id="remove-foods" value="Remove All Lists">
+    </section>
+  <div class="theme-switcher-buttons">
+    <button id="light-theme" type="button" class="button primary has-icon">
+      <span class="button-wrap">
+        <i class="fa-solid fa-sun"></i> Light
+      </span>
+    </button>
+    <button id="dark-theme" type="button" class="button primary has-icon">
+      <span class="button-wrap">
+        <i class="fa-solid fa-moon"></i> Dark
+      </span>
+    </button>
+  </div>
 </div>
+<script type="text/javascript" language="javascript" src="./scripts/accordion.js"></script>
 <script type="text/javascript" language="javascript" src="./scripts/weeknight-dinner.js"></script>
+<script type="text/javascript" language="javascript" src="./scripts/theme-switcher.js"></script>
 </body>
 
 </html>

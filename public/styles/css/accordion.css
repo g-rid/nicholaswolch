@@ -1,0 +1,24 @@
+.accordion {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  padding: 1.8rem;
+  width: 80%;
+  text-align: left;
+  transition: 0.4s;
+}
+
+.active,
+.accordion:hover {
+  background-color: grey;
+}
+
+.accordion-panel {
+  display: none;
+  overflow: hidden;
+  padding: 0 1.8rem;
+  background-color: var(--secondary-color);
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+
+/*# sourceMappingURL=accordion.css.map */

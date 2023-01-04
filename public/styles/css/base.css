@@ -32,12 +32,15 @@ html {
   box-sizing: border-box;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
-  overflow-y: hidden;
 }
 @media (max-width: 480px) {
   html {
     --gutter-spacing: 8vw;
   }
+}
+
+html.home-page {
+  overflow-y: hidden;
 }
 
 *,

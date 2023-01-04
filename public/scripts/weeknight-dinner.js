@@ -9,22 +9,7 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     return to.concat(ar || Array.prototype.slice.call(from));
 };
 var proteins = ['Pork', 'Chicken', 'Salmon', 'Beef', 'Tofu', 'Shrimp'];
-var veggies = [
-    'Sweet Potato',
-    'Potato',
-    'Brussel Sprouts',
-    'Broccoli',
-    'Carrots',
-    'Green Beans',
-    'Zucchini',
-    'Spinich',
-    'Cauliflower',
-    'Squash',
-    'Beets',
-    'Parsnips',
-    'Peas',
-    'Corn',
-];
+var veggies = ['Sweet Potato', 'Potato', 'Brussel Sprouts', 'Broccoli', 'Carrots', 'Green Beans', 'Zucchini', 'Spinich', 'Cauliflower', 'Squash', 'Beets', 'Parsnips', 'Peas', 'Corn'];
 var grains = ['White Rice', 'Brown Rice', 'Farro', 'Lentils', 'Quinoua', 'Cous Cous'];
 var randomButton = document.getElementById('randomize');
 var proteinsOutput = document.querySelector('.proteins output');
@@ -58,7 +43,7 @@ function displayLists() {
     proteins.forEach(function (protein) {
         var li = document.createElement('li');
         li.innerHTML = "".concat(protein, " <button type=\"button\" onclick=\"removeItemFromList()\">X</button>");
-        console.log(li.dataset);
+        // console.log(li.dataset);
         // li.dataset = protein;
         proteinsList.appendChild(li);
     });
@@ -73,9 +58,6 @@ function displayLists() {
         grainsList.appendChild(li);
     });
 }
-// function removeItemFromList(event) {
-//         console.log(event);
-// }
 function destroyLists() {
     proteinsList.innerHTML = '';
     veggiesList.innerHTML = '';
