@@ -6,39 +6,39 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Weeknight Dinner App</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"> -->
   <link rel="stylesheet" href="./styles/css/styles.css">
   <script src="https://kit.fontawesome.com/849300a45d.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-<div class="w-60 d-flex align-items-center justify-content-center flex-wrap flex-column">
-    <h2>Weeknight Dinner App</h2>
-    <section class="output form-wrapper d-flex align-items-center justify-content-center flex-column">
-        <form class="w-100">
-          <h3 class="w-100 text-center py-4">Click the button to get a generated meal</h3>
-          <div class="meal-items-wrapper d-flex align-items-start justify-content-center w-100">
-            <div class="meal-item proteins">
+<main>
+    <h1>Weeknight Dinner App</h1>
+    <section class="output form-wrapper">
+        <form>
+          <h3>Click the button to get a generated meal</h3>
+          <div class="meal-items-output__wrapper">
+            <div class="meal-item-output proteins">
               <label><b>Proteins</b></label>
               <output></output>
             </div>
-            <div class="meal-item veggies">
+            <div class="meal-item-output veggies">
               <label><b>Veggies (x3)</b></label>
               <output></output>
             </div>
-            <div class="meal-item grains">
+            <div class="meal-item-output grains">
               <label><b>Grains</b></label>
               <output></output>
             </div>
           </div>
         </form>
-        <button type="button" class="text-center" id="randomize">Randomize Meal</button>
+        <button type="button" id="randomize__button">Randomize Meal</button>
     </section>
-    <input type="button" class="accordion" value="Add/Remove Food Items">
-      <section class="accordion-panel-wrapper food-list form-wrapper align-items-center justify-content-center flex-column">
-        <div class="w-100 accordian-panel">
+    <input type="button" class="accordion__button" value="Add/Remove Food Items">
+      <section class="accordion-panel__wrapper food-list form-wrapper">
+        <div class="accordian__panel">
             <form>
-              <div class="new-foods-wrapper d-flex align-items-center justify-content-center">
+              <div class="new-foods__wrapper">
                 <input type="text" id="food-input" value="Add your food here">
                 <select name="Types of Food" id="food-type">
                   <option value="default">Select Food Type</option>
@@ -49,23 +49,23 @@
                 <input type="button" class="text-center" id="new-food-submit" value="Submit">
               </div>
             </form>
-          <h3 class="w-100 text-center py-4">Current food in your lists:</h3>
-          <div class="meal-items-wrapper d-flex align-items-start justify-content-center w-100">
-            <div class="meal-item proteins">
+          <h3>Current food in your lists:</h3>
+          <div class="macros-lists__wrapper">
+            <div class="macro proteins">
               <label><b>Proteins</b></label>
-              <ul id="proteins-output"></ul>
+              <ul id="proteins-list"></ul>
             </div>
-            <div class="meal-item veggies">
+            <div class="macro veggies">
               <label><b>Veggies</b></label>
-              <ul id="veggies-output"></ul>
+              <ul id="veggies-list"></ul>
             </div>
-            <div class="meal-item grains">
+            <div class="macro grains">
               <label><b>Grains</b></label>
-              <ul id="grains-output"></ul>
+              <ul id="grains-list"></ul>
             </div>
           </div>
         </div>
-        <input type="button" class="text-center" id="remove-foods" value="Remove All Lists">
+        <input type="button" id="remove-all-foods__button" value="Remove All Lists">
     </section>
   <div class="theme-switcher-buttons">
     <button id="light-theme" type="button" class="button primary has-icon">
@@ -79,7 +79,7 @@
       </span>
     </button>
   </div>
-</div>
+</main>
 <script type="text/javascript" language="javascript" src="./scripts/accordion.js"></script>
 <script type="text/javascript" language="javascript" src="./scripts/weeknight-dinner.js"></script>
 <script type="text/javascript" language="javascript" src="./scripts/theme-switcher.js"></script>

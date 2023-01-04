@@ -1,40 +1,97 @@
-h2,
-h3 {
-  padding: 2rem 0;
+@mixin flexCenterCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-h2 {
-  color: var(--secondary-color);
-}
+.weeknight-dinner {
+  main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: inherit;
+  }
 
-ul {
-  padding-left: 0;
-}
+  h2,
+  h3 {
+    padding: 2rem 0;
+    text-align: center;
+  }
 
-li {
-  list-style-type: none;
-}
+  ul {
+    padding-left: 0;
+  }
 
-.form-wrapper {
-  background: var(--secondary-color);
-  width: 80vw;
-  padding: 2rem;
-  margin: 2rem;
-}
+  li {
+    list-style-type: none;
+  }
 
-.meal-item {
-  width: 33%;
-  text-align: center;
-}
+  .form-wrapper {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    width: 80vw;
+    padding: 2rem;
+    margin: 2rem;
+    @include flexCenterCenter;
+    flex-direction: column;
+    form {
+      width: 100%;
+    }
+  }
 
-output {
-  display: block;
-}
+  .meal-items-output__wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    .meal-item-output {
+      width: 33%;
+    }
+  }
 
-button {
-  margin: 2rem 0;
-}
+  .new-foods__wrapper {
+    margin: auto;
+    @include flexCenterCenter;
+  }
 
-body {
-  background-color: var(--primary-color);
+  .macros-lists__wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 5rem;
+    width: 100%;
+    .macro {
+      flex-grow: 1;
+      gap: 2rem;
+    }
+  }
+
+  .food-item {
+    display: flex;
+    justify-content: space-between;
+    button {
+      margin: 0;
+    }
+  }
+
+  output {
+    display: block;
+  }
+
+  .accordion__button {
+    width: calc(100% - 3.3rem);
+  }
+
+  #randomize__button {
+    margin-top: 3rem;
+  }
+
+  #remove-all-foods__button {
+    margin: auto;
+  }
 }

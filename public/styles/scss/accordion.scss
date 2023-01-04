@@ -1,18 +1,18 @@
-.accordion {
+.accordion__button {
   background-color: var(--secondary-color);
   color: var(--primary-color);
   padding: 1.8rem;
-  width: 80%;
+  width: 100%;
   text-align: left;
   transition: 0.4s;
 }
 
 .active,
-.accordion:hover {
+.accordion__buton:hover {
   background-color: grey;
 }
 
-.accordion-panel {
+.accordion__panel {
   display: none;
   overflow: hidden;
   padding: 0 1.8rem;

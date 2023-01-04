@@ -1,5 +1,5 @@
 "use strict";
-var accordion = document.getElementsByClassName('accordion');
+var accordion = document.getElementsByClassName('accordion__button');
 for (var i = 0; i < accordion.length; i++) {
     accordion[i].addEventListener('click', function () {
         this.classList.toggle('active');

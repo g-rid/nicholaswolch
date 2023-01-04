@@ -1,42 +1,83 @@
-h2,
-h3 {
+.weeknight-dinner main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: inherit;
+}
+.weeknight-dinner h2,
+.weeknight-dinner h3 {
   padding: 2rem 0;
+  text-align: center;
 }
-
-h2 {
-  color: var(--secondary-color);
-}
-
-ul {
+.weeknight-dinner ul {
   padding-left: 0;
 }
-
-li {
+.weeknight-dinner li {
   list-style-type: none;
 }
-
-.form-wrapper {
+.weeknight-dinner .form-wrapper {
   background: var(--secondary-color);
+  color: var(--primary-color);
+  font-size: 1.8rem;
   width: 80vw;
   padding: 2rem;
   margin: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
-
-.meal-item {
-  width: 33%;
+.weeknight-dinner .form-wrapper form {
+  width: 100%;
+}
+.weeknight-dinner .meal-items-output__wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 70%;
+  margin: auto;
   text-align: center;
 }
-
-output {
+.weeknight-dinner .meal-items-output__wrapper .meal-item-output {
+  width: 33%;
+}
+.weeknight-dinner .new-foods__wrapper {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.weeknight-dinner .macros-lists__wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 5rem;
+  width: 100%;
+}
+.weeknight-dinner .macros-lists__wrapper .macro {
+  flex-grow: 1;
+  gap: 2rem;
+}
+.weeknight-dinner .food-item {
+  display: flex;
+  justify-content: space-between;
+}
+.weeknight-dinner .food-item button {
+  margin: 0;
+}
+.weeknight-dinner output {
   display: block;
 }
-
-button {
-  margin: 2rem 0;
+.weeknight-dinner .accordion__button {
+  width: calc(100% - 3.3rem);
 }
-
-body {
-  background-color: var(--primary-color);
+.weeknight-dinner #randomize__button {
+  margin-top: 3rem;
+}
+.weeknight-dinner #remove-all-foods__button {
+  margin: auto;
 }
 
 /*# sourceMappingURL=weeknight-dinner.css.map */

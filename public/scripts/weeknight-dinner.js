@@ -11,16 +11,16 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
 var proteins = ['Pork', 'Chicken', 'Salmon', 'Beef', 'Tofu', 'Shrimp'];
 var veggies = ['Sweet Potato', 'Potato', 'Brussel Sprouts', 'Broccoli', 'Carrots', 'Green Beans', 'Zucchini', 'Spinich', 'Cauliflower', 'Squash', 'Beets', 'Parsnips', 'Peas', 'Corn'];
 var grains = ['White Rice', 'Brown Rice', 'Farro', 'Lentils', 'Quinoua', 'Cous Cous'];
-var randomButton = document.getElementById('randomize');
+var randomButton = document.getElementById('randomize__button');
 var proteinsOutput = document.querySelector('.proteins output');
 var veggiesOutput = document.querySelector('.veggies output');
 var grainsOutput = document.querySelector('.grains output');
-var proteinsList = document.getElementById('proteins-output');
-var veggiesList = document.getElementById('veggies-output');
-var grainsList = document.getElementById('grains-output');
+var proteinsList = document.getElementById('proteins-list');
+var veggiesList = document.getElementById('veggies-list');
+var grainsList = document.getElementById('grains-list');
 var foodTypeInput = document.getElementById('food-type');
 var newFoodSubmitButton = document.getElementById('new-food-submit');
-var removeFoodSubmitButton = document.getElementById('remove-foods');
+var removeFoodSubmitButton = document.getElementById('remove-all-foods__button');
 function randomizeButton() {
     function randomProtein() {
         return proteins[Math.floor(Math.random() * proteins.length)];
@@ -42,6 +42,7 @@ function randomizeButton() {
 function displayLists() {
     proteins.forEach(function (protein) {
         var li = document.createElement('li');
+        li.classList.add('food-item');
         li.innerHTML = "".concat(protein, " <button type=\"button\" onclick=\"removeItemFromList()\">X</button>");
         // console.log(li.dataset);
         // li.dataset = protein;
@@ -49,11 +50,13 @@ function displayLists() {
     });
     veggies.forEach(function (veggie) {
         var li = document.createElement('li');
+        li.classList.add('food-item');
         li.innerHTML = "".concat(veggie, " <button type=\"button\" onclick=\"removeItemFromList()\">X</button>");
         veggiesList.appendChild(li);
     });
     grains.forEach(function (grain) {
         var li = document.createElement('li');
+        li.classList.add('food-item');
         li.innerHTML = "".concat(grain, " <button type=\"button\" onclick=\"removeItemFromList()\">X</button>");
         grainsList.appendChild(li);
     });
