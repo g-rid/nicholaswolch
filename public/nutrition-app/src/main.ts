@@ -4,17 +4,21 @@ import router from "./router";
 
 import "./assets/main.css";
 
-/* import the fontawesome core */
+// Import FontAwesome Icons
 import { library } from "@fortawesome/fontawesome-svg-core";
-/* import font awesome icon component */
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-/* import specific icons */
 import { faUtensils } from "@fortawesome/free-solid-svg-icons";
-/* add icons to the library */
-library.add(faUtensils);
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { faScrewdriverWrench } from "@fortawesome/free-solid-svg-icons";
+library.add(faUtensils, faUser, faScrewdriverWrench);
 
+// Import Apex Charts
+// import ApexCharts from "apexcharts";
+import VueApexCharts from "vue3-apexcharts";
+
+// Create App
 const app = createApp(App);
 
-app.use(router);
+app.use(router, VueApexCharts);
 app.component("font-awesome-icon", FontAwesomeIcon);
 app.mount("#app");
