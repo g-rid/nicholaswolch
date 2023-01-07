@@ -12,7 +12,7 @@ defineProps<{
     </div>
     <div class="user-wrapper">
       <font-awesome-icon icon="fa-solid fa-user" />
-      <h3>User</h3>
+      <button>User</button>
     </div>
   </div>
 </template>

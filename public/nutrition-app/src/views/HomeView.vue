@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import DailyNutritionPieChart from "../components/DailyNutritionPieChart.vue";
+import DailyNutritionBarGraph from "../components/DailyNutritionBarGraph.vue";
 </script>
 
 <template>
   <main>
-    <DailyNutritionPieChart />
+    <DailyNutritionBarGraph />
   </main>
 </template>
 
