@@ -1,15 +1,11 @@
 <template>
-  <div>
-    <h2>FDA Daily Recommended Nutrition Value</h2>
-    <h3>Macronutrients</h3>
-    <apexchart
-      type="bar"
-      height="500"
-      :options="options"
-      :series="options.series"
-      :tooltip="options.tooltip"
-    ></apexchart>
-  </div>
+  <h3>Macronutrients</h3>
+  <apexchart
+    type="bar"
+    height="300"
+    :options="options"
+    :series="options.series"
+  ></apexchart>
 </template>
 
 <script lang="ts">
@@ -20,6 +16,11 @@ export default {
   data: function () {
     return {
       options: {
+        chart: {
+          toolbar: {
+            show: false,
+          },
+        },
         series: [
           {
             name: "grams",
@@ -28,20 +29,17 @@ export default {
         ],
         xaxis: {
           categories: [
-            "Carbohydrates",
+            "Total Carbohydrates",
             "Dietary Fiber",
             "Protein",
-            "Fat",
+            "Total Fat",
             "Saturated Fat Acids",
           ],
-          label: {
-            text: "yay!",
-          },
         },
         plotOptions: {
           bar: {
             horizontal: true,
-            columnWidth: "30%",
+            columnWidth: "40%",
             endingShape: "rounded",
           },
         },
@@ -49,7 +47,7 @@ export default {
           enabled: true,
         },
         stroke: {
-          show: false,
+          show: true,
           width: 2,
           colors: ["transparent"],
         },
