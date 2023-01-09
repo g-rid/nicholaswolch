@@ -28,6 +28,35 @@
     "whatItDoes": "<li>Energy storage</li><li>Protein, carbohdrate and fat matabolism</li>",
     "whereItsFound": "<li>Avocados</li><li>Cauliflower</li><li>Eggs</li><li>Fruits (e.g., Rasperries)</li><li>Liver</li><li>Pork</li><li>Salmon</li><li>Whole grains</li>"
   },
+  "carbohydrate": {
+    "name": "Total Carbohydrates",
+    "type": "macronutrient",
+    "dailyValue": {
+      "unit": "g",
+      "value": 275
+    },
+    "whatItDoes": "Carbohydrates provide calories, or “energy,” for the body. Each gram of carbohydrate provides 4 calories. The human body breaks down carbohydrates into glucose. Glucose in the blood (often referred to as blood sugar) is the primary energy source for the body’s cells, tissues, and organs (such as the brain and muscles). Glucose can be used immediately or stored in the liver and muscles for later use.",
+    "whereItsFound": "<li><strong>Dietary</strong> fiber includes naturally occurring fibers in plants (such as beans, fruits, lentils, nuts, peas, vegetables, seeds, whole grains, and foods made with whole grain ingredients) and certain isolated or synthetic non-digestible carbohydrates added to food that the U.S. Food and Drug Administration has determined have beneficial physiological effects to human health.</li><li><strong>Total sugars</strong> include sugars found naturally in foods such as dairy products, fruits, and vegetables and <strong>added sugars</strong> often found in foods such as candies, desserts, sweet snacks, and sugar-sweetened beverages and cereals.</li><li><strong>Sugar alcohols</strong> are found naturally in small amounts in a variety of fruits and vegetables and are also commercially produced and added as reduced-calorie sweeteners to foods (such as chewing gum, baked goods, desserts, frostings, and sweets).</li>",
+    "dri": {
+      "unit": "(g/d)",
+      "maleValues": {
+        "nineToThirteenYears": 130,
+        "fourteenToEighteenYears": 130,
+        "ninteenToThirtyYears": 130,
+        "thirtyOneToFiftyYears": 130,
+        "fiftyOneToSeventyYears": 130,
+        "seventyOnePlus": 130
+      },
+      "femaleValues": {
+        "nineToThirteenYears": 130,
+        "fourteenToEighteenYears": 130,
+        "ninteenToThirtyYears": 130,
+        "thirtyOneToFiftyYears": 130,
+        "fiftyOneToSeventyYears": 130,
+        "seventyOnePlus": 130
+      }
+    }
+  },
   "calcium": {
     "name": "Calcium",
     "type": "mineral",
@@ -170,6 +199,66 @@
         "thirtyOneToFiftyYears": 900,
         "fiftyOneToSeventyYears": 900,
         "seventyOnePlus": 900
+      }
+    }
+  },
+  "fat": {
+    "name": "Total Fat",
+    "type": "macronutrient",
+    "dailyValue": {
+      "unit": "g",
+      "value": 78
+    },
+    "whatItIs": "Fat is found in foods from both plants and animals. Total Fat on the Nutrition Facts label includes: <ul><li><strong>Saturated fat</strong> is found in higher proportions in <strong>animal products</strong> and is usually <strong>solid</strong> at room temperature.</li><li><strong>Trans fat formed naturally</strong> is found in small amounts in dairy products, beef, and lamb. <strong>Trans fat formed artificially during food processing</strong> is found in partially hydrogenated oils, which were used in a variety of foods, such as baked goods, coffee creamer, ready-to use frostings, snack foods, and stick margarine. As of 2018, most uses of partially hydrogenated oils, the major source of artificial trans fat in the U.S. food supply, have been phased out. Trans fat is also present at very low levels in refined vegetable oils.</li><li><strong>Monounsaturated and polyunsaturated fats</strong> are found in higher proportions in <strong>plants</strong> and are usually <strong>liquid</strong> at room temperature as oils.</li></ul>",
+    "whatItDoes": "<li>Fat provides calories, or “energy,” for the body. Each gram of fat provides 9 calories. Fat also stores energy in excess of what the body needs immediately and serves as a secondary energy source once calories from carbohydrates are used up.</li><li>Fat is a basic part of cell membranes and is necessary for proper growth and development.</li><li>Fat helps the body absorb important fat-soluble vitamins (vitamins A, D, E, and K).</li><li>Fat supports key body processes, such as blood clotting, nervous system function, reproduction, and immune response.</li><li>Fat plays a vital role in maintaining healthy skin and hair.</li><li>Fat in food provides taste and consistency and helps you feel full.</li>",
+    "whereItsFound": "<li><strong>Saturated fat</strong> is found in animal fats, baked goods, condiments, gravies, dairy products (whole and 2% reduced-fat), desserts, meats and poultry, processed meats and poultry products, pizza, salad dressings, snack foods, sandwiches, spreads, sweets, tropical plant oils, and vegetable shortening.</li><li><strong>Trans fat formed naturally</strong> is found in small amounts in dairy products, beef, and lamb. <strong>Trans fat formed artificially during food processing</strong> is found in partially hydrogenated oils, which were used in a variety of foods. As of 2018, most uses of partially hydrogenated oils, the major source of artificial trans fat in the U.S. food supply, have been phased out. Trans fat is also present at very low levels in refined vegetable oils.</li><li>Monounsaturated and polyunsaturated fats are found in avocados, fish, mayonnaise and oil-based salad dressings, nuts, olives, seeds, soft margarines, and vegetable oils.</li>",
+    "dri": {
+      "unit": "(g/d)",
+      "maleValues": {
+        "nineToThirteenYears": null,
+        "fourteenToEighteenYears": null,
+        "ninteenToThirtyYears": null,
+        "thirtyOneToFiftyYears": null,
+        "fiftyOneToSeventyYears": null,
+        "seventyOnePlus": null
+      },
+      "femaleValues": {
+        "nineToThirteenYears": null,
+        "fourteenToEighteenYears": null,
+        "ninteenToThirtyYears": null,
+        "thirtyOneToFiftyYears": null,
+        "fiftyOneToSeventyYears": null,
+        "seventyOnePlus": null
+      }
+    }
+  },
+  "fiber": {
+    "name": "Dietary Fiber",
+    "type": "macronutrient",
+    "dailyValue": {
+      "unit": "g",
+      "value": 28
+    },
+    "whatItIs": "Dietary fiber is a type of <strong>carbohydrate</strong> made up of many sugar molecules linked together. But unlike other carbohydrates, dietary fiber is bound together in such a way that it cannot be easily digested in the small intestine.<br><br>There are <strong>two types</strong> of dietary fiber:<ul><li><strong>Soluble dietary fiber</strong> dissolves in water to form a thick gel-like substance in the stomach. It is broken down by bacteria in the large intestine and provides some calories.</li><li><strong>Insoluble dietary fiber</strong> does not dissolve in water and may pass through the gastrointestinal tract relatively intact and, therefore, is not a source of calories.</li></ul>",
+    "whatItDoes": "<li><strong>Soluble dietary fiber</strong> can interfere with the absorption of dietary fat and cholesterol. This, in turn, can help lower low-density lipoprotein (LDL or “bad”) cholesterol levels in the blood. Soluble fiber can also slow digestion and the rate at which carbohydrates and other nutrients are absorbed into the bloodstream. This can help control the level of blood glucose (often referred to as blood sugar) by preventing rapid rises in blood glucose following a meal.</li><li><strong>Insoluble dietary fiber</strong> can speed up the movement of food and waste through the digestive system.</li><li>Both <strong>soluble and insoluble dietary fiber</strong> can make you feel full, which may lower your calorie intake by helping you eat less and yet stay satisfied longer.</li>",
+    "whereItsFound": "<li>Beans, peas, and lentils</li><li>Fruits</li><li>Nuts</li><li>Seeds</li><li>Vegetables</li><li>Wheat bran</li><li>Whole grains (such as whole oats, brown rice, popcorn, and quinoa) and foods made with whole grain ingredients (such as some breads, cereals, crackers, and pasta).</li>",
+    "dri": {
+      "unit": "(g/d)",
+      "maleValues": {
+        "nineToThirteenYears": 31,
+        "fourteenToEighteenYears": 38,
+        "ninteenToThirtyYears": 38,
+        "thirtyOneToFiftyYears": 38,
+        "fiftyOneToSeventyYears": 30,
+        "seventyOnePlus": 30
+      },
+      "femaleValues": {
+        "nineToThirteenYears": 26,
+        "fourteenToEighteenYears": 26,
+        "ninteenToThirtyYears": 25,
+        "thirtyOneToFiftyYears": 25,
+        "fiftyOneToSeventyYears": 21,
+        "seventyOnePlus": 21
       }
     }
   },
