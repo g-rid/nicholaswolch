@@ -1,0 +1,75 @@
+{
+  "calcium": {
+    "name": "Calcium",
+    "type": "mineral",
+    "unit": "(mg/d)",
+    "maleValues": {
+      "nineToThirteenYears": 1100,
+      "fourteenToEighteenYears": 1100,
+      "ninteenToThirtyYears": 800,
+      "thirtyOneToFiftyYears": 800,
+      "fiftyOneToSeventyYears": 800,
+      "seventyOnePlus": 1000
+    },
+    "femaleValues": {
+      "nineToThirteenYears": 1100,
+      "fourteenToEighteenYears": 1100,
+      "ninteenToThirtyYears": 800,
+      "thirtyOneToFiftyYears": 800,
+      "fiftyOneToSeventyYears": 1000,
+      "seventyOnePlus": 1000
+    },
+    "whatItDoes": "<li>Blood Clotting</li><li>Bone and teeth formation</li><li>Constriction and relaxation of blood vessles</li><li>Hormone secretion</li><li>Muscle contraction</li><li>Nervous system function</li>",
+    "whereItsFound": "<li>Canned seafood with bones (e.g., salmon and sardines)</li><li>Dairy products</li><li>Fortified orange juice</li><li>Fortified soy beverages</li><li>Fortified ready-to-eat cereals</li><li>Green vegetables (e.g., kale, broccoli, and collard greens)</li><li>Tofu (made with calcium sulfate)</li>"
+  },
+  "biotin": {
+    "name": "Biotin",
+    "type": "vitiman",
+    "dailyValue": {
+      "value": 30,
+      "unit": "micrograms"
+    },
+    "zeroToSixMonths": {
+      "value": 125,
+      "unit": "grams"
+    },
+    "whatItDoes": "<li>Energy storage</li><li>Protein, carbohdrate and fat matabolism</li>",
+    "whereItsFound": "<li>Avocados</li><li>Cauliflower</li><li>Eggs</li><li>Fruits (e.g., Rasperries)</li><li>Liver</li><li>Pork</li><li>Salmon</li><li>Whole grains</li>"
+  },
+  "choline": {
+    "name": "Choline",
+    "dailyValue": {
+      "value": 550,
+      "unit": "grams"
+    },
+    "whatItDoes": "<li>Brain development</li><li>Cell signaling</li><li>Lipid (fat) transport and metabolism</li><li>Liver function</li><li>Muscle movement</li><li>Nerve Function</li><li>Normal metabolism</li>",
+    "whereItsFound": "<li>Beans and peas</li><li>Egg yolks</li><li>Fish (e.g., cod and salmon)</li><li>Liver (e.g., beef and chicken)</li><li>Milk</li><li>Nuts</li><li>Salmon</li><li>Soy Foods</li><li>Vegtables (e.g., broccoli, cauliflower, spinach)</li>"
+  },
+  "vitimanA": {
+    "name": "Vitiman A",
+    "type": "vitiman",
+    "unit": "(ug/d)a",
+    "dailyValue": {
+      "unit": "micrograms",
+      "value": 900
+    },
+    "maleValues": {
+      "nineToThirteenYears": 445,
+      "fourteenToEighteenYears": 630,
+      "ninteenToThirtyYears": 625,
+      "thirtyOneToFiftyYears": 625,
+      "fiftyOneToSeventyYears": 625,
+      "seventyOnePlus": 625
+    },
+    "femaleValues": {
+      "nineToThirteenYears": 420,
+      "fourteenToEighteenYears": 485,
+      "ninteenToThirtyYears": 500,
+      "thirtyOneToFiftyYears": 500,
+      "fiftyOneToSeventyYears": 500,
+      "seventyOnePlus": 500
+    },
+    "whatItDoes": "<li>Growth and development</li><li>Immune function</li><li>Red blood cellformation<li><li>Reproduction</li><li>Skin and bone formation</li>",
+    "whereItsFound": "<li>Cantaloupe</li><li>Carrots</li><li>Dairy products</li><li>Eggs</li><li>Fortified cereals</li><li>Green leafy vegetables (e.g., spinach and broccoli)</li><li>Pumpkin</li><li>Red peppers</li><li>Sweet potatoes</li>"
+  }
+}

@@ -2,7 +2,7 @@
   <h3>Vitimans</h3>
   <apexchart
     type="bar"
-    height="300"
+    height="500"
     :options="options"
     :series="options.series"
   ></apexchart>
@@ -10,33 +10,12 @@
 
 <script lang="ts">
 import VueApexCharts from "vue3-apexcharts";
+import nutrients from "../data/nutrients.json";
 export default {
   name: "BarChartVitimans",
   components: { apexchart: VueApexCharts },
-  setup() {
-    const nutrients = {
-      biotin: {
-        name: "Biotin",
-        dailyValue: 0.3,
-        whatItDoes: `
-          <li>Energy Storage</li>
-          <li>Protein, carbohdrate and fat matabolism</li>`,
-        whereItsFound: `
-          <li>Avocados</li>
-          <li>Cauliflower</li>
-          <li>Eggs</li>
-          <li>Fruits (eg. Rasperries)</li>
-          <li>Liver</li>
-          <li>Pork</li>
-          <li>Salmon</li>
-          <li>Whole Grains</li>`,
-      },
-    };
-    return {
-      nutrients,
-    };
-  },
-  data(nutrients) {
+  data() {
+    console.log("Nutrients", typeof nutrients);
     return {
       options: {
         chart: {
@@ -47,40 +26,25 @@ export default {
         series: [
           {
             name: "mg",
-            data: [
-              nutrients.biotin.dailyValue,
-              0.4,
-              16,
-              5,
-              1.3,
-              1.2,
-              0.9,
-              1.7,
-              0.024,
-              90,
-              0.02,
-              15,
-              0.12,
-            ],
+            data: [nutrients.vitimanA.dailyValue.value],
           },
         ],
         xaxis: {
-          categories: [
-            "Biotin",
-            "Folate/Folic Acid",
-            "Niacin",
-            "Pantothenic Acid",
-            "Riboflaven",
-            "Thiamin",
-            "Vitiman A",
-            "Vitiman B6",
-            "Vitiman B12",
-            "Vitiman C",
-            "Vitiman D",
-            "Vitiman E",
-            "Vitiman K",
-          ],
-          label: { text: "mg" },
+          categories: [nutrients.vitimanA.name],
+          label: "mg",
+        },
+        tooltip: {
+          custom: function ({ series, seriesIndex, dataPointIndex, xaxis }) {
+            console.log("tooltip", xaxis[categories]);
+            return (
+              '<div class="arrow_box">' +
+              "<span>" +
+              series[seriesIndex][dataPointIndex] +
+              "</span>" +
+              "</div>"
+            );
+          },
+          theme: "dark",
         },
         plotOptions: {
           bar: {
@@ -99,32 +63,6 @@ export default {
         },
         fill: {
           opacity: 0.7,
-        },
-        tooltip: {
-          theme: "dark",
-          enabled: true,
-          x: {
-            show: true,
-          },
-          y: {
-            show: true,
-            title: [
-              `Good for: <br>Energy Storage<br>Protein, carbohydrate, and fat metabolism`,
-              "Choline",
-              "Folate/Folic Acid",
-              "Niacin",
-              "Pantothenic Acid",
-              "Riboflaven",
-              "Thiamin",
-              "Vitiman A",
-              "Vitiman B6",
-              "Vitiman B12",
-              "Vitiman C",
-              "Vitiman D",
-              "Vitiman E",
-              "Vitiman K",
-            ],
-          },
         },
       },
     };

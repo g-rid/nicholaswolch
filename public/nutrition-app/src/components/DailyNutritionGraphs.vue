@@ -3,6 +3,10 @@
     <h2>FDA Daily Recommended Nutrition Value</h2>
     <Macronutrients />
     <Vitimans />
+    <div>
+      This app is not intended for children, infants, pregnant women, or
+      breastfeeding women.
+    </div>
   </div>
 </template>
 
@@ -24,8 +28,6 @@ export default {
 h2,
 h3 {
   color: var(--vt-c-white);
-}
-h3 {
   text-align: center;
 }
 </style>
