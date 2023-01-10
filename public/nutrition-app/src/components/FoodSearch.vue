@@ -24,7 +24,7 @@ export default {
   components: {},
   data() {
     // Define a reactive state object to store the search query and search results
-    const state = reactive({
+    const state: Object = reactive({
       query: "",
       results: [],
     });

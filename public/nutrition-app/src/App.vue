@@ -1,17 +1,14 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from "vue-router";
+import { RouterView } from "vue-router";
 import NavTitle from "./components/NavTitle.vue";
+import Navigation from "./components/Navigation.vue";
 </script>
 
 <template>
   <header>
     <div class="nav-wrapper">
       <NavTitle msg="Nutrition Planner" />
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/food-search">Food Search</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+      <Navigation />
     </div>
   </header>
 
@@ -24,58 +21,15 @@ header {
   max-height: 100vh;
   padding-top: 5vh;
 }
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+header {
+  display: flex;
+  place-items: flex-start;
 }
 
-nav {
-  width: 100%;
-  font-size: 1.2rem;
-  text-align: center;
-  /* margin-top: 2rem; */
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: block;
-  padding: 0.5rem 1rem;
-  margin: 1rem 0;
-  border-left: 1px solid var(--color-border);
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: flex-start;
-    /* padding-right: calc(var(--section-gap) / 2); */
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .nav-wrapper {
-    display: flex;
-    align-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+header .nav-wrapper {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 2rem;
 }
 </style>
