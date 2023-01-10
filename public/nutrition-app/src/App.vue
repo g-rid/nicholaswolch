@@ -9,6 +9,7 @@ import NavTitle from "./components/NavTitle.vue";
       <NavTitle msg="Nutrition Planner" />
       <nav>
         <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/food-search">Food Search</RouterLink>
         <RouterLink to="/about">About</RouterLink>
       </nav>
     </div>

@@ -1,8 +1,11 @@
 {
   "include": ["src/**/*", "data/**/*"],
   "compilerOptions": {
-    "resolveJsonModule": true,
-    "esModuleInterop": true
+    // "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "module": "es2022",
+    "target": "ESNext",
+    "types": ["vite/client"]
   },
   "references": [
     {
