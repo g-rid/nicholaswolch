@@ -10,7 +10,8 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { faUtensils } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faScrewdriverWrench } from "@fortawesome/free-solid-svg-icons";
-library.add(faUtensils, faUser, faScrewdriverWrench);
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
+library.add(faUtensils, faUser, faScrewdriverWrench, faXmark);
 
 // Import Apex Charts
 // import ApexCharts from "apexcharts";

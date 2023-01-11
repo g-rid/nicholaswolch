@@ -10,7 +10,7 @@
 
 <script lang="ts">
 import VueApexCharts from "vue3-apexcharts";
-import nutrients from "../data/nutrients.json";
+import nutrients from "../data/defaultNutrients.json";
 export default {
   name: "BarChartVitimans",
   components: { apexchart: VueApexCharts },
