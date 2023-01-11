@@ -1,25 +1,25 @@
 <template>
   <div class="food-search-wrapper">
     <span>Search all USDA registered food:</span>
-    <h2>Show Modal: {{ showModal }}</h2>
     <div>
       <input v-model="state.query" @keyup.enter="search" type="text" />
       <button @click="search">Search</button>
     </div>
     <ul>
-      <li
-        v-for="result in state.results"
-        :key="result.fdcId"
-        :search-result="result"
-        @click="showModal = true"
-      >
-        {{ result.description }}
+      <li v-for="result in state.results" :key="result.fdcId">
+        <button
+          @click="(showModal = true), (selectedItem = result)"
+          role="button"
+        >
+          {{ result.description }}
+        </button>
       </li>
     </ul>
     <FoodSearchModal
       v-if="showModal"
       :show="showModal"
       @close="showModal = false"
+      :selected-item="selectedItem"
     />
   </div>
 </template>
@@ -30,6 +30,7 @@ import axios from "axios";
 import FoodSearchModal from "./FoodSearchModal.vue";
 interface ParentData {
   showModal: boolean;
+  selectedItem: Object | null;
 }
 const componentProps: ComponentPropsOptions<ParentData> = {};
 export default {
@@ -41,6 +42,7 @@ export default {
     const state = reactive({
       query: "",
       results: [],
+      selectedResult: null,
     });
     const localApiKey = import.meta.env.VITE_USDA_API_KEY;
 
@@ -55,11 +57,12 @@ export default {
       console.log("All Data", response.data);
       state.results = response.data.foods;
     };
-
+    const selectedItem = reactive({ result: null });
     return {
       state,
       search,
       showModal: false,
+      selectedItem,
     };
   },
 };

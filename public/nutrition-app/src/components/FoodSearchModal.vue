@@ -2,10 +2,17 @@
   <div v-if="show" class="modal">
     <div class="modal-header">
       <div class="modal-title-wrapper">
-        <h2>Show Modal:</h2>
-        <h2>Food Name</h2>
-        <h3>Total Calories:</h3>
-        <div>Nutrient Type:</div>
+        <h2>{{ selectedItem.description }}</h2>
+        <h3>Brand Name: {{ selectedItem.brandName }}</h3>
+        <h3>Brand Owner: {{ selectedItem.brandOwner }}</h3>
+        <h3>
+          Serving Size: {{ selectedItem.servingSize
+          }}{{ selectedItem.servingSizeUnit }}
+        </h3>
+        <h3>
+          Total Calories: {{ selectedItem.foodNutrients[3].nutrientNumber }}cal
+        </h3>
+        <h3>Ingreditents: {{ selectedItem.ingredients }}</h3>
       </div>
       <button @click="closeModal">
         <font-awesome-icon icon="fa-solid fa-xmark" />
@@ -62,12 +69,17 @@
 
 <script lang="ts">
 import { PropType } from "vue";
+
 export default {
   name: "FoodSearchModal",
   components: {},
   props: {
     show: {
       type: Boolean as PropType<boolean>,
+      required: true,
+    },
+    selectedItem: {
+      type: Object,
       required: true,
     },
   },
