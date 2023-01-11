@@ -1,6 +1,7 @@
 <template>
   <div class="food-search-wrapper">
-    <span>Search all USDA registered food:{{ showModal }}</span>
+    <span>Search all USDA registered food:</span>
+    <h2>Show Modal: {{ showModal }}</h2>
     <div>
       <input v-model="state.query" @keyup.enter="search" type="text" />
       <button @click="search">Search</button>
@@ -10,35 +11,36 @@
         v-for="result in state.results"
         :key="result.fdcId"
         :search-result="result"
-        @mouseover="showModal = true"
-        @mouseleave="showModal = false"
+        @click="showModal = true"
       >
         {{ result.description }}
       </li>
     </ul>
-    <FoodSearchModal :show-modal="showModal" />
+    <FoodSearchModal
+      v-if="showModal"
+      :show="showModal"
+      @close="showModal = false"
+    />
   </div>
 </template>
 
 <script lang="ts">
-import { reactive, ref } from "vue";
+import { reactive, ComponentPropsOptions } from "vue";
 import axios from "axios";
 import FoodSearchModal from "./FoodSearchModal.vue";
-
+interface ParentData {
+  showModal: boolean;
+}
+const componentProps: ComponentPropsOptions<ParentData> = {};
 export default {
   name: "FoodSearch",
   components: { FoodSearchModal },
-  setup() {
-    const showModal = ref(false);
-    return {
-      showModal,
-    };
-  },
+  props: componentProps,
   data() {
     // Define a reactive state object to store the search query and search results
-    const state: Object = reactive({
-      query: "" as string,
-      results: [] as Object,
+    const state = reactive({
+      query: "",
+      results: [],
     });
     const localApiKey = import.meta.env.VITE_USDA_API_KEY;
 
@@ -57,6 +59,7 @@ export default {
     return {
       state,
       search,
+      showModal: false,
     };
   },
 };

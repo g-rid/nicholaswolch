@@ -1,12 +1,13 @@
 <template>
-  <div class="modal">
+  <div v-if="show" class="modal">
     <div class="modal-header">
       <div class="modal-title-wrapper">
-        <h2>{{ defaultNutrientsObject.vitimanA.name }}</h2>
+        <h2>Show Modal:</h2>
+        <h2>Food Name</h2>
         <h3>Total Calories:</h3>
-        <div>Nutrient Type: {{ defaultNutrientsObject.vitimanA.type }}</div>
+        <div>Nutrient Type:</div>
       </div>
-      <button @click="showModal = false">
+      <button @click="closeModal">
         <font-awesome-icon icon="fa-solid fa-xmark" />
       </button>
     </div>
@@ -15,49 +16,34 @@
         <table>
           <thead>
             <tr>
-              <th>Nutrient<br /></th>
+              <th>Macronutrients<br /></th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>&nbsp;</td>
             </tr>
+          </tbody>
+        </table>
+        <table>
+          <thead>
+            <tr>
+              <th>Vitimans<br /></th>
+            </tr>
+          </thead>
+          <tbody>
             <tr>
               <td>&nbsp;</td>
             </tr>
+          </tbody>
+        </table>
+        <table>
+          <thead>
             <tr>
-              <td>&nbsp;</td>
+              <th>Minerals<br /></th>
             </tr>
-            <tr>
-              <td>&nbsp;</td>
-            </tr>
-            <tr>
-              <td>&nbsp;</td>
-            </tr>
-            <tr>
-              <td>&nbsp;</td>
-            </tr>
-            <tr>
-              <td>&nbsp;</td>
-            </tr>
-            <tr>
-              <td>&nbsp;</td>
-            </tr>
-            <tr>
-              <td>&nbsp;</td>
-            </tr>
-            <tr>
-              <td>&nbsp;</td>
-            </tr>
-            <tr>
-              <td>&nbsp;</td>
-            </tr>
-            <tr>
-              <td>&nbsp;</td>
-            </tr>
-            <tr>
-              <td>&nbsp;</td>
-            </tr>
+          </thead>
+          <tbody>
             <tr>
               <td>&nbsp;</td>
             </tr>
@@ -66,45 +52,33 @@
       </div>
       <div class="nutrient-info">
         <h3>What it does?</h3>
-        <ul>
-          {{
-            defaultNutrientsObject.vitimanA.whatItDoes
-          }}
-        </ul>
+        <ul></ul>
         <h3>Where it's found?</h3>
-        <ul>
-          {{
-            defaultNutrientsObject.vitimanA.whereItsFound
-          }}
-        </ul>
+        <ul></ul>
       </div>
     </div>
   </div>
-  <!-- <div v-if="showModal" class="modal-backdrop" @mouseover="showModal = true">
-    <div class="modal">
-      <button @click="showModal = false">X</button>
-      <h2>{{ result }}</h2>
-      <h3>Daily Nutrients:</h3>
-      <ul>
-        <li v-for="nutrient in SearchResult" :key="nutrient.nutrientId">
-          {{ nutrientName }} {{ nutrient.nutrientNumber }}
-          {{ nutrient.unitName }}
-        </li>
-      </ul>
-    </div>
-  </div> -->
 </template>
 
 <script lang="ts">
-import defaultNutrients from "./data/defaultNutrients.json";
+import { PropType } from "vue";
 export default {
   name: "FoodSearchModal",
-  components: { defaultNutrients: Object },
+  components: {},
+  props: {
+    show: {
+      type: Boolean as PropType<boolean>,
+      required: true,
+    },
+  },
+  setup() {},
   data() {
-    const defaultNutrientsObject = defaultNutrients;
-    return {
-      defaultNutrientsObject,
-    };
+    return {};
+  },
+  methods: {
+    closeModal() {
+      this.$emit("close");
+    },
   },
 };
 </script>
@@ -115,6 +89,10 @@ h3 {
   text-align: left;
 }
 .modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 80rem;
   background-color: var(--vt-c-black);
   padding: 2rem;
@@ -125,10 +103,9 @@ h3 {
   justify-content: space-between;
 }
 .modal-body {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  padding: 0;
 }
 table {
   border: 1px solid #b3adad;
