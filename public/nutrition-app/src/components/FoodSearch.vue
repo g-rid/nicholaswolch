@@ -1,5 +1,6 @@
 <template>
   <div class="food-search-wrapper">
+    <button @click="debug">Debug</button>
     <span>Search all USDA registered food:</span>
     <div>
       <input v-model="state.query" @keyup.enter="search" type="text" />
@@ -11,7 +12,7 @@
           @click="(showModal = true), (selectedItem = result)"
           role="button"
         >
-          {{ result.description }}
+          {{ result.description }}: {{ result.brandName }}
         </button>
       </li>
     </ul>
@@ -42,27 +43,38 @@ export default {
     const state = reactive({
       query: "",
       results: [],
-      selectedResult: null,
     });
-    const localApiKey = import.meta.env.VITE_USDA_API_KEY;
+    const apiKey = import.meta.env.VITE_USDA_API_KEY;
 
     // Define a method to perform the search
     const search = async () => {
-      // Make a GET request to the USDA API using the search query
-      const response = await axios.get(
-        `https://api.nal.usda.gov/fdc/v1/search?api_key=${localApiKey}&query=${state.query}&pageSize=25&pageNumber=2&sortBy=dataType.keyword&sortOrder=asc`
-      );
-
-      // Update the search results in the reactive state object
-      console.log("All Data", response.data);
-      state.results = response.data.foods;
+      try {
+        // Make a GET request to the USDA API using the search query
+        const response = await axios.get(
+          `https://api.nal.usda.gov/fdc/v1/foods/search?api_key=${apiKey}&query=${state.query}&pageSize=50&pageNumber=5&sortBy=dataType.keyword&sortOrder=asc`
+        );
+        // Update the search results in the reactive state object
+        console.log("Response Object:", response.data);
+        state.results = response.data.foods;
+        if (state.results.length === 0) {
+          alert(
+            `The USDA's food database does not contain any results for this search. Please try a different food.`
+          );
+        }
+      } catch (error) {
+        alert(`Looks like we're having some trouble.<br><br>` + error);
+      }
     };
     const selectedItem = reactive({ result: null });
+    function debug() {
+      console.log("State Results", state.results);
+    }
     return {
       state,
       search,
       showModal: false,
       selectedItem,
+      debug,
     };
   },
 };
