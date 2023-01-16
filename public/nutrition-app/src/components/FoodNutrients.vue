@@ -80,7 +80,6 @@ export default {
   data() {
     const selectedItemFdcId = this.selectedItem.fdcId;
     const selectedFoodData = reactive({
-      query: "",
       results: [],
     });
     const apiKey = import.meta.env.VITE_USDA_API_KEY;
@@ -90,7 +89,7 @@ export default {
       try {
         // Make a GET request to the USDA API using the search query
         const response = await axios.get(
-          `https://api.nal.usda.gov/fdc/v1/food/${selectedItemFdcId}?api_key=${apiKey}`
+          `https://api.nal.usda.gov/fdc/v1/food/${selectedItemFdcId}?api_key=${apiKey}&format=full`
         );
         // Update the search results in the reactive state object
         console.log("Selected Food Object:", response.data);
@@ -101,7 +100,7 @@ export default {
           );
         }
       } catch (error) {
-        alert(`Looks like we're having some trouble.` + error);
+        alert(`Looks like we're having some trouble. ` + error);
       }
     };
     search();
@@ -114,24 +113,4 @@ export default {
 };
 </script>
 
-<style>
-table {
-  border: 1px solid #b3adad;
-  border-collapse: collapse;
-  padding: 5px;
-}
-table th {
-  border: 1px solid #b3adad;
-  padding: 5px;
-  background: #f0f0f0;
-  color: #313030;
-  text-align: left;
-}
-table td {
-  border: 1px solid #b3adad;
-  text-align: left;
-  padding: 5px;
-  background: #ffffff;
-  color: #313030;
-}
-</style>
+<style></style>

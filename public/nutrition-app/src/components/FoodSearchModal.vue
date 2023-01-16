@@ -19,7 +19,7 @@
         </h3>
         <h3>
           Total Calories:
-          {{ displayCalories() }}
+          {{ displaySelectedCalories() }}
           kcal
         </h3>
         <h3 v-if="selectedItem.ingredients">
@@ -57,6 +57,10 @@ export default {
       type: Object,
       required: true,
     },
+    capitalize: {
+      type: Function as PropType<Function>,
+      required: false,
+    },
   },
   data() {
     // Split up the nutrients into different types based on nutrientFilter
@@ -73,14 +77,7 @@ export default {
     closeModal() {
       this.$emit("close");
     },
-    capitalize(text?: String) {
-      if (text === undefined) {
-        return "";
-      } else {
-        return text.toLowerCase().replace(/\b(\w)/g, (x) => x.toUpperCase());
-      }
-    },
-    displayCalories() {
+    displaySelectedCalories() {
       const calories = this.selectedItem.foodNutrients.find(
         (nutreint: Object) => nutreint.nutrientId === 1008
       );
