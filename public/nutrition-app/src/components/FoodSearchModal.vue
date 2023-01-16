@@ -34,79 +34,20 @@
       </button>
     </div>
     <div class="modal-body">
-      <div class="nutrient-graph">
-        <table>
-          <thead>
-            <tr>
-              <th>Nutrients<br /></th>
-              <th>Units<br /></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr
-              v-for="nutrient in selectedItem.foodNutrients"
-              :key="nutrient.nutrientId"
-            >
-              <td>{{ nutrient.nutrientName }}</td>
-              <td>{{ nutrient.value }} {{ nutrient.unitName }}</td>
-            </tr>
-          </tbody>
-        </table>
-        <!-- <table>
-          <thead>
-            <tr>
-              <th>Macronutrients<br /></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>&nbsp;</td>
-            </tr>
-          </tbody>
-        </table>
-        <table>
-          <thead>
-            <tr>
-              <th>Vitimans<br /></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>&nbsp;</td>
-            </tr>
-          </tbody>
-        </table>
-        <table>
-          <thead>
-            <tr>
-              <th>Minerals<br /></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>&nbsp;</td>
-            </tr>
-          </tbody>
-        </table> -->
-      </div>
-      <div class="nutrient-info">
-        <h3>What it does?</h3>
-        <ul></ul>
-        <h3>Where it's found?</h3>
-        <ul></ul>
-      </div>
+      <FoodNutrients :selected-item="selectedItem" />
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { PropType } from "vue";
+import FoodNutrients from "./FoodNutrients.vue";
 // import defaultNutrients from "./data/defaultNutrients.json";
 import nutrientFilter from "./data/nutrientFilter.json";
 
 export default {
   name: "FoodSearchModal",
-  components: {},
+  components: { FoodNutrients },
   props: {
     show: {
       type: Boolean as PropType<boolean>,

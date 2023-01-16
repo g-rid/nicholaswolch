@@ -26,18 +26,13 @@
 </template>
 
 <script lang="ts">
-import { reactive, ComponentPropsOptions } from "vue";
+import { reactive } from "vue";
 import axios from "axios";
 import FoodSearchModal from "./FoodSearchModal.vue";
-interface ParentData {
-  showModal: boolean;
-  selectedItem: Object | null;
-}
-const componentProps: ComponentPropsOptions<ParentData> = {};
 export default {
   name: "FoodSearch",
   components: { FoodSearchModal },
-  props: componentProps,
+  props: {},
   data() {
     // Define a reactive state object to store the search query and search results
     const state = reactive({
@@ -54,7 +49,7 @@ export default {
           `https://api.nal.usda.gov/fdc/v1/foods/search?api_key=${apiKey}&query=${state.query}&pageSize=50&pageNumber=5&lowercaseDescription.keyword&sortOrder=asc`
         );
         // Update the search results in the reactive state object
-        console.log("Response Object:", response.data);
+        console.log("Search Response Object:", response.data);
         state.results = response.data.foods;
         if (state.results.length === 0) {
           alert(
@@ -62,7 +57,7 @@ export default {
           );
         }
       } catch (error) {
-        alert(`Looks like we're having some trouble.<br><br>` + error);
+        alert(`Looks like we're having some trouble.` + error);
       }
     };
     const selectedItem = reactive({ result: null });
