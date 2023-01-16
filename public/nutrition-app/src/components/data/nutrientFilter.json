@@ -1,0 +1,442 @@
+{
+  "1003": {
+    "name": "Protein",
+    "type": "macronutrient"
+  },
+  "1004": {
+    "name": "Total Lipid (Fat)",
+    "type": "macronutrient"
+  },
+  "1005": {
+    "name": "Total Carbohydrates, By Difference",
+    "type": "macronutrient"
+  },
+  "1008": {
+    "name": "Energy",
+    "type": "macronutrient"
+  },
+  "1009": {
+    "name": "Starch",
+    "type": "macronutrient"
+  },
+  "1010": {
+    "name": "Sucrose",
+    "type": "macronutrient"
+  },
+  "1011": {
+    "name": "Glucose (Dextrose)",
+    "type": "macronutrient"
+  },
+  "1012": {
+    "name": "Fructose",
+    "type": "macronutrient"
+  },
+  "1013": {
+    "name": "Lactose",
+    "type": "macronutrient"
+  },
+  "1014": {
+    "name": "Maltose",
+    "type": "macronutrient"
+  },
+  "1015": {
+    "name": "Alcohol, Ethyl",
+    "type": "macronutrient"
+  },
+  "1016": {
+    "name": "Ash",
+    "type": "macronutrient"
+  },
+  "1017": {
+    "name": "Water",
+    "type": "macronutrient"
+  },
+  "1018": {
+    "name": "Caffeine",
+    "type": "macronutrient"
+  },
+  "1019": {
+    "name": "Theobromine",
+    "type": "macronutrient"
+  },
+  "1020": {
+    "name": "Sugars, Total",
+    "type": "macronutrient"
+  },
+  "1021": {
+    "name": "Galactose",
+    "type": "macronutrient"
+  },
+  "1022": {
+    "name": "Fiber, Total Dietary",
+    "type": "macronutrient"
+  },
+  "1023": {
+    "name": "Calcium, Ca",
+    "type": "mineral"
+  },
+  "1024": {
+    "name": "Iron, Fe",
+    "type": "mineral"
+  },
+  "1025": {
+    "name": "Magnesium, Mg",
+    "type": "mineral"
+  },
+  "1026": {
+    "name": "Phosphorus, P",
+    "type": "mineral"
+  },
+  "1027": {
+    "name": "Potassium, K",
+    "type": "mineral"
+  },
+  "1028": {
+    "name": "Sodium, Na",
+    "type": "mineral"
+  },
+  "1029": {
+    "name": "Zinc, Zn",
+    "type": "mineral"
+  },
+  "1030": {
+    "name": "Copper, Cu",
+    "type": "mineral"
+  },
+  "1031": {
+    "name": "Manganese, Mn",
+    "type": "mineral"
+  },
+  "1032": {
+    "name": "Selenium, Se",
+    "type": "mineral"
+  },
+  "1033": {
+    "name": "Vitamin C, Total Ascorbic Acid",
+    "type": "vitamin"
+  },
+  "1034": {
+    "name": "Thiamin",
+    "type": "vitamin"
+  },
+  "1035": {
+    "name": "Riboflavin",
+    "type": "vitamin"
+  },
+  "1036": {
+    "name": "Niacin",
+    "type": "vitamin"
+  },
+  "1037": {
+    "name": "Pantothenic Acid",
+    "type": "vitamin"
+  },
+  "1038": {
+    "name": "Vitamin B-6",
+    "type": "vitamin"
+  },
+  "1039": {
+    "name": "Folate, Total",
+    "type": "vitamin"
+  },
+  "1040": {
+    "name": "Folic Acid",
+    "type": "vitamin"
+  },
+  "1041": {
+    "name": "Food Folate",
+    "type": "vitamin"
+  },
+  "1042": {
+    "name": "Folate, DFE",
+    "type": "vitamin"
+  },
+  "1043": {
+    "name": "Choline, Total",
+    "type": "vitamin"
+  },
+  "1044": {
+    "name": "Vitamin B-12",
+    "type": "vitamin"
+  },
+  "1045": {
+    "name": "Vitamin A, RAE",
+    "type": "vitamin"
+  },
+  "1046": {
+    "name": "Retinol",
+    "type": "vitamin"
+  },
+  "1047": {
+    "name": "Alpha-Carotene",
+    "type": "vitamin"
+  },
+  "1048": {
+    "name": "Beta-Carotene",
+    "type": "vitamin"
+  },
+  "1049": {
+    "name": "Beta-Cryptoxanthin",
+    "type": "vitamin"
+  },
+  "1050": {
+    "name": "Lycopene",
+    "type": "vitamin"
+  },
+  "1051": {
+    "name": "Lutein + Zeaxanthin",
+    "type": "vitamin"
+  },
+  "1052": {
+    "name": "Vitamin E (Alpha-Tocopherol)",
+    "type": "vitamin"
+  },
+  "1053": {
+    "name": "Vitamin D (D2 + D3)",
+    "type": "vitamin"
+  },
+  "1054": {
+    "name": "Vitamin D",
+    "type": "vitamin"
+  },
+  "1055": {
+    "name": "Vitamin D2 (ergocalciferol)",
+    "type": "vitamin"
+  },
+  "1056": {
+    "name": "Vitamin D3 (cholecalciferol)",
+    "type": "vitamin"
+  },
+  "1057": {
+    "name": "Cryptoxanthin, Beta",
+    "type": "vitamin"
+  },
+  "1058": {
+    "name": "Lycopene",
+    "type": "vitamin"
+  },
+  "1059": {
+    "name": "Lutein + Zeaxanthin",
+    "type": "vitamin"
+  },
+  "1060": {
+    "name": "Tocopherol, Beta",
+    "type": "vitamin"
+  },
+  "1061": {
+    "name": "Tocopherol, Gamma",
+    "type": "vitamin"
+  },
+  "1062": {
+    "name": "Tocopherol, Delta",
+    "type": "vitamin"
+  },
+  "1063": {
+    "name": "Tocotrienol, Alpha",
+    "type": "vitamin"
+  },
+  "1064": {
+    "name": "Tocotrienol, Beta",
+    "type": "vitamin"
+  },
+  "1065": {
+    "name": "Tocotrienol, Gamma",
+    "type": "vitamin"
+  },
+  "1066": {
+    "name": "Tocotrienol, Delta",
+    "type": "vitamin"
+  },
+  "1067": {
+    "name": "Vitamin K (Phylloquinone)",
+    "type": "vitamin"
+  },
+  "1068": {
+    "name": "Fatty acids, total saturated",
+    "type": "fat"
+  },
+  "1069": {
+    "name": "4:0",
+    "type": "fat"
+  },
+  "1070": {
+    "name": "6:0",
+    "type": "fat"
+  },
+  "1071": {
+    "name": "8:0",
+    "type": "fat"
+  },
+  "1072": {
+    "name": "10:0",
+    "type": "fat"
+  },
+  "1073": {
+    "name": "12:0",
+    "type": "fat"
+  },
+  "1074": {
+    "name": "14:0",
+    "type": "fat"
+  },
+  "1075": {
+    "name": "16:0",
+    "type": "fat"
+  },
+  "1076": {
+    "name": "18:0",
+    "type": "fat"
+  },
+  "1077": {
+    "name": "20:0",
+    "type": "fat"
+  },
+  "1078": {
+    "name": "22:0",
+    "type": "fat"
+  },
+  "1079": {
+    "name": "24:0",
+    "type": "fat"
+  },
+  "1080": {
+    "name": "Fatty acids, total monounsaturated",
+    "type": "macronutrient"
+  },
+  "1081": {
+    "name": "14:1",
+    "type": "fat"
+  },
+  "1082": {
+    "name": "15:1",
+    "type": "fat"
+  },
+  "1083": {
+    "name": "16:1 undifferentiated",
+    "type": "fat"
+  },
+  "1084": {
+    "name": "16:1 c",
+    "type": "fat"
+  },
+  "1085": {
+    "name": "16:1 t",
+    "type": "fat"
+  },
+  "1086": {
+    "name": "17:1",
+    "type": "fat"
+  },
+  "1087": {
+    "name": "18:1 undifferentiated",
+    "type": "fat"
+  },
+  "1088": {
+    "name": "18:1 c",
+    "type": "fat"
+  },
+  "1089": {
+    "name": "18:1 t",
+    "type": "fat"
+  },
+  "1090": {
+    "name": "20:1",
+    "type": "fat"
+  },
+  "1091": {
+    "name": "22:1 undifferentiated",
+    "type": "fat"
+  },
+  "1092": {
+    "name": "22:1 c",
+    "type": "fat"
+  },
+  "1093": {
+    "name": "22:1 t",
+    "type": "fat"
+  },
+  "1094": {
+    "name": "24:1 c",
+    "type": "fat"
+  },
+  "1095": {
+    "name": "Fatty acids, total polyunsaturated",
+    "type": "macronutrient"
+  },
+  "1096": {
+    "name": "18:2 undifferentiated",
+    "type": "fat"
+  },
+  "1097": {
+    "name": "18:2 n-6 c,c",
+    "type": "fat"
+  },
+  "1098": {
+    "name": "18:2 CLAs",
+    "type": "fat"
+  },
+  "1099": {
+    "name": "18:2 t,t",
+    "type": "fat"
+  },
+  "1100": {
+    "name": "18:2 i",
+    "type": "fat"
+  },
+  "1101": {
+    "name": "18:3 undifferentiated",
+    "type": "fat"
+  },
+  "1102": {
+    "name": "18:3 n-3 c,c,c (ALA)",
+    "type": "fat"
+  },
+  "1103": {
+    "name": "18:3i",
+    "type": "fat"
+  },
+  "1104": {
+    "name": "20:2 n-6 c,c",
+    "type": "fat"
+  },
+  "1105": {
+    "name": "20:3 undifferentiated",
+    "type": "fat"
+  },
+  "1106": {
+    "name": "20:3 n-6",
+    "type": "fat"
+  },
+  "1107": {
+    "name": "20:3 n-3",
+    "type": "fat"
+  },
+  "1108": {
+    "name": "20:4 undifferentiated",
+    "type": "fat"
+  },
+  "1109": {
+    "name": "20:4 n-6",
+    "type": "fat"
+  },
+  "1110": {
+    "name": "20:5 n-3 (EPA)",
+    "type": "fat"
+  },
+  "1111": {
+    "name": "22:4",
+    "type": "fat"
+  },
+  "1112": {
+    "name": "22:5 n-3 (DPA)",
+    "type": "fat"
+  },
+  "1113": {
+    "name": "22:6 n-3 (DHA)",
+    "type": "fat"
+  },
+  "1114": {
+    "name": "Fatty acids",
+    "type": "fat"
+  }
+}

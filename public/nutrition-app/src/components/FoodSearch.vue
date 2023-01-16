@@ -51,7 +51,7 @@ export default {
       try {
         // Make a GET request to the USDA API using the search query
         const response = await axios.get(
-          `https://api.nal.usda.gov/fdc/v1/foods/search?api_key=${apiKey}&query=${state.query}&pageSize=50&pageNumber=5&sortBy=dataType.keyword&sortOrder=asc`
+          `https://api.nal.usda.gov/fdc/v1/foods/search?api_key=${apiKey}&query=${state.query}&pageSize=50&pageNumber=5&lowercaseDescription.keyword&sortOrder=asc`
         );
         // Update the search results in the reactive state object
         console.log("Response Object:", response.data);

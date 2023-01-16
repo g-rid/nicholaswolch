@@ -3,19 +3,29 @@
     <div class="modal-header">
       <div class="modal-title-wrapper">
         <h2>{{ capitalize(selectedItem.description) }}</h2>
-        <h3>Brand Name: {{ capitalize(selectedItem.brandName) }}</h3>
-        <h3>Brand Owner: {{ selectedItem.brandOwner }}</h3>
-        <h3>
+        <h3 v-if="selectedItem.brandName">
+          Brand Name: {{ capitalize(selectedItem.brandName) }}
+        </h3>
+        <h3 v-if="selectedItem.dataType === 'SR Legacy'">
+          Data Source: <strong>USDA</strong> based on Standard Reference
+          originally available via the USDA National Nutrient Database (NNDB)
+        </h3>
+        <h3 v-if="selectedItem.brandOwner">
+          Brand Owner: {{ selectedItem.brandOwner }}
+        </h3>
+        <h3 v-if="selectedItem.servingSize">
           Serving Size: {{ selectedItem.servingSize
           }}{{ selectedItem.servingSizeUnit }}
         </h3>
         <h3>
-          Total Calories: {{ selectedItem.foodNutrients[3].nutrientNumber }}cal
+          Total Calories:
+          {{ displayCalories() }}
+          kcal
         </h3>
-        <h3>
+        <h3 v-if="selectedItem.ingredients">
           Ingredients:
           <div class="ingredients">
-            {{ capitalize(selectedItem.ingredients) }}
+            {{ selectedItem.ingredients }}
           </div>
         </h3>
       </div>
@@ -38,7 +48,7 @@
               :key="nutrient.nutrientId"
             >
               <td>{{ nutrient.nutrientName }}</td>
-              <td>{{ nutrient.nutrientNumber }} {{ nutrient.unitName }}</td>
+              <td>{{ nutrient.value }} {{ nutrient.unitName }}</td>
             </tr>
           </tbody>
         </table>
@@ -91,6 +101,8 @@
 
 <script lang="ts">
 import { PropType } from "vue";
+// import defaultNutrients from "./data/defaultNutrients.json";
+import nutrientFilter from "./data/nutrientFilter.json";
 
 export default {
   name: "FoodSearchModal",
@@ -105,17 +117,33 @@ export default {
       required: true,
     },
   },
-  setup() {},
   data() {
-    // console.log("Selected Item:", selectedItem);
-    return {};
+    // Split up the nutrients into different types based on nutrientFilter
+    const nutrientTypes = {
+      macronutrients: [],
+      vitamins: [],
+      minerals: [],
+    };
+    return {
+      nutrientTypes,
+    };
   },
   methods: {
     closeModal() {
       this.$emit("close");
     },
-    capitalize(text: String) {
-      return text.toLowerCase().replace(/\b(\w)/g, (x) => x.toUpperCase());
+    capitalize(text?: String) {
+      if (text === undefined) {
+        return "";
+      } else {
+        return text.toLowerCase().replace(/\b(\w)/g, (x) => x.toUpperCase());
+      }
+    },
+    displayCalories() {
+      const calories = this.selectedItem.foodNutrients.find(
+        (nutreint: Object) => nutreint.nutrientId === 1008
+      );
+      return calories ? calories.value : "0";
     },
   },
 };
