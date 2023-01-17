@@ -29,7 +29,7 @@
             </button>
           </td>
           <td>{{ capitalize(result.brandName) }}</td>
-          <td>{{ displayCalories(result.foodNutrients) }}</td>
+          <td>{{ displayCalories(result.foodNutrients) }} KCal</td>
         </tr>
       </tbody>
     </table>
@@ -84,29 +84,11 @@ export default {
       }
     };
     const selectedItem = reactive({ result: null });
-    function debug() {
-      console.log("State Results", state.results);
-    }
-    function nextPage() {
-      state.pageNumber++;
-      search();
-    }
-    function previousPage() {
-      if (state.pageNumber > 1) {
-        state.pageNumber--;
-        search();
-      } else {
-        alert("You are on the first page.");
-      }
-    }
     return {
       state,
       search,
       showModal: false,
       selectedItem,
-      debug,
-      nextPage,
-      previousPage,
     };
   },
   methods: {
@@ -122,6 +104,21 @@ export default {
         (nutreint) => nutreint.nutrientId === 1008
       );
       return calories ? calories.value : "0";
+    },
+    debug() {
+      console.log("State Results", this.state.results);
+    },
+    nextPage() {
+      this.state.pageNumber++;
+      this.search();
+    },
+    previousPage() {
+      if (this.state.pageNumber > 1) {
+        this.state.pageNumber--;
+        this.search();
+      } else {
+        alert("You are on the first page.");
+      }
     },
   },
 };
