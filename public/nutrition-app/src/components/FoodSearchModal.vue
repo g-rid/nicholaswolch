@@ -14,8 +14,8 @@
           Brand Owner: {{ selectedItem.brandOwner }}
         </h3>
         <h3 v-if="selectedItem.servingSize">
-          Serving Size: {{ selectedItem.servingSize
-          }}{{ selectedItem.servingSizeUnit }}
+          Serving Size: {{ selectedItem.servingSize }}
+          {{ selectedItem.servingSizeUnit }}
         </h3>
         <h3>
           Total Calories:
@@ -42,7 +42,7 @@
 <script lang="ts">
 import { PropType } from "vue";
 import FoodNutrients from "./FoodNutrients.vue";
-// import defaultNutrients from "./data/defaultNutrients.json";
+import defaultNutrients from "./data/defaultNutrients.json";
 import nutrientFilter from "./data/nutrientFilter.json";
 
 export default {
