@@ -1,28 +1,32 @@
 <template>
   <div class="nutrient-graph">
-    <button @click="debug">Debug</button>
+    <!-- <button @click="debug">Debug</button> -->
     <!-- <div v-for="(defaultNutrient, key) in defaultNutrients" :key="key">
       <ul>
         <li>{{ key }}</li>
       </ul>
     </div> -->
-    <div>{{ displayObject }}</div>
+    <!-- <div>{{ displayObject.nutrients }}</div> -->
     <div v-if="loading" class="loading">
       <font-awesome-icon icon="fa-solid fa-spinner" />
     </div>
-    <table v-else>
+    <table
+      v-else
+      v-for="(nutrientGroup, type) in displayObject.nutrients"
+      :key="type"
+    >
       <thead>
         <tr>
-          <th>Nutrients:</th>
+          <th>{{ nutrientGroup.type }}</th>
           <th>Units:</th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(selectedFoodResult, key) in selectedFoodData" :key="key">
-          <td>
-            {{ key }}
-          </td>
-          <td>{{ selectedFoodResult.value }} *Unit*</td>
+        <tr v-for="nutrient in nutrientGroup" :key="nutrient.nutrientName">
+          <td>{{ nutrient.nutrientName }}</td>
+          <td>{{ nutrient.nutrientValue }}</td>
+          <td>{{ nutrient.whatItDoes }}</td>
+          <td>{{ nutrient.whereItsFound }}</td>
         </tr>
       </tbody>
     </table>
@@ -67,14 +71,9 @@ export default {
   },
   data() {
     const selectedItemFdcId: string = this.selectedItem.fdcId;
-    const displayObject = reactive({
-      nutrientName: {
-        nutrientValue: {},
-        whatItDoes: {},
-        whereItsFound: {},
-      },
+    let displayObject = reactive({
+      nutrients: [] as any,
     });
-
     const selectedFoodData = reactive({
       results: {} as any,
     });
@@ -83,21 +82,25 @@ export default {
 
     // Define a method that constructs displayObject
     // Get the value of each label nutrient from the USDA API
-    // Get the what it does and where it's found from the defaultNutrients.json file
+    // Get the "what it does" and "where it's found" from the defaultNutrients.json file
     const constructDisplayObject = () => {
-      // Loop through the nutrientNames array
-      console.log("type of", Object.entries(selectedFoodData.results));
+      // Loop through the selectedFoodData object
       Object.entries(selectedFoodData.results).forEach((labelName) => {
         // Loop through the defaultNutrients object
         for (const [key, value] of Object.entries(defaultNutrients)) {
-          // If the nutrientName matches the key in defaultNutrients
-          if (labelName[0] === key) {
-            // Add the nutrientName to the displayObject
-            displayObject.nutrientName = {
-              nutrientValue: labelName[1],
-              whatItDoes: value.whatItDoes,
-              whereItsFound: value.whereItsFound,
-            };
+          // If the nutrientName contains the key even though they are concatenated
+          if (labelName.includes(key)) {
+            // add an object for each new nutrient to the displayObject
+            displayObject.nutrients = [
+              ...displayObject.nutrients,
+              {
+                nutrientName: value.name as string,
+                nutrientValue: labelName[1] as string,
+                whatItDoes: value.whatItDoes as string,
+                whereItsFound: value.whereItsFound as string,
+                type: value.type as string,
+              },
+            ];
           }
         }
       });
@@ -115,14 +118,6 @@ export default {
         // Update the search results in the reactive state object
         console.log("Selected Food Object:", response.data);
         selectedFoodData.results = response.data.labelNutrients;
-        // selectedFoodData.nutrientValues = Object.values(
-        //   response.data.labelNutrients
-        // );
-        // console.log(
-        //   "Label Nutrients",
-        //   Object.keys(response.data.labelNutrients),
-        //   Object.values(response.data.labelNutrients)
-        // );
         constructDisplayObject();
         if (response.data.length === 0) {
           alert(
@@ -141,17 +136,6 @@ export default {
       defaultNutrients: defaultNutrients,
       displayObject,
     };
-  },
-  methods: {
-    debug(): void {
-      console.log("Default Nutrients", this.displayObject);
-      // for (const nutrient in this.defaultNutrients) {
-      //   console.log("Default Nutrients", nutrient);
-      // }
-    },
-    displayNutritionFacts() {
-      console.log(this.organizedLabelNutrients);
-    },
   },
 };
 </script>

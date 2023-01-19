@@ -5,6 +5,9 @@
     <div>
       <input v-model="state.query" @keyup.enter="search" type="text" />
       <button @click="search">Search</button>
+      <p v-if="state.results.length > 0">
+        Total Results: {{ totalHits.number }}
+      </p>
     </div>
     <div v-if="loading" class="loading">
       <font-awesome-icon icon="fa-solid fa-spinner" />
@@ -61,6 +64,9 @@ export default {
   components: { FoodSearchModal },
   props: {},
   data() {
+    const totalHits = reactive({
+      number: Number,
+    });
     // Define a reactive state object to store the search query and search results
     const state = reactive({
       query: "",
@@ -82,6 +88,7 @@ export default {
         // Update the search results in the reactive state object
         console.log("Search Response Object:", response.data);
         state.results = response.data.foods;
+        totalHits.number = response.data.totalHits;
         if (state.results.length === 0) {
           alert(
             `The USDA's food database does not contain any results for this search. Please try a different food.`
@@ -98,6 +105,7 @@ export default {
       showModal: false,
       selectedItem,
       loading,
+      totalHits,
     };
   },
   methods: {

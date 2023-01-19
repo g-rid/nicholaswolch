@@ -1,5 +1,5 @@
 {
-  "Carbohydrates": {
+  "carbohydrates": {
     "name": "Total Carbohydrates, By Difference",
     "type": "macronutrient",
     "dailyValue": {
@@ -28,7 +28,7 @@
       }
     }
   },
-  "Fat": {
+  "fat": {
     "name": "Total Lipid (Fat)",
     "type": "macronutrient",
     "dailyValue": {
@@ -58,7 +58,7 @@
       }
     }
   },
-  "Fiber": {
+  "fiber": {
     "name": "Dietary Fiber",
     "type": "macronutrient",
     "dailyValue": {
@@ -88,7 +88,7 @@
       }
     }
   },
-  "Biotin": {
+  "fiotin": {
     "name": "Biotin",
     "type": "vitiman",
     "dailyValue": {
@@ -117,7 +117,7 @@
     "whatItDoes": "<li>Energy storage</li><li>Protein, carbohdrate and fat matabolism</li>",
     "whereItsFound": "<li>Avocados</li><li>Cauliflower</li><li>Eggs</li><li>Fruits (e.g., Rasperries)</li><li>Liver</li><li>Pork</li><li>Salmon</li><li>Whole grains</li>"
   },
-  "Choline": {
+  "choline": {
     "name": "Choline",
     "type": "vitiman",
     "dailyValue": {
@@ -146,7 +146,7 @@
     "whatItDoes": "<li>Brain development</li><li>Cell signaling</li><li>Lipid (fat) transport and metabolism</li><li>Liver function</li><li>Muscle movement</li><li>Nerve Function</li><li>Normal metabolism</li>",
     "whereItsFound": "<li>Beans and peas</li><li>Egg yolks</li><li>Fish (e.g., cod and salmon)</li><li>Liver (e.g., beef and chicken)</li><li>Milk</li><li>Nuts</li><li>Salmon</li><li>Soy Foods</li><li>Vegtables (e.g., broccoli, cauliflower, spinach)</li>"
   },
-  "Folate": {
+  "folate": {
     "name": "Folate/Folic Acid",
     "type": "vitiman",
     "dri": {
@@ -175,7 +175,7 @@
     "whatItDoes": "<li>Prevention of birth defects</li><li>Protein metabolism</li><li>Red blood cell formation</li>",
     "whereItsFound": "<li>Asparagus</li><li>Avocados</li><li>Beans and peas</li><li>Enriched grain products (e.g., bread, cereal, pasta, rice)</li><li>Green leafy vegetables (e.g., spinach)</li><li>Oranges and orange juice</li>"
   },
-  "Niacin": {
+  "niacin": {
     "name": "Niacin",
     "type": "vitiman",
     "dri": {
@@ -204,7 +204,7 @@
     "whatItDoes": "<li>Cholesterol production</li><li>Conversion of food into energy</li><li>Digestion</li><li>Nervous system function</li>",
     "whereItsFound": "<li>Beans</li><li>Beef</li><li>Enriched grain products (e.g., bread, cereal, pasta, rice)</li><li>Nuts</li><li>Pork</li><li>Poultry</li><li>Seafood</li><li>Whole grains</li>"
   },
-  "PantothenicAcid": {
+  "pantothenicAcid": {
     "name": "Pantothenic Acid",
     "type": "vitiman",
     "dri": {
@@ -233,7 +233,7 @@
     "whatItDoes": "<li>Conversion of food into energy</li><li>Fat metabolism</li><li>Hormone production</li><li>Nervous system function</li><li>Red blood cell formation</li>",
     "whereItsFound": "<li>Avocados</li><li>Beans and peas</li><li>Broccoli</li><li>Eggs</li><li>Milk</li><li>Mushrooms</li><li>Poultry</li><li>Seafood</li><li>Sweet potatoes</li><li>Whole grains</li><li>Yogurt</li>"
   },
-  "Riboflavin": {
+  "riboflavin": {
     "name": "Riboflavin",
     "type": "vitiman",
     "dailyValue": {
@@ -262,7 +262,7 @@
       }
     }
   },
-  "Thiamin": {
+  "thiamin": {
     "name": "Thiamin",
     "type": "vitiman",
     "dailyValue": {
@@ -291,7 +291,7 @@
       }
     }
   },
-  "VitimanA": {
+  "vitimanA": {
     "name": "Vitiman A",
     "type": "vitiman",
     "dailyValue": {
@@ -320,7 +320,7 @@
       }
     }
   },
-  "VitimanB6": {
+  "vitimanB6": {
     "name": "Vitiman B6",
     "type": "vitiman",
     "dailyValue": {
@@ -349,7 +349,7 @@
       }
     }
   },
-  "VitimanB12": {
+  "vitimanB12": {
     "name": "Vitiman B12",
     "type": "vitiman",
     "dailyValue": {
@@ -378,7 +378,7 @@
       }
     }
   },
-  "VitimanC": {
+  "vitimanC": {
     "name": "Vitiman C",
     "type": "vitiman",
     "dailyValue": {
@@ -407,7 +407,7 @@
       }
     }
   },
-  "VitimanD": {
+  "vitimanD": {
     "name": "Vitiman D",
     "type": "vitiman",
     "dailyValue": {
@@ -436,7 +436,7 @@
       }
     }
   },
-  "VitimanE": {
+  "vitimanE": {
     "name": "Vitiman E",
     "type": "vitiman",
     "dailyValue": {
@@ -465,7 +465,7 @@
       }
     }
   },
-  "VitimanK": {
+  "vitimanK": {
     "name": "Vitiman K",
     "type": "vitiman",
     "dailyValue": {
@@ -494,7 +494,7 @@
       }
     }
   },
-  "Valcium": {
+  "valcium": {
     "name": "Calcium",
     "type": "mineral",
     "dailyValue": {
@@ -523,7 +523,7 @@
     "whatItDoes": "<li>Blood Clotting</li><li>Bone and teeth formation</li><li>Constriction and relaxation of blood vessles</li><li>Hormone secretion</li><li>Muscle contraction</li><li>Nervous system function</li>",
     "whereItsFound": "<li>Canned seafood with bones (e.g., salmon and sardines)</li><li>Dairy products</li><li>Fortified orange juice</li><li>Fortified soy beverages</li><li>Fortified ready-to-eat cereals</li><li>Green vegetables (e.g., kale, broccoli, and collard greens)</li><li>Tofu (made with calcium sulfate)</li>"
   },
-  "Chloride": {
+  "chloride": {
     "name": "Chloride",
     "type": "mineral",
     "dailyValue": {
@@ -552,7 +552,7 @@
       }
     }
   },
-  "Chromium": {
+  "chromium": {
     "name": "Chromium",
     "type": "mineral",
     "dailyValue": {
@@ -581,7 +581,7 @@
       }
     }
   },
-  "Copper": {
+  "copper": {
     "name": "Copper",
     "type": "mineral",
     "dailyValue": {
@@ -610,7 +610,7 @@
       }
     }
   },
-  "Iodine": {
+  "iodine": {
     "name": "Iodine",
     "type": "mineral",
     "dailyValue": {
@@ -639,7 +639,7 @@
       }
     }
   },
-  "Iron": {
+  "iron": {
     "name": "Iron",
     "type": "mineral",
     "dailyValue": {
@@ -668,7 +668,7 @@
       }
     }
   },
-  "Magnesium": {
+  "magnesium": {
     "name": "Magnesium",
     "type": "mineral",
     "dailyValue": {
@@ -697,7 +697,7 @@
       }
     }
   },
-  "Manganese": {
+  "manganese": {
     "name": "Manganese",
     "type": "mineral",
     "dailyValue": {
@@ -726,7 +726,7 @@
       }
     }
   },
-  "Molybdenum": {
+  "molybdenum": {
     "name": "Molybdenum",
     "type": "mineral",
     "dailyValue": {
@@ -755,7 +755,7 @@
       }
     }
   },
-  "Phosphorus": {
+  "phosphorus": {
     "name": "Phosphorus",
     "type": "mineral",
     "dailyValue": {
@@ -784,7 +784,7 @@
       }
     }
   },
-  "Potassium": {
+  "potassium": {
     "name": "Potassium",
     "type": "mineral",
     "dailyValue": {
@@ -813,7 +813,7 @@
       }
     }
   },
-  "Selenium": {
+  "selenium": {
     "name": "selenium",
     "type": "mineral",
     "dailyValue": {
@@ -842,7 +842,7 @@
       }
     }
   },
-  "Sodium": {
+  "sodium": {
     "name": "Sodium",
     "type": "mineral",
     "dailyValue": {
@@ -871,7 +871,7 @@
       }
     }
   },
-  "Zinc": {
+  "zinc": {
     "name": "Zinc",
     "type": "mineral",
     "dailyValue": {
