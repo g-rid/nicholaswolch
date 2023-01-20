@@ -22,12 +22,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="nutrient in nutrientGroup" :key="nutrient.nutrientName">
+        <!-- <tr v-for="nutrient in nutrientGroup" :key="nutrient.nutrientName">
           <td>{{ nutrient.nutrientName }}</td>
           <td>{{ nutrient.nutrientValue }}</td>
           <td>{{ nutrient.whatItDoes }}</td>
           <td>{{ nutrient.whereItsFound }}</td>
-        </tr>
+        </tr> -->
       </tbody>
     </table>
   </div>
@@ -112,7 +112,7 @@ export default {
         loading.value = true;
         // Make a GET request to the USDA API using the FdcId query
         const response = await axios.get(
-          `https://api.nal.usda.gov/fdc/v1/food/${selectedItemFdcId}?api_key=${apiKey}&format=full`
+          `https://api.nal.usda.gov/fdc/v1/foods?api_key=${apiKey}&fdcIds=${selectedItemFdcId}&format=full&nutrients=0`
         );
         loading.value = false;
         // Update the search results in the reactive state object

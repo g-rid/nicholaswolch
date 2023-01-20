@@ -16,18 +16,12 @@ function addClickIndicator() {
     spanElement.innerHTML = 'Try clicking?';
     spanElement.classList.add('click-indicator');
     clickIndicatorCube.insertAdjacentElement('afterend', spanElement);
-    console.log(clickIndicatorCube);
 }
 // Remove click indicator
 function removeClickIndicator() {
     const clickIndicator = document.querySelector('.click-indicator');
     clickIndicator.remove();
     clickCount = 0;
-}
-// Reset click indicator
-function resetClickIndicator() {
-    removeClickIndicator();
-    setTimeout(addClickIndicator, 7000);
 }
 function displayClearButton() {
     clearButton.classList.remove("hidden");
@@ -53,7 +47,7 @@ function addCubes() {
     cubeWrapper.innerHTML += cubeMarkup;
     if (clickCount >= 6) {
         displayClearButton();
-        resetClickIndicator();
+        removeClickIndicator();
     }
 }
 mainElement.addEventListener("click", addCubes);
@@ -65,7 +59,7 @@ clearButton.addEventListener("click", () => {
     }
     clearButton.classList.remove("displayed");
     clearButton.classList.add("hidden");
-    resetClickIndicator();
+    removeClickIndicator();
 });
-// Add click indicator 5 seconds after page
+// Add click indicator 5 seconds after page one time
 setTimeout(addClickIndicator, 5000);
