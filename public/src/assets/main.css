@@ -1,6 +1,6 @@
 @import './base.css';
 
-#app {
+#nutrition-app {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -10,7 +10,7 @@
   color: var(--vt-c-white-soft);
 }
 
-main {
+#nutrition-app main {
   background: rgb(169, 96, 238);
   background: linear-gradient(
     0deg,
@@ -42,7 +42,7 @@ a,
     place-items: center;
   }
 
-  #app {
+  #nutrition-app {
     display: grid;
     grid-template-columns: 20% 80%;
     padding: 0;
