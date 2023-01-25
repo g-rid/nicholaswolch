@@ -1,53 +1,14 @@
 <!DOCTYPE html>
-<html class="dark-theme home-page" lang="en">
+<html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>The Portfolio of Nicholas Wolch</title>
-    <link rel="stylesheet" href="styles/css/styles.css" />
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/849300a45d.js" crossorigin="anonymous"></script>
+    <title>The Portfolio of Nicholas Wolch</title>
   </head>
   <body>
-    <div class="cube-background-frame initial-cube">
-      <div class="cube-position-wrapper">
-        <div class="cube">
-          <div class="front"></div>
-          <div class="back"></div>
-          <div class="left"></div>
-          <div class="right"></div>
-          <div class="top"></div>
-          <div class="bottom"></div>
-        </div>
-      </div>
-    </div>
-    <div class="gutters">
-      <div class="line line-top"></div>
-      <div class="line line-right"></div>
-      <div class="line line-bottom"></div>
-      <div class="line line-left"></div>
-    </div>
-    <main>
-        <h1>Nicholas Wolch</h1>
-        <h5>Web Developer</h5>  
-        <section class="content">
-          Hi there. You've stumbled onto my portfolio site. It's still in progress. Check back for more soon. In the meantime feel free to reach out at <a href="mailto: hey@nicholaswolch.com">hey@nicholaswolch.com</a>
-        </section>
-    </main>
-    <button id="clear-button" type="button" class="clear-button hidden">Clear</button>
-    <div class="theme-switcher-buttons">
-      <button id="light-theme" type="button" class="button primary has-icon">
-        <span class="button-wrap">
-          <i class="fa-solid fa-sun"></i> Light
-        </span>
-      </button>
-      <button id="dark-theme" type="button" class="button primary has-icon">
-        <span class="button-wrap">
-          <i class="fa-solid fa-moon"></i> Dark
-        </span>
-      </button>
-    </div>
-    <script type="text/javascript" language="javascript" src="./scripts/cube-generator.js"></script>
-    <script type="text/javascript" language="javascript" src="./scripts/theme-switcher.js"></script>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
