@@ -1,9 +1,3 @@
-<script setup lang="ts">
-import { RouterView } from "vue-router";
-import NavTitle from "./components/NavTitle.vue";
-import Navigation from "./components/AppNavigation.vue";
-</script>
-
 <template>
   <div class="cube-background-frame initial-cube">
     <div class="cube-position-wrapper">
@@ -35,15 +29,13 @@ import Navigation from "./components/AppNavigation.vue";
   <button id="clear-button" type="button" class="clear-button hidden">
     Clear
   </button>
-  <div class="theme-switcher-buttons">
-    <button id="light-theme" type="button" class="button primary has-icon">
-      <span class="button-wrap"> <i class="fa-solid fa-sun"></i> Light </span>
-    </button>
-    <button id="dark-theme" type="button" class="button primary has-icon">
-      <span class="button-wrap"> <i class="fa-solid fa-moon"></i> Dark </span>
-    </button>
-  </div>
+  <ThemeSwitcher />
 </template>
+
+<script lang="ts">
+import { RouterView } from "vue-router";
+import ThemeSwitcher from "./components/ThemeSwitcher.vue";
+</script>
 
 <style scoped lang="css" src="./assets/styles.css"></style>
 <style scoped>
