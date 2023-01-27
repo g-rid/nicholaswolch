@@ -1,6 +1,7 @@
 <template>
   <h1>Nicholas Wolch</h1>
   <h5>Web Developer</h5>
+  <HomepageNavigation />
   <section class="content">
     Hi there. You've stumbled onto my portfolio site. It's still in progress.
     Check back for more soon. In the meantime feel free to reach out at
@@ -9,9 +10,10 @@
 </template>
 
 <script lang="ts">
+import HomepageNavigation from "./HomepageNavigation.vue";
 export default {
   name: "HomePageContent",
-  components: {},
+  components: { HomepageNavigation },
   props: {},
   setup() {
     return {};
