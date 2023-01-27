@@ -12,7 +12,17 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faScrewdriverWrench } from "@fortawesome/free-solid-svg-icons";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
-library.add(faUtensils, faUser, faScrewdriverWrench, faXmark, faSpinner);
+import { faMoon } from "@fortawesome/free-solid-svg-icons";
+import { faSun } from "@fortawesome/free-solid-svg-icons";
+library.add(
+  faUtensils,
+  faUser,
+  faScrewdriverWrench,
+  faXmark,
+  faSpinner,
+  faMoon,
+  faSun
+);
 
 // Import Apex Charts
 // import ApexCharts from "apexcharts";

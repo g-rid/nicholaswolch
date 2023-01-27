@@ -56,11 +56,4 @@ h3 {
   padding-right: 1rem;
   width: 3rem;
 }
-
-@media (min-width: 1024px) {
-  .greetings h1,
-  .greetings h3 {
-    text-align: left;
-  }
-}
 </style>

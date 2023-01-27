@@ -1,39 +1,68 @@
 <template>
   <div class="theme-switcher-buttons">
-    <button id="light-theme" type="button" class="button primary has-icon">
-      <span class="button-wrap"> <i class="fa-solid fa-sun"></i> Light </span>
+    <button
+      @click="setTheme('light-theme')"
+      type="button"
+      class="light-theme-button"
+    >
+      <span class="button-wrap">
+        <font-awesome-icon icon="fa-solid fa-sun" /> Light
+      </span>
     </button>
-    <button id="dark-theme" type="button" class="button primary has-icon">
-      <span class="button-wrap"> <i class="fa-solid fa-moon"></i> Dark </span>
+    <button
+      @click="setTheme('dark-theme')"
+      type="button"
+      class="dark-theme-button"
+    >
+      <span class="button-wrap">
+        <font-awesome-icon icon="fa-solid fa-moon" /> Dark
+      </span>
     </button>
   </div>
 </template>
 
 <script lang="ts">
+import { ref, onMounted } from "vue";
 export default {
   name: "ThemeSwitcher",
   components: {},
   props: {},
   setup() {
-    const lightThemeButton = document.getElementById("light-theme");
-    const darkThemeButton = document.getElementById("dark-theme");
-    const theme = localStorage.getItem("theme");
-    const currentTheme = theme ? theme : "light";
-    const setTheme = (theme: string) => {
-      document.documentElement.setAttribute("data-theme", theme);
-      localStorage.setItem("theme", theme);
+    const theme = ref("dark-theme");
+    onMounted(() => {
+      document.body.className = theme.value;
+    });
+    const setTheme = (themeSelector: string) => {
+      theme.value = themeSelector;
+      document.body.className = theme.value;
     };
-    if (currentTheme === "dark") {
-      setTheme("dark");
-    }
-    lightThemeButton.addEventListener("click", () => {
-      setTheme("light");
-    });
-    darkThemeButton.addEventListener("click", () => {
-      setTheme("dark");
-    });
+    return {
+      theme,
+      setTheme,
+    };
   },
 };
 </script>
 
-<style></style>
+<style scoped>
+.theme-switcher-buttons {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  bottom: 0;
+  right: var(--gutter-spacing);
+}
+.theme-switcher-buttons button {
+  border: transparent;
+  font-size: 1rem;
+  font-weight: 300;
+  padding: 0.9rem;
+  transition: all 300ms ease-in-out;
+  height: var(--gutter-spacing);
+  margin: 0;
+}
+.dark-theme-button {
+  margin-right: 1px;
+}
+</style>

@@ -1,34 +1,34 @@
-const rootHTML = document.querySelector('html') as HTMLHtmlElement;
-const cubeWrapper = document.querySelector('.cube-background-frame') as HTMLDivElement;
-const mainElement = document.querySelector('main') as HTMLElement;
-const clearButton = document.getElementById('clear-button') as HTMLDivElement;
+const rootHTML = document.querySelector("html") as HTMLHtmlElement;
+const cubeWrapper = document.querySelector(
+  ".cube-background-frame"
+) as HTMLDivElement;
+const mainElement = document.querySelector("main") as HTMLElement;
+const clearButton = document.getElementById("clear-button") as HTMLDivElement;
 let clickCount = 0 as number;
-
-// Get mouse X and Y positions
-rootHTML.addEventListener("mousemove", e => {
-  rootHTML.style.setProperty('--mouse-x', e.clientX + "deg");
-  rootHTML.style.setProperty('--mouse-y', e.clientY + "deg");
-});
 
 // Add click indicator
 function addClickIndicator() {
-  const clickIndicatorCube = document.querySelector('.initial-cube .cube') as HTMLSpanElement;
-  const spanElement = document.createElement('span') as HTMLSpanElement;
-  spanElement.innerHTML = 'Try clicking?';
-  spanElement.classList.add('click-indicator');
-  clickIndicatorCube.insertAdjacentElement('afterend', spanElement);
+  const clickIndicatorCube = document.querySelector(
+    ".initial-cube .cube"
+  ) as HTMLSpanElement;
+  const spanElement = document.createElement("span") as HTMLSpanElement;
+  spanElement.innerHTML = "Try clicking?";
+  spanElement.classList.add("click-indicator");
+  clickIndicatorCube.insertAdjacentElement("afterend", spanElement);
 }
 
 // Remove click indicator
 function removeClickIndicator() {
-  const clickIndicator = document.querySelector('.click-indicator') as HTMLSpanElement;
+  const clickIndicator = document.querySelector(
+    ".click-indicator"
+  ) as HTMLSpanElement;
   clickIndicator.remove();
   clickCount = 0;
 }
 
 function displayClearButton() {
-    clearButton.classList.remove("hidden");
-    clearButton.classList.add("displayed");
+  clearButton.classList.remove("hidden");
+  clearButton.classList.add("displayed");
 }
 
 // Generate cubes in random positions when the Main element is clicked
