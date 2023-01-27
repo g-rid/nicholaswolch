@@ -11,6 +11,9 @@
       </div>
     </div>
   </div>
+  <button id="clear-button" type="button" class="clear-button hidden">
+    Clear
+  </button>
 </template>
 <script lang="ts">
 export default {
@@ -24,7 +27,9 @@ export default {
     const cubeWrapper = document.querySelector(
       ".cube-background-frame"
     ) as HTMLDivElement;
-    const mainElement = document.querySelector("main") as HTMLElement;
+    const cubeBackgroundFrame = document.querySelector(
+      ".cube-background-frame"
+    ) as HTMLDivElement;
     const clearButton = document.getElementById(
       "clear-button"
     ) as HTMLDivElement;
@@ -79,7 +84,7 @@ export default {
       }
     }
 
-    mainElement.addEventListener("click", addCubes);
+    cubeBackgroundFrame.addEventListener("click", addCubes);
 
     // Remove generated cubes when clear button is clicked
     clearButton.addEventListener("click", () => {
@@ -97,3 +102,93 @@ export default {
   },
 };
 </script>
+
+<style>
+.cube-background-frame {
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--secondary-color);
+  overflow: hidden;
+  perspective: 25em;
+  perspective-origin: 50% calc(50% - 4em);
+}
+
+.cube-position-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cube {
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateY(var(--mouse-x)) rotateX(var(--mouse-y));
+  animation: rotatecube 100s infinite linear;
+  width: 5em;
+  height: 5em;
+}
+.cube .left,
+.cube .right,
+.cube .front,
+.cube .back,
+.cube .top,
+.cube .bottom {
+  position: absolute;
+  opacity: 0.5;
+  border: 1px solid var(--primary-color);
+  background-color: var(--secondary-color);
+  transform-style: preserve-3d;
+  box-shadow: 0 0 1em var(--primary-text-shadow) inset;
+}
+.cube .left,
+.cube .right,
+.cube .front,
+.cube .back {
+  width: 100%;
+  height: 100%;
+}
+.cube .front {
+  transform: translateZ(2.5em);
+}
+.cube .right {
+  transform: rotateY(90deg) translateZ(2.5em);
+}
+.cube .back {
+  transform: rotateY(180deg) translateZ(2.5em);
+}
+.cube .left {
+  transform: rotateY(270deg) translateZ(2.5em);
+}
+.cube .top,
+.cube .bottom {
+  width: 5em;
+  height: 5em;
+}
+.cube .top {
+  transform: translateY(-50%) rotateX(90deg);
+}
+.cube .bottom {
+  bottom: 0;
+  transform: translateY(50%) rotateX(90deg);
+}
+
+@keyframes rotatecube {
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+.cube-position-wrapper .click-indicator {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 1rem;
+  color: var(--primary-color);
+  z-index: 1;
+  text-shadow: 2px 2px 2px var(--primary-text-shadow);
+}
+</style>

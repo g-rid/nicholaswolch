@@ -23,7 +23,6 @@
   flex-direction: column;
 }
 
-a,
 .purple {
   text-decoration: none;
   color: var(--purple);

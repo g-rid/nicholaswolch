@@ -18,3 +18,45 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.gutters {
+  /* position: fixed;
+  top: var(--gutter-spacing);
+  right: calc(var(--gutter-spacing) * 6);
+  bottom: var(--gutter-spacing);
+  left: calc(var(--gutter-spacing) * 6); */
+  z-index: 1;
+}
+
+.line {
+  position: absolute;
+  background-color: var(--secondary-color);
+}
+.line.line-top,
+.line.line-bottom {
+  width: 100%;
+  height: 2px;
+}
+.line.line-right,
+.line.line-left {
+  width: 2px;
+  height: 100%;
+}
+.line.line-top {
+  bottom: 0;
+  left: 0;
+}
+.line.line-right {
+  top: 0;
+  left: 0;
+}
+.line.line-bottom {
+  top: 0;
+  left: 0;
+}
+.line.line-left {
+  top: 0;
+  right: 0;
+}
+</style>

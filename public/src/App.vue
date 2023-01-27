@@ -1,13 +1,9 @@
 <template>
-  <Gutters />
-  <CubeBackgroundFrame />
-  <main>
-    <HomePageContent />
-  </main>
-  <button id="clear-button" type="button" class="clear-button hidden">
-    Clear
-  </button>
-  <ThemeSwitcher />
+  <HomePageContent />
+  <div class="cube-container">
+    <CubeBackgroundFrame />
+    <ThemeSwitcher />
+  </div>
 </template>
 
 <script lang="ts">
@@ -41,5 +37,12 @@ export default {
 <style>
 #app {
   width: 100vw;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  padding: 0;
+}
+
+.cube-container {
+  padding: var(--gutter-spacing);
 }
 </style>
