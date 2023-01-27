@@ -189,6 +189,6 @@ export default {
   font-size: 1rem;
   color: var(--primary-color);
   z-index: 1;
-  text-shadow: 2px 2px 2px var(--primary-text-shadow);
+  text-shadow: 1px 1px 1px var(--secondary-text-shadow);
 }
 </style>
