@@ -1,17 +1,28 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
 import FoodSearchView from "../views/FoodSearchView.vue";
-import AboutView from "../views/AboutView.vue";
+import ResumeView from "../views/ResumeView.vue";
 import NutritionApp from "../views/NutritionApp.vue";
 import NutritionAppHome from "../views/NutritionAppHome.vue";
+import PortfolioView from "../views/PortfolioView.vue";
+import CubeContainerView from "../views/CubeContainerView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: "/",
-      name: "home",
-      component: HomeView,
+      name: "cube-container",
+      component: CubeContainerView,
+    },
+    {
+      path: "/resume",
+      name: "resume",
+      component: ResumeView,
+    },
+    {
+      path: "/portfolio",
+      name: "portfolio",
+      component: PortfolioView,
     },
     {
       path: "/nutrition-app",
@@ -27,11 +38,6 @@ const router = createRouter({
       path: "/nutrition-app/food-search",
       name: "foodSearch",
       component: FoodSearchView,
-    },
-    {
-      path: "/nutrition-app/about",
-      name: "about",
-      component: AboutView,
     },
   ],
 });

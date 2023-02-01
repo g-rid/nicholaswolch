@@ -1,25 +1,16 @@
 <template>
   <HomePageContent />
-  <div class="cube-container">
-    <CubeBackgroundFrame />
-    <ThemeSwitcher />
+  <div class="view-frame">
+    <RouterView />
   </div>
 </template>
 
 <script lang="ts">
-import { RouterView } from "vue-router";
-import ThemeSwitcher from "./components/ThemeSwitcher.vue";
 import HomePageContent from "./components/HomePageContent.vue";
-import CubeBackgroundFrame from "./components/CubeBackgroundFrame.vue";
-import Gutters from "./components/Gutters.vue";
 export default {
   name: "App",
   components: {
-    ThemeSwitcher,
     HomePageContent,
-    RouterView,
-    CubeBackgroundFrame,
-    Gutters,
   },
   mounted() {
     // Add mousemove X and Y coordinates to #app element
@@ -38,11 +29,12 @@ export default {
 #app {
   width: 100vw;
   display: grid;
-  grid-template-columns: 30% 70%;
+  grid-template-columns: 25% 75%;
   padding: 0;
 }
 
-.cube-container {
-  padding: var(--gutter-spacing);
+.view-frame {
+  border: 1px solid var(--secondary-color);
+  margin: var(--gutter-spacing);
 }
 </style>

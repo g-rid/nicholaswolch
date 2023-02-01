@@ -19,7 +19,6 @@
 export default {
   name: "CubeBackgroundFrame",
   components: {},
-  props: {},
   setup() {
     return {};
   },
@@ -107,7 +106,6 @@ export default {
 .cube-background-frame {
   width: 100%;
   height: 100%;
-  border: 1px solid var(--secondary-color);
   overflow: hidden;
   perspective: 25em;
   perspective-origin: 50% calc(50% - 4em);

@@ -1,38 +1,33 @@
 <template>
   <div class="nav-container">
-    <button @click="isOpen = !isOpen" class="hamburger">
-      <span></span><span></span><span></span><span></span>
-    </button>
-    <transition name="slide-down">
-      <nav>
-        <ul v-if="isOpen" class="nav-items">
-          <li v-for="item in items" :key="item.id">
-            <router-link :to="item.path">{{ item.name }}</router-link>
-          </li>
-        </ul>
-      </nav>
-    </transition>
+    <nav>
+      <ul class="nav-items">
+        <li v-for="item in items" :key="item.id">
+          <RouterLink :to="item.path">{{ item.name }}</RouterLink>
+        </li>
+      </ul>
+    </nav>
   </div>
 </template>
+
 <script lang="ts">
+import { RouterLink } from "vue-router";
 export default {
   name: "HomepageNavigation",
-  props: {},
-  setup() {
-    return {};
-  },
+  components: { RouterLink },
   data() {
     return {
       isOpen: false,
       items: [
         { id: 1, name: "Home", path: "/" },
-        { id: 2, name: "About", path: "/about" },
-        { id: 3, name: "Contact", path: "/contact" },
+        { id: 2, name: "Portfolio", path: "/portfolio" },
+        { id: 3, name: "Resume", path: "/resume" },
       ],
     };
   },
 };
 </script>
+
 <style scoped>
 .nav-container {
   position: relative;
@@ -46,7 +41,6 @@ export default {
   padding: 0;
   margin: 0;
   list-style: none;
-  background-color: #fff;
 }
 
 .hamburger {

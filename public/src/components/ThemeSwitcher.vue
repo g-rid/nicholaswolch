@@ -25,8 +25,6 @@
 import { ref, onMounted } from "vue";
 export default {
   name: "ThemeSwitcher",
-  components: {},
-  props: {},
   setup() {
     const theme = ref("dark-theme");
     onMounted(() => {

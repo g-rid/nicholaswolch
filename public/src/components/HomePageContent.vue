@@ -18,7 +18,6 @@ import HomepageNavigation from "./HomepageNavigation.vue";
 export default {
   name: "HomePageContent",
   components: { HomepageNavigation },
-  props: {},
   setup() {
     return {};
   },
@@ -40,12 +39,15 @@ a {
   font-weight: 500;
   text-decoration: underline;
 }
+h1 {
+  font-size: 2.7rem;
+}
 h5 {
   margin-bottom: 5px;
 }
 
 .content {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   text-shadow: 1px 1px 1px var(--primary-text-shadow);
 }
 </style>
