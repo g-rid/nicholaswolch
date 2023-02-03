@@ -14,6 +14,11 @@ export default defineComponent({
     CubeBackgroundFrame,
     ThemeSwitcher,
   },
+  mounted() {
+    this.$store.state.blurb = `Hi there. You've stumbled onto my portfolio site. It's still in progress.
+      Check back for more soon. In the meantime feel free to reach out at
+      <a href="mailto:hey@nicholaswolch.com">hey@nicholaswolch.com</a>?`;
+  },
 });
 </script>
 <style>

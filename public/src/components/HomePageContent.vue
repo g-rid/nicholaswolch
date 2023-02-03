@@ -5,10 +5,8 @@
       <h5>Web Developer</h5>
       <HomepageNavigation />
     </div>
-    <section class="content">
-      Hi there. You've stumbled onto my portfolio site. It's still in progress.
-      Check back for more soon. In the meantime feel free to reach out at
-      <a href="mailto: hey@nicholaswolch.com">hey@nicholaswolch.com</a>
+    <section class="blurb">
+      {{ blurb }}
     </section>
   </main>
 </template>
@@ -46,7 +44,7 @@ h5 {
   margin-bottom: 5px;
 }
 
-.content {
+.blurb {
   font-size: 1.4rem;
   text-shadow: 1px 1px 1px var(--primary-text-shadow);
 }

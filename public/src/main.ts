@@ -1,6 +1,8 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
+import Vuex from "vuex";
+import { createStore } from "vuex";
 
 import "./assets/main.css";
 
@@ -31,6 +33,19 @@ import VueApexCharts from "vue3-apexcharts";
 // Create App
 const app = createApp(App);
 
-app.use(router, VueApexCharts);
+app.use(router, VueApexCharts, Vuex, createStore);
 app.component("font-awesome-icon", FontAwesomeIcon);
 app.mount("#app");
+
+const store = createStore({
+  state: {
+    blurb: String,
+  },
+  mutations: {
+    // increment(state) {
+    //   state.blurb = "Hello World";
+    // },
+  },
+});
+
+console.log("blurb", store.state.blurb);
