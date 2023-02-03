@@ -96,8 +96,8 @@ export default {
       removeClickIndicator();
     });
 
-    // Add click indicator 5 seconds after page one time
-    setTimeout(addClickIndicator, 5000);
+    // Add click indicator 10 seconds after page one time
+    setTimeout(addClickIndicator, 10000);
   },
 };
 </script>

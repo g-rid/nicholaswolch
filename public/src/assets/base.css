@@ -87,10 +87,11 @@ html {
 }
 
 body.light-theme {
-  --primary-color: white;
-  --secondary-color: black;
+  --primary-color: rgb(255, 255, 255);
+  --secondary-color: rgb(0, 0, 0);
   --primary-text-shadow: rgba(255, 255, 255, 0.7);
   --secondary-text-shadow: rgba(0, 0, 0, 0.7);
+  --secondary-hover-background-color: rgba(255,255,255, 0.5);
   background-color: var(--primary-color);
   color: var(--secondary-color);
   border-color: var(--secondary-color);
@@ -98,10 +99,11 @@ body.light-theme {
 }
 
 body.dark-theme {
-  --primary-color: black;
-  --secondary-color: white;
+  --primary-color: rgb(0, 0, 0);
+  --secondary-color: rgb(255, 255, 255);
   --primary-text-shadow: rgba(0, 0, 0, 0.7);
   --secondary-text-shadow: rgba(255, 255, 255, 0.7);
+  --secondary-hover-background-color: rgba(0, 0, 0, 0.5);
   background-color: var(--primary-color);
   color: var(--secondary-color);
   transition: all 500ms;

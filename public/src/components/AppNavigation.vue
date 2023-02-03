@@ -1,6 +1,4 @@
-<script setup lang="ts">
-// import { RouterLink } from "vue-router";
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <nav>
@@ -20,11 +18,12 @@ nav {
 }
 
 nav a.router-link-exact-active {
-  color: var(--color-text);
+  margin-left: 1rem;
+  color: var(--secondary-color);
 }
 
 nav a.router-link-exact-active:hover {
-  background-color: transparent;
+  color: var(--primary-color);
 }
 
 nav a {
@@ -32,5 +31,8 @@ nav a {
   padding: 0.5rem 1rem;
   margin: 1rem 0;
   border-left: 1px solid var(--color-border);
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  color: var(--secondary-text-shadow);
 }
 </style>
