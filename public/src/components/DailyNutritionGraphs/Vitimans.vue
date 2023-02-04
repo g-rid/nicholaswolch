@@ -35,7 +35,6 @@ export default {
         },
         tooltip: {
           custom: function ({ series, seriesIndex, dataPointIndex, xaxis }) {
-            console.log("tooltip", xaxis[categories]);
             return (
               '<div class="arrow_box">' +
               "<span>" +

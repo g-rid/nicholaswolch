@@ -15,10 +15,12 @@ export default {
   mounted() {
     // Add mousemove X and Y coordinates to #app element
     const rootHTML = document.getElementById("app");
-    rootHTML.addEventListener("mousemove", (e) => {
-      rootHTML.style.setProperty("--mouse-x", e.clientX + "deg");
-      rootHTML.style.setProperty("--mouse-y", e.clientY + "deg");
-    });
+    if (rootHTML) {
+      rootHTML.addEventListener("mousemove", (e) => {
+        rootHTML.style.setProperty("--mouse-x", e.clientX + "deg");
+        rootHTML.style.setProperty("--mouse-y", e.clientY + "deg");
+      });
+    }
   },
 };
 </script>

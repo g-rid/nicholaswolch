@@ -2,9 +2,11 @@
   <div v-if="show" class="modal">
     <div class="modal-header">
       <div class="modal-title-wrapper">
-        <h2>{{ capitalize(selectedItem.description) }}</h2>
-        <h3 v-if="selectedItem.brandName">
-          Brand Name: {{ capitalize(selectedItem.brandName) }}
+        <h2 v-if="selectedItem && selectedItem.description">
+          {{ selectedItem.description }}
+        </h2>
+        <h3 v-if="selectedItem && selectedItem.brandName">
+          Brand Name: {{ selectedItem.brandName }}
         </h3>
         <h3 v-if="selectedItem.dataType === 'SR Legacy'">
           Data Source: <strong>USDA</strong> based on Standard Reference
@@ -40,10 +42,8 @@
 </template>
 
 <script lang="ts">
-import { PropType } from "vue";
+import type { PropType } from "vue";
 import FoodNutrients from "./FoodNutrients.vue";
-import defaultNutrients from "./data/defaultNutrients.json";
-import nutrientFilter from "./data/nutrientFilter.json";
 
 export default {
   name: "FoodSearchModal",
@@ -77,12 +77,12 @@ export default {
     closeModal() {
       this.$emit("close");
     },
-    displaySelectedCalories() {
-      const calories = this.selectedItem.foodNutrients.find(
-        (nutreint: Object) => nutreint.nutrientId === 1008
-      );
-      return calories ? calories.value : "0";
-    },
+    // displaySelectedCalories() {
+    //   const calories = this.selectedItem.foodNutrients.find(
+    //     (nutreint: Object) => nutreint.nutrientId === 1008
+    //   );
+    //   return calories ? calories.value : "0";
+    // },
   },
 };
 </script>

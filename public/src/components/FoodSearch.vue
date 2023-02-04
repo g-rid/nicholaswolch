@@ -32,11 +32,13 @@
                 @click="(showModal = true), (selectedItem = result)"
                 role="button"
               >
-                {{ capitalize(result.description) }}
+                <span v-if="result.description">{{
+                  capitalize(result.description)
+                }}</span>
               </button>
             </td>
-            <td>{{ capitalize(result.brandName) }}</td>
-            <td>{{ displayCalories(result.foodNutrients) }} KCal</td>
+            <td v-if="result.brandName">{{ capitalize(result.brandName) }}</td>
+            <td v-if="result.foodNutrients">{{ result.foodNutrients }} KCal</td>
           </tr>
         </tbody>
       </table>
@@ -62,7 +64,6 @@ import FoodSearchModal from "./FoodSearchModal.vue";
 export default {
   name: "FoodSearch",
   components: { FoodSearchModal },
-  props: {},
   data() {
     const totalHits = reactive({
       number: Number,
@@ -110,18 +111,18 @@ export default {
   },
   methods: {
     capitalize(text?: String) {
-      if (text === undefined) {
+      if (text === undefined || text === null) {
         return "";
       } else {
         return text.toLowerCase().replace(/\b(\w)/g, (x) => x.toUpperCase());
       }
     },
-    displayCalories(nutrients?: Array<Object>) {
-      const calories = nutrients.find(
-        (nutreint) => nutreint.nutrientId === 1008
-      );
-      return calories ? calories.value : "0";
-    },
+    // displayCalories(nutrients?: Array<Object>) {
+    //   const calories = nutrients.find(
+    //     (nutreint) => nutreint.nutrientId === 1008
+    //   );
+    //   return calories ? calories.value : "0";
+    // },
     debug() {
       console.log("State Results", this.state.results);
     },

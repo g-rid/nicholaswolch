@@ -6,7 +6,7 @@
       <HomepageNavigation />
     </div>
     <section class="blurb">
-      {{ blurb }}
+      <!-- {{ blurb }} -->
     </section>
   </main>
 </template>

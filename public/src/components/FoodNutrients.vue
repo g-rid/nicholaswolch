@@ -41,7 +41,7 @@
 
 <script lang="ts">
 import { reactive, ref } from "vue";
-import { PropType } from "vue";
+import type { PropType } from "vue";
 import axios from "axios";
 import defaultNutrients from "./data/defaultNutrients.json";
 // import nutrientFilter from "./data/nutrientFilter.json";
