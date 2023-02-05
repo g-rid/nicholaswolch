@@ -34,11 +34,15 @@ export default {
           label: "mg",
         },
         tooltip: {
-          custom: function ({ series, seriesIndex, dataPointIndex, xaxis }) {
+          custom: (props: {
+            series: number[][];
+            seriesIndex: number;
+            dataPointIndex: number;
+          }) => {
             return (
               '<div class="arrow_box">' +
               "<span>" +
-              series[seriesIndex][dataPointIndex] +
+              props.series[props.seriesIndex][props.dataPointIndex] +
               "</span>" +
               "</div>"
             );

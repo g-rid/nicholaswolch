@@ -1,22 +1,23 @@
 {
-  "include": ["src/**/*", "data/**/*"],
-  "compilerOptions": {
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "module": "es2022",
-    "target": "ESNext",
-    "types": ["vite/client"],
-    "moduleResolution": "Node",
-  },
-  "references": [
-    {
-      "path": "./tsconfig.config.json"
+    "include": ["src/**/*", "data/**/*"],
+    "compilerOptions": {
+      "resolveJsonModule": true,
+      "esModuleInterop": true,
+      "module": "es2022",
+      "target": "ESNext",
+      "types": ["vite/client"],
+      "moduleResolution": "Node",
     },
-    {
-      "path": "./tsconfig.app.json"
-    },
-    {
-      "path": "./tsconfig.cypress-ct.json"
-    }
-  ]
-}
+    "references": [
+      {
+        "path": "./tsconfig.config.json"
+      },
+      {
+        "path": "./tsconfig.app.json"
+      },
+      {
+        "path": "./tsconfig.cypress-ct.json"
+      }
+    ]
+  }
+  

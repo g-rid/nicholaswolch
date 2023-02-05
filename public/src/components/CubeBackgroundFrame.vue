@@ -49,8 +49,10 @@ export default {
     function removeClickIndicator() {
       if (document.querySelector(".click-indicator")) {
         const clickIndicator = document.querySelector(".click-indicator");
-        clickIndicator.remove();
-        clickCount = 0;
+        if (clickIndicator) {
+          clickIndicator.remove();
+          clickCount = 0;
+        }
       }
     }
 

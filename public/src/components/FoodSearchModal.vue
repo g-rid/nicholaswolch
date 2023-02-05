@@ -21,7 +21,7 @@
         </h3>
         <h3>
           Total Calories:
-          {{ displaySelectedCalories() }}
+          <!-- {{ displaySelectedCalories() }} -->
           kcal
         </h3>
         <h3 v-if="selectedItem.ingredients">

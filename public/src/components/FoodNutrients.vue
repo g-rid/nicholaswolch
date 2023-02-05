@@ -1,12 +1,15 @@
 <template>
+  <div>Placeholder</div>
+</template>
+<!-- <template>
   <div class="nutrient-graph">
-    <!-- <button @click="debug">Debug</button> -->
-    <!-- <div v-for="(defaultNutrient, key) in defaultNutrients" :key="key">
+    <button @click="debug">Debug</button>
+    <div v-for="(defaultNutrient, key) in defaultNutrients" :key="key">
       <ul>
         <li>{{ key }}</li>
       </ul>
-    </div> -->
-    <!-- <div>{{ displayObject.nutrients }}</div> -->
+    </div>
+    <div>{{ displayObject.nutrients }}</div>
     <div v-if="loading" class="loading">
       <font-awesome-icon icon="fa-solid fa-spinner" />
     </div>
@@ -22,12 +25,12 @@
         </tr>
       </thead>
       <tbody>
-        <!-- <tr v-for="nutrient in nutrientGroup" :key="nutrient.nutrientName">
+        <tr v-for="nutrient in nutrientGroup" :key="nutrient.nutrientName">
           <td>{{ nutrient.nutrientName }}</td>
           <td>{{ nutrient.nutrientValue }}</td>
           <td>{{ nutrient.whatItDoes }}</td>
           <td>{{ nutrient.whereItsFound }}</td>
-        </tr> -->
+        </tr>
       </tbody>
     </table>
   </div>
@@ -85,9 +88,9 @@ export default {
     // Get the "what it does" and "where it's found" from the defaultNutrients.json file
     const constructDisplayObject = () => {
       // Loop through the selectedFoodData object
-      Object.entries(selectedFoodData.results).forEach((labelName) => {
+      Object.keys(selectedFoodData.results).forEach((labelName) => {
         // Loop through the defaultNutrients object
-        for (const [key, value] of Object.entries(defaultNutrients)) {
+        for (const [key, value] of Object.keys(defaultNutrients)) {
           // If the nutrientName contains the key even though they are concatenated
           if (labelName.includes(key)) {
             // add an object for each new nutrient to the displayObject
@@ -140,4 +143,4 @@ export default {
 };
 </script>
 
-<style></style>
+<style></style> -->

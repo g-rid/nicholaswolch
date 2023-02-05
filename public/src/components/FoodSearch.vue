@@ -68,10 +68,25 @@ export default {
     const totalHits = reactive({
       number: Number,
     });
+
+    interface Result {
+      fdcId: number;
+      description: string;
+      dataType: string;
+      gtinUpc: string;
+      publishedDate: string;
+      brandOwner: string;
+      ingredients: string;
+      allHighlightFields: string;
+      score: number;
+      foodNutrients: Array<Object>;
+      brandName: string;
+      result: ObjectConstructor;
+    }
     // Define a reactive state object to store the search query and search results
     const state = reactive({
       query: "",
-      results: [],
+      results: Array<Result>(),
       pageNumber: 1,
     });
     const loading = ref(false);
@@ -99,7 +114,7 @@ export default {
         alert(`Looks like we're having some trouble. ` + error);
       }
     };
-    const selectedItem = reactive({ result: null });
+    const selectedItem = reactive({ result: Object });
     return {
       state,
       search,
