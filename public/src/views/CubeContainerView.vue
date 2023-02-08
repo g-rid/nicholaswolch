@@ -1,18 +1,15 @@
 <template>
   <div class="cube-container">
     <CubeBackgroundFrame />
-    <ThemeSwitcher />
   </div>
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
 import CubeBackgroundFrame from "../components/CubeBackgroundFrame.vue";
-import ThemeSwitcher from "../components/ThemeSwitcher.vue";
 export default defineComponent({
   name: "CubeContainerView",
   components: {
     CubeBackgroundFrame,
-    ThemeSwitcher,
   },
   mounted() {
     // this.$store.state.blurb = `Hi there. You've stumbled onto my portfolio site. It's still in progress.
