@@ -1,7 +1,23 @@
 <template>
-  <Carousel :itemsToShow="3.95" :wrapAround="true" :transition="500">
+  <Carousel :itemsToShow="3" :wrapAround="true" :transition="500">
     <Slide v-for="card in cardData" :key="card.id">
-      <div class="card">{{ card.title }}</div>
+      <article class="card">
+        <header>
+          <h2>{{ card.title }}</h2>
+        </header>
+        <a
+          :href="card.pageLink"
+          :title="'Click here to navigate to ' + card.title"
+          target="_blank"
+        >
+          <img :src="card.image" :alt="card.alt" />
+        </a>
+        <div class="content">
+          <p>
+            {{ card.blurb }}
+          </p>
+        </div>
+      </article>
     </Slide>
 
     ...
@@ -12,6 +28,7 @@
 import { defineComponent } from "vue";
 import { Carousel, Slide } from "vue3-carousel";
 import "vue3-carousel/dist/carousel.css";
+import sc2156 from "@/assets/screenshots/2156.jpg";
 
 export default defineComponent({
   name: "PortfolioView",
@@ -26,19 +43,22 @@ export default defineComponent({
       blurb: string;
       pageLink: string;
       image: string;
+      alt: string;
     }
     const cardData: Card[] = [
       {
         id: 1,
         title: "Semi-Custom Theme #2156",
-        blurb: "",
+        blurb: "This is a semi-custom theme for a dental practice.",
         pageLink:
           "https://demo.pbhshosting.com/dental/?theme=Template2120&theme_version=2154-template",
-        image: "../assets/screenshots/2156.jpg",
+        image: sc2156,
+        alt: "A homepage screenshot of Semi-Custom Theme #2156",
       },
-      { id: 1, title: "", blurb: "", pageLink: "Panel 1", image: "" },
-      { id: 1, title: "", blurb: "", pageLink: "Panel 1", image: "" },
-      { id: 1, title: "", blurb: "", pageLink: "Panel 1", image: "" },
+      { id: 2, title: "", blurb: "", pageLink: "Panel 1", image: "", alt: "" },
+      { id: 3, title: "", blurb: "", pageLink: "Panel 1", image: "", alt: "" },
+      { id: 4, title: "", blurb: "", pageLink: "Panel 1", image: "", alt: "" },
+      { id: 5, title: "", blurb: "", pageLink: "Panel 1", image: "", alt: "" },
     ];
     return {
       cardData,
@@ -47,18 +67,9 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
-.carousel__item {
-  /* background: #fff;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  color: #000;
-  font-size: 1.5rem;
-  height: 500px;
-  line-height: 1.5;
-  padding: 1rem;
-  text-align: center;
-  width: 500px; */
+<style>
+.carousel {
+  height: 100%;
 }
 .carousel__slide {
   padding: 5px;
@@ -66,6 +77,8 @@ export default defineComponent({
 
 .carousel__viewport {
   perspective: 2000px;
+  height: 100%;
+  display: flex;
 }
 
 .carousel__track {
@@ -98,5 +111,22 @@ export default defineComponent({
 .carousel__slide--active {
   opacity: 1;
   transform: rotateY(0) scale(1.1);
+}
+
+.card:hover {
+  cursor: grab;
+}
+
+.card:active,
+.card:focus {
+  cursor: grabbing;
+}
+
+.card img:hover {
+  cursor: alias;
+}
+
+.card img {
+  max-width: 100%;
 }
 </style>
