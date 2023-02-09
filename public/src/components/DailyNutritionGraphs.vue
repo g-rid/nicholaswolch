@@ -27,7 +27,6 @@ export default {
 <style>
 h2,
 h3 {
-  color: var(--vt-c-white);
   text-align: center;
 }
 </style>

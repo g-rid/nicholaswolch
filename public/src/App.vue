@@ -2,18 +2,15 @@
   <HomePageContent />
   <div class="view-frame">
     <RouterView />
-    <ThemeSwitcher />
   </div>
 </template>
 
 <script lang="ts">
 import HomePageContent from "./components/HomePageContent.vue";
-import ThemeSwitcher from "./components/ThemeSwitcher.vue";
 export default {
   name: "App",
   components: {
     HomePageContent,
-    ThemeSwitcher,
   },
   mounted() {
     // Add mousemove X and Y coordinates to #app element

@@ -17,7 +17,6 @@ export default {
   components: { RouterLink },
   data() {
     return {
-      isOpen: false,
       items: [
         { id: 1, name: "Home", path: "/" },
         { id: 2, name: "Portfolio", path: "/portfolio" },
@@ -34,10 +33,6 @@ export default {
 }
 
 .nav-items {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
   padding: 0;
   margin: 0;
   list-style: none;

@@ -44,12 +44,8 @@ export default {
 
 <style scoped>
 .theme-switcher-buttons {
-  position: fixed;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  bottom: 0;
-  right: var(--gutter-spacing);
 }
 .theme-switcher-buttons button {
   border: transparent;

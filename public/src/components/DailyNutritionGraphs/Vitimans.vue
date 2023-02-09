@@ -76,10 +76,6 @@ export default {
 </script>
 
 <style>
-h2,
-h3 {
-  color: var(--vt-c-white);
-}
 h3 {
   text-align: center;
 }

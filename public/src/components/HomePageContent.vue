@@ -4,6 +4,7 @@
       <h1>Nicholas Wolch</h1>
       <h5>Web Developer</h5>
       <HomepageNavigation />
+      <ThemeSwitcher />
     </div>
     <section class="blurb">
       <!-- {{ blurb }} -->
@@ -13,9 +14,10 @@
 
 <script lang="ts">
 import HomepageNavigation from "./HomepageNavigation.vue";
+import ThemeSwitcher from "./ThemeSwitcher.vue";
 export default {
   name: "HomePageContent",
-  components: { HomepageNavigation },
+  components: { HomepageNavigation, ThemeSwitcher },
   setup() {
     return {};
   },
