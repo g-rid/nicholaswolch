@@ -3,8 +3,8 @@
     <div class="title-wrap">
       <h1>Nicholas Wolch</h1>
       <h5>Web Developer</h5>
-      <HomepageNavigation />
       <ThemeSwitcher />
+      <HomepageNavigation />
     </div>
     <section class="blurb">
       <!-- {{ blurb }} -->

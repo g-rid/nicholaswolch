@@ -27,7 +27,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .nav-container {
   position: relative;
 }
@@ -38,93 +38,28 @@ export default {
   list-style: none;
 }
 
-.hamburger {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 0.5rem 0 0 0;
-  background: none;
-  border: none;
-  width: 30px;
-  height: 20px;
-  position: relative;
-  margin: 0px;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg);
-  -webkit-transition: 0.5s ease-in-out;
-  -moz-transition: 0.5s ease-in-out;
-  -o-transition: 0.5s ease-in-out;
-  transition: 0.5s ease-in-out;
-  cursor: pointer;
-}
-
-.hamburger span {
-  background-color: var(--secondary-color);
-  border: 1px solid var(--primary-color);
-  display: block;
-  position: absolute;
-  height: 3px;
+nav {
   width: 100%;
-  border-radius: 9px;
-  opacity: 1;
-  left: 0;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg);
-  -webkit-transition: 0.25s ease-in-out;
-  -moz-transition: 0.25s ease-in-out;
-  -o-transition: 0.25s ease-in-out;
-  transition: 0.25s ease-in-out;
+  text-align: left;
+  font-size: 1.2rem;
 }
 
-.hamburger span:nth-child(1) {
-  top: 0px;
+nav a.router-link-exact-active {
+  margin-left: 0.5rem;
+  color: var(--secondary-color);
 }
 
-.hamburger span:nth-child(2),
-.hamburger span:nth-child(3) {
-  top: 10px;
+nav a.router-link-exact-active:hover {
+  color: var(--primary-color);
 }
 
-.hamburger span:nth-child(4) {
-  top: 20px;
-}
-
-.hamburger.open span:nth-child(1) {
-  top: 11px;
-  width: 0%;
-  left: 50%;
-}
-
-.hamburger.open span:nth-child(2) {
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
-.hamburger.open span:nth-child(3) {
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-}
-
-.hamburger.open span:nth-child(4) {
-  top: 11px;
-  width: 0%;
-  left: 50%;
-}
-
-.slide-down-enter-active,
-.slide-down-leave-active {
-  transition: all 0.5s ease;
-}
-.slide-down-enter,
-.slide-down-leave-to {
-  transform: translateY(-100%);
+nav a {
+  display: block;
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  border-left: 1px solid var(--color-border);
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  color: var(--secondary-text-shadow);
 }
 </style>

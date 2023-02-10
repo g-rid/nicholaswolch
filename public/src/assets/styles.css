@@ -250,7 +250,7 @@ a {
 }
 
 a.button,
-button,
+button:not(.theme-switcher),
 input[type=button] {
   color: var(--secondary-color);
   background-color: var(--primary-color);
@@ -261,9 +261,9 @@ input[type=button] {
   font-size: 2rem;
   transition: all 200ms ease;
 }
-a.button:hover, a.button:focus,
-button:hover,
-button:focus,
+a.button:hover:not(.theme-switcher), a.button:focus:not(.theme-switcher),
+button:hover:not(.theme-switcher),
+button:focus:not(.theme-switcher),
 input[type=button]:hover,
 input[type=button]:focus {
   color: var(--primary-color);
