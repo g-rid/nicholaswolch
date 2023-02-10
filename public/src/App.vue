@@ -35,6 +35,13 @@ export default {
   padding: 0;
 }
 
+@media (max-width: 768px) {
+  #app {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 .view-frame {
   border: 1px solid var(--secondary-color);
   margin: var(--gutter-spacing);

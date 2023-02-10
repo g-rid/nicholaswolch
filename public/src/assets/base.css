@@ -4,6 +4,12 @@ html {
   --text-shadow: 1px 1px 2px var(--primary-text-shadow);
   --box-shadow: 0 0 5px 5px var(--primary-text-shadow);
   --gutter-spacing: 4vw;
+  --mobile-down: 479px;
+  --mobile-up: 480px;
+  --tablet-down: 768px;
+  --tablet-up: 769px;
+  --desktop-down: 1279px;
+  --desktop-up: 1280px;
   height: 100%;
   font-size: 62.5%;
   font-family: "Poppins", Helvetica, sans-serif;

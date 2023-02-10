@@ -35,6 +35,7 @@ main {
   flex-direction: column;
   padding: calc(var(--gutter-spacing) + 1.5rem) var(--gutter-spacing);
 }
+
 a {
   color: var(--secondary-color);
   font-weight: 500;
@@ -60,5 +61,14 @@ h5 {
 .blurb {
   font-size: 1.4rem;
   text-shadow: 1px 1px 1px var(--primary-text-shadow);
+}
+
+@media (max-width: 768px) {
+  main {
+    flex-direction: row;
+  }
+  .title-wrap {
+    display: flex;
+  }
 }
 </style>
