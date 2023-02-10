@@ -95,9 +95,19 @@ samp {
   font-size: 1em;
 }
 
-a {
+a:not(button) {
   background-color: transparent;
+  font-weight: 400;
+  color: var(--secondary-text-shadow);
+    text-decoration-color: var(--secondary-text-shadow);
 }
+
+a:hover:not(button) {
+  font-weight: 500;
+  color: var(--secondary-color);
+  text-decoration-color: var(--secondary-color)
+}
+
 
 button,
 input,

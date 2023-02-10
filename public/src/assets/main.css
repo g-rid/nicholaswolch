@@ -29,13 +29,6 @@
   transition: 0.4s;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: var(--secondary-text-shadow);
-    color: var(--primary-color);
-  }
-}
-
 @media (min-width: 641px) {
   body {
     display: flex;

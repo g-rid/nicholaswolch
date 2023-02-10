@@ -50,10 +50,6 @@ nav a.router-link-exact-active {
   color: var(--secondary-color);
 }
 
-nav a.router-link-exact-active:hover {
-  color: var(--primary-color);
-}
-
 nav a {
   display: block;
   padding: 0.5rem 1rem;
