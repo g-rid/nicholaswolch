@@ -7,7 +7,8 @@
       <HomepageNavigation />
     </div>
     <section class="blurb">
-      <!-- {{ blurb }} -->
+      This is placeholder text for an incoming text field that is dynamic
+      depending on which view is selected.
     </section>
   </main>
 </template>
@@ -39,9 +40,19 @@ a {
   font-weight: 500;
   text-decoration: underline;
 }
+
 h1 {
   font-size: 2.7rem;
 }
+
+.title-wrap h1 {
+  margin-bottom: 1rem;
+}
+
+.title-wrap h5 {
+  margin-bottom: 2rem;
+}
+
 h5 {
   margin-bottom: 5px;
 }

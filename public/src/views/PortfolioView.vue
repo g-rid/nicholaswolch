@@ -28,7 +28,7 @@
 import { defineComponent } from "vue";
 import { Carousel, Slide } from "vue3-carousel";
 import "vue3-carousel/dist/carousel.css";
-import sc2156 from "@/assets/screenshots/2156.jpg";
+import sc2156 from "@/assets/portfolio-screenshots/2156.jpg";
 
 export default defineComponent({
   name: "PortfolioView",

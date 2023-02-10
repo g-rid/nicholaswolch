@@ -5,7 +5,6 @@
       <blockquote>
         Santa Rosa, CA |
         <a href="mailto:hey@nicholaswolch.com">hey@nicholaswolch.com</a> |
-        <a href="tel:7075915234">707.591.5234</a> |
         <a href="https://www.linkedin.com/in/nicholaswolch/" target="_blank"
           >LinkedIn</a
         >

@@ -21,6 +21,7 @@ export default {
         { id: 1, name: "Home", path: "/" },
         { id: 2, name: "Portfolio", path: "/portfolio" },
         { id: 3, name: "Resume", path: "/resume" },
+        { id: 4, name: "Contact", path: "/contact" },
       ],
     };
   },
@@ -57,7 +58,6 @@ nav a {
   display: block;
   padding: 0.5rem 1rem;
   margin: 1rem 0;
-  border-left: 1px solid var(--color-border);
   text-decoration: none;
   transition: all 0.2s ease-in-out;
   color: var(--secondary-text-shadow);

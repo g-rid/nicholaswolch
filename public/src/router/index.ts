@@ -5,6 +5,7 @@ import NutritionApp from "../views/NutritionApp.vue";
 import NutritionAppHome from "../views/NutritionAppHome.vue";
 import PortfolioView from "../views/PortfolioView.vue";
 import CubeContainerView from "../views/CubeContainerView.vue";
+import ContactView from "../views/ContactView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -23,6 +24,11 @@ const router = createRouter({
       path: "/portfolio",
       name: "portfolio",
       component: PortfolioView,
+    },
+    {
+      path: "/contact",
+      name: "contact",
+      component: ContactView,
     },
     {
       path: "/nutrition-app",
