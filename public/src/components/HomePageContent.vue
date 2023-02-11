@@ -3,13 +3,14 @@
     <div class="title-wrap">
       <h1>Nicholas Wolch</h1>
       <h5>Web Developer</h5>
-      <ThemeSwitcher />
       <HomepageNavigation />
     </div>
+    <div class="flex-grow"></div>
     <section class="blurb">
       This is placeholder text for an incoming text field that is dynamic
       depending on which view is selected.
     </section>
+    <ThemeSwitcher />
   </main>
 </template>
 
@@ -33,7 +34,8 @@ main {
   align-items: flex-start;
   justify-content: space-between;
   flex-direction: column;
-  padding: calc(var(--gutter-spacing) + 1.5rem) var(--gutter-spacing);
+  padding: calc(var(--gutter-spacing) + 1rem) var(--gutter-spacing)
+    var(--gutter-spacing) var(--gutter-spacing);
 }
 
 a {
@@ -61,6 +63,10 @@ h5 {
 .blurb {
   font-size: 1.4rem;
   text-shadow: 1px 1px 1px var(--primary-text-shadow);
+}
+
+.flex-grow {
+  flex-grow: 1;
 }
 
 @media (max-width: 768px) {

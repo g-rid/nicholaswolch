@@ -29,8 +29,11 @@ export default {
 </script>
 
 <style>
-.nav-container {
-  position: relative;
+nav {
+  width: 100%;
+  text-align: left;
+  font-size: 1.2rem;
+  margin-top: 3rem;
 }
 
 .nav-items {
@@ -39,21 +42,17 @@ export default {
   list-style: none;
 }
 
-nav {
-  width: 100%;
-  text-align: left;
-  font-size: 1.2rem;
-}
-
 nav a.router-link-exact-active {
   margin-left: 0.5rem;
   color: var(--secondary-color);
 }
 
+nav li {
+  padding: 0.8rem 0.8rem 0.8rem 0;
+}
+
 nav a {
   display: block;
-  padding: 0.5rem 1rem;
-  margin: 1rem 0;
   text-decoration: none;
   transition: all 0.2s ease-in-out;
   color: var(--secondary-text-shadow);

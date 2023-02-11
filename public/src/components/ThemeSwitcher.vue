@@ -55,7 +55,7 @@ export default defineComponent({
   display: inline-block;
   position: relative;
   cursor: pointer;
-  padding: 1rem 0;
+  padding-top: 1rem;
 }
 
 .toggle-container {
