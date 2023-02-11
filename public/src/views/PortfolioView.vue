@@ -1,5 +1,5 @@
 <template>
-  <Carousel :itemsToShow="2.5" :wrapAround="true">
+  <Carousel :wrapAround="true">
     <Slide v-for="card in cardData" :key="card.id">
       <article class="card">
         <header>
@@ -22,7 +22,6 @@
         </div>
       </article>
     </Slide>
-
     <template #addons>
       <Navigation />
     </template>
@@ -31,7 +30,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { Carousel, Slide, Navigation } from "vue3-carousel";
+import { Carousel, Navigation, Pagination, Slide } from "vue3-carousel";
 import "vue3-carousel/dist/carousel.css";
 import sc2146 from "@/assets/portfolio-screenshots/2146.webp";
 import sc2152 from "@/assets/portfolio-screenshots/2152.webp";
@@ -49,8 +48,9 @@ export default defineComponent({
   name: "PortfolioView",
   components: {
     Carousel,
-    Slide,
     Navigation,
+    Pagination,
+    Slide,
   },
   data() {
     interface Card {
@@ -60,6 +60,8 @@ export default defineComponent({
       pageLink: string;
       image: string;
     }
+    const genericBlurb =
+      "This is a semi-custom theme for a dental practice. The Divi theme framework is a drag and drop page builder that allows the client to easily edit the content on their site without any coding knowledge.";
     const cardData: Card[] = [
       {
         id: 1,
@@ -135,19 +137,19 @@ export default defineComponent({
       },
       {
         id: 11,
-        title: "Sleepy Hollow Dental Arts",
-        blurb:
-          "This is a custom site designed by our design department and build pixel for pixel by yours truly.",
-        pageLink: "https://www.sleepyhollowdentalarts.com/",
-        image: sleepyHollow,
-      },
-      {
-        id: 12,
         title: "Visage Facal Surgery",
         blurb:
           "This is a custom site designed by our design department and build pixel for pixel by yours truly.",
         pageLink: "https://www.visagefacialsurgery.com/",
         image: visage,
+      },
+      {
+        id: 12,
+        title: "Sleepy Hollow Dental Arts",
+        blurb:
+          "This is a custom site designed by our design department and build pixel for pixel by yours truly.",
+        pageLink: "https://www.sleepyhollowdentalarts.com/",
+        image: sleepyHollow,
       },
     ];
     return {
@@ -158,50 +160,26 @@ export default defineComponent({
 </script>
 
 <style>
-.carousel {
-  height: 100%;
-}
-
-.carousel__slide {
-  padding: 5px;
-}
-
-.carousel__viewport {
-  perspective: 2000px;
-  height: 100%;
+.carousel__item {
+  min-height: 200px;
+  width: 100%;
+  background-color: var(--vc-clr-primary);
+  color: var(--vc-clr-white);
+  font-size: 20px;
+  border-radius: 8px;
   display: flex;
-}
-
-.carousel__track {
-  transform-style: preserve-3d;
-}
-
-.carousel__slide--sliding {
-  transition: 0.5s;
+  justify-content: center;
+  align-items: center;
 }
 
 .carousel__slide {
-  opacity: 0.9;
-  transform: rotateY(-20deg) scale(0.9);
+  padding: 10px;
 }
 
-.carousel__slide--active ~ .carousel__slide {
-  transform: rotateY(20deg) scale(0.9);
-}
-
-.carousel__slide--prev {
-  opacity: 1;
-  transform: rotateY(-10deg) scale(0.95);
-}
-
-.carousel__slide--next {
-  opacity: 1;
-  transform: rotateY(10deg) scale(0.95);
-}
-
-.carousel__slide--active {
-  opacity: 1;
-  transform: rotateY(0) scale(1.1);
+.carousel__prev,
+.carousel__next {
+  box-sizing: content-box;
+  border: 5px solid white;
 }
 
 .card:hover {
@@ -218,7 +196,8 @@ export default defineComponent({
 }
 
 .card h2 {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
+  margin: 2rem 0;
 }
 
 .card p {
@@ -226,7 +205,7 @@ export default defineComponent({
 }
 
 .card img {
-  max-width: 100%;
+  max-width: 450px;
   filter: grayscale(100%);
   transition: filter 0.35s ease;
 }

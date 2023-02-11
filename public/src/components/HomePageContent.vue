@@ -3,13 +3,15 @@
     <div class="title-wrap">
       <h1>Nicholas Wolch</h1>
       <h5>Web Developer</h5>
-      <HomepageNavigation />
+      <HomepageNavigation
+        selectedView="selectedView"
+        @update:selectedView="updateSelectedView"
+      />
     </div>
     <div class="flex-grow"></div>
-    <section class="blurb">
-      This is placeholder text for an incoming text field that is dynamic
-      depending on which view is selected.
-    </section>
+    <transition name="fade">
+      <div class="blurb" v-html="selectedViewBlurb"></div>
+    </transition>
     <ThemeSwitcher />
   </main>
 </template>
@@ -20,8 +22,40 @@ import ThemeSwitcher from "./ThemeSwitcher.vue";
 export default {
   name: "HomePageContent",
   components: { HomepageNavigation, ThemeSwitcher },
-  setup() {
-    return {};
+  data() {
+    return {
+      selectedView: "Home",
+      viewData: {
+        Home: {
+          blurb:
+            "Hello there, welcome to my portfolio site. I'm a web developer with a passion for building a better web.",
+        },
+        Portfolio: {
+          blurb: `<p>
+    Here's an example of some sites that I built during my time at
+    <a href="https://www.revneuewell.com" target="_blank">PBHS/Revenuewell</a>
+    A marketing agency that specializes in making webistes for doctors and
+    dentists.
+  </p>`,
+        },
+        Resume: {
+          blurb: "This is the contact view blurb",
+        },
+        Contact: {
+          blurb: "This is the contact view blurb",
+        },
+      },
+    };
+  },
+  computed: {
+    selectedViewBlurb() {
+      return this.viewData[this.selectedView].blurb || "";
+    },
+  },
+  methods: {
+    updateSelectedView(view: string) {
+      this.selectedView = view;
+    },
   },
 };
 </script>
@@ -67,6 +101,15 @@ h5 {
 
 .flex-grow {
   flex-grow: 1;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 
 @media (max-width: 768px) {
