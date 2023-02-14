@@ -1,10 +1,7 @@
 <template>
-  <Carousel :wrapAround="true">
+  <Carousel :settings="settings" :breakpoints="breakpoints">
     <Slide v-for="card in cardData" :key="card.id">
       <article class="card">
-        <header>
-          <h2>{{ card.title }}</h2>
-        </header>
         <a
           :href="card.pageLink"
           :title="'Click here to navigate to ' + card.title"
@@ -15,11 +12,14 @@
             :alt="'A homepage screenshot of ' + card.title"
           />
         </a>
+        <!-- <header>
+          <h2>{{ card.title }}</h2>
+        </header>
         <div class="content">
           <p>
             {{ card.blurb }}
           </p>
-        </div>
+        </div> -->
       </article>
     </Slide>
     <template #addons>
@@ -30,7 +30,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { Carousel, Navigation, Pagination, Slide } from "vue3-carousel";
+import { Carousel, Navigation, Slide } from "vue3-carousel";
 import "vue3-carousel/dist/carousel.css";
 import sc2146 from "@/assets/portfolio-screenshots/2146.webp";
 import sc2152 from "@/assets/portfolio-screenshots/2152.webp";
@@ -49,7 +49,6 @@ export default defineComponent({
   components: {
     Carousel,
     Navigation,
-    Pagination,
     Slide,
   },
   data() {
@@ -60,8 +59,6 @@ export default defineComponent({
       pageLink: string;
       image: string;
     }
-    const genericBlurb =
-      "This is a semi-custom theme for a dental practice. The Divi theme framework is a drag and drop page builder that allows the client to easily edit the content on their site without any coding knowledge.";
     const cardData: Card[] = [
       {
         id: 1,
@@ -152,8 +149,28 @@ export default defineComponent({
         image: sleepyHollow,
       },
     ];
+    const settings = {
+      itemsToShow: 1,
+      snapAlign: "center",
+    };
+    // breakpoints are mobile first
+    // any settings not specified will fallback to the carousel settings
+    const breakpoints = {
+      // 700px and up
+      700: {
+        itemsToShow: 3.5,
+        snapAlign: "center",
+      },
+      // 1024 and up
+      1024: {
+        itemsToShow: 5,
+        snapAlign: "start",
+      },
+    };
     return {
       cardData,
+      settings,
+      breakpoints,
     };
   },
 });
@@ -168,9 +185,13 @@ export default defineComponent({
   align-items: center;
 }
 
+.carousel__track {
+  flex-wrap: wrap;
+}
+
 .carousel__item {
   min-height: 200px;
-  width: 100%;
+  /* width: 100%; */
   background-color: var(--vc-clr-primary);
   color: var(--vc-clr-white);
   font-size: 20px;
@@ -188,6 +209,11 @@ export default defineComponent({
 .carousel__next {
   box-sizing: content-box;
   border: 5px solid white;
+}
+
+.card,
+.card img {
+  max-width: 200px;
 }
 
 .card:hover {
@@ -213,7 +239,6 @@ export default defineComponent({
 }
 
 .card img {
-  max-width: 450px;
   filter: grayscale(100%);
   transition: filter 0.35s ease;
 }
@@ -224,7 +249,7 @@ export default defineComponent({
 
 .carousel button {
   padding: 0;
-  background-color: var(--primary-text-shadow);
+  /* background-color: var(--primary-text-shadow); */
 }
 
 .carousel button:hover {

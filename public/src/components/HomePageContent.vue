@@ -49,7 +49,7 @@ export default {
   },
   computed: {
     selectedViewBlurb() {
-      return this.viewData[this.selectedView].blurb || "";
+      return "";
     },
   },
   methods: {
