@@ -96,7 +96,7 @@ h5 {
 
 .blurb {
   font-size: 1.4rem;
-  text-shadow: 1px 1px 1px var(--primary-text-shadow);
+  text-shadow: 1px 1px 1px var(--primary-a-7);
 }
 
 .flex-grow {

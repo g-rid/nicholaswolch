@@ -5,8 +5,8 @@
 html.light-theme {
   --primary-color: white;
   --secondary-color: black;
-  --primary-text-shadow: rgba(255, 255, 255, 0.7);
-  --secondary-text-shadow: rgba(0, 0, 0, 0.7);
+  --primary-a-7: rgba(255, 255, 255, 0.7);
+  --secondary-a-7: rgba(0, 0, 0, 0.7);
   background-color: var(--primary-color);
   color: var(--secondary-color);
   border-color: var(--secondary-color);
@@ -18,8 +18,8 @@ html.light-theme {
 html.dark-theme {
   --primary-color: black;
   --secondary-color: white;
-  --primary-text-shadow: rgba(0, 0, 0, 0.7);
-  --secondary-text-shadow: rgba(255, 255, 255, 0.7);
+  --primary-a-7: rgba(0, 0, 0, 0.7);
+  --secondary-a-7: rgba(255, 255, 255, 0.7);
   background-color: var(--primary-color);
   color: var(--secondary-color);
   transition: all 500ms;
@@ -28,8 +28,8 @@ html.dark-theme {
 html {
   --grey: #cecece;
   --gray: var(--grey);
-  --text-shadow: 1px 1px 2px var(--primary-text-shadow);
-  --box-shadow: 0 0 5px 5px var(--primary-text-shadow);
+  --text-shadow: 1px 1px 2px var(--primary-a-7);
+  --box-shadow: 0 0 5px 5px var(--primary-a-7);
   --gutter-spacing: 4vw;
   @media (max-width: 480px) {
     --gutter-spacing: 8vw;
@@ -79,7 +79,7 @@ details {
   font-size: 1.8rem;
   width: 228px;
   text-align: right;
-  text-shadow: 1px 1px 1px var(--primary-text-shadow);
+  text-shadow: 1px 1px 1px var(--primary-a-7);
   @media (max-width: 480px) {
     right: calc(var(--gutter-spacing) * 1.6);
     bottom: calc(var(--gutter-spacing) * 1.6);

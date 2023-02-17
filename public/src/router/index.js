@@ -3,7 +3,7 @@ import FoodSearchView from "../views/FoodSearchView.vue";
 import ResumeView from "../views/ResumeView.vue";
 import NutritionApp from "../views/NutritionApp.vue";
 import NutritionAppHome from "../views/NutritionAppHome.vue";
-import PortfolioView2 from "../views/PortfolioView2.vue";
+import PortfolioView from "../views/PortfolioView.vue";
 import CubeContainerView from "../views/CubeContainerView.vue";
 import ContactView from "../views/ContactView.vue";
 
@@ -23,7 +23,7 @@ const router = createRouter({
     {
       path: "/portfolio",
       name: "portfolio",
-      component: PortfolioView2,
+      component: PortfolioView,
     },
     {
       path: "/contact",

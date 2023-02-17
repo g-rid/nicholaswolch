@@ -1,8 +1,8 @@
 html {
   --grey: #cecece;
   --gray: var(--grey);
-  --text-shadow: 1px 1px 2px var(--primary-text-shadow);
-  --box-shadow: 0 0 5px 5px var(--primary-text-shadow);
+  --text-shadow: 1px 1px 2px var(--primary-a-7);
+  --box-shadow: 0 0 5px 5px var(--primary-a-7);
   --gutter-spacing: 4vw;
   --mobile-down: 479px;
   --mobile-up: 480px;
@@ -95,9 +95,16 @@ html {
 body.light-theme {
   --primary-color: rgb(255, 255, 255);
   --secondary-color: rgb(0, 0, 0);
-  --primary-text-shadow: rgba(255, 255, 255, 0.7);
-  --secondary-text-shadow: rgba(0, 0, 0, 0.7);
+  --primary-a-9: rgba(255, 255, 255, 0.9);
+  --secondary-a-9: rgba(0, 0, 0, 0.7);
+  --primary-a-7: rgba(255, 255, 255, 0.9);
+  --secondary-a-7: rgba(0, 0, 0, 0.7);
+  --primary-a-5: rgba(255, 255, 255, 0.5);
+  --secondary-a-5: rgba(0, 0, 0, 0.5);
+  --primary-a-3: rgba(255, 255, 255, 0.3);
+  --secondary-a-3: rgba(0, 0, 0, 0.3);
   --secondary-hover-background-color: rgba(255,255,255, 0.5);
+  
   background-color: var(--primary-color);
   color: var(--secondary-color);
   border-color: var(--secondary-color);
@@ -107,8 +114,14 @@ body.light-theme {
 body.dark-theme {
   --primary-color: rgb(0, 0, 0);
   --secondary-color: rgb(255, 255, 255);
-  --primary-text-shadow: rgba(0, 0, 0, 0.7);
-  --secondary-text-shadow: rgba(255, 255, 255, 0.7);
+  --primary-a-9: rgba(0, 0, 0, 0.9);
+  --secondary-a-9: rgba(255, 255, 255, 0.9);
+  --primary-a-7: rgba(0, 0, 0, 0.7);
+  --secondary-a-7: rgba(255, 255, 255, 0.7);
+  --primary-a-5: rgba(0, 0, 0, 0.5);
+  --secondary-a-5: rgba(255, 255, 255, 0.5);
+  --primary-a-3: rgba(0, 0, 0, 0.3);
+  --secondary-a-3: rgba(255, 255, 255, 0.3);
   --secondary-hover-background-color: rgba(0, 0, 0, 0.5);
   background-color: var(--primary-color);
   color: var(--secondary-color);

@@ -139,7 +139,7 @@ export default {
   border: 1px solid var(--primary-color);
   background-color: var(--secondary-color);
   transform-style: preserve-3d;
-  box-shadow: 0 0 1em var(--primary-text-shadow) inset;
+  box-shadow: 0 0 1em var(--primary-a-7) inset;
 }
 .cube .left,
 .cube .right,
@@ -189,6 +189,6 @@ export default {
   font-size: 1rem;
   color: var(--primary-color);
   z-index: 1;
-  text-shadow: 1px 1px 1px var(--secondary-text-shadow);
+  text-shadow: 1px 1px 1px var(--secondary-a-7);
 }
 </style>

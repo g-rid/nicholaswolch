@@ -98,8 +98,8 @@ samp {
 a:not(button) {
   background-color: transparent;
   font-weight: 400;
-  color: var(--secondary-text-shadow);
-    text-decoration-color: var(--secondary-text-shadow);
+  color: var(--secondary-a-7);
+    text-decoration-color: var(--secondary-a-7);
 }
 
 a:hover:not(button) {

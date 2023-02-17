@@ -53,7 +53,7 @@
   border: 1px solid var(--primary-color);
   background-color: var(--secondary-color);
   transform-style: preserve-3d;
-  box-shadow: 0 0 1em var(--primary-text-shadow) inset;
+  box-shadow: 0 0 1em var(--primary-a-7) inset;
 }
 .cube .left,
 .cube .right,

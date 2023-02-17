@@ -65,7 +65,7 @@ export default defineComponent({
   width: 40px;
   height: 22px;
   flex-shrink: 0;
-  border: 1px solid var(--secondary-text-shadow);
+  border: 1px solid var(--secondary-a-7);
   background-color: grey;
   transition: border-color 0.25s, background-color 0.25s;
 }
