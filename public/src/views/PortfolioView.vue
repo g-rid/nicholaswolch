@@ -2,7 +2,7 @@
   <div class="portfolio-section">
     <p>
       For the past four years I worked with the tight knit team at
-      <a href="https://www.pbhs.com">PBHS/RevenueWell</a>.<br />
+      <a href="https://www.pbhs.com" target="_blank">PBHS/RevenueWell</a>.<br />
       Here are some examples of sites that were designed by our design team and
       developed by yours truly.
     </p>
@@ -10,10 +10,10 @@
   <div class="portfolio-section">
     <div class="portfolio-grid">
       <div
-        v-for="preview in cardData"
+        v-for="(preview, index) in cardData"
         :key="preview.id"
         class="preview"
-        @click="openModal(preview.id)"
+        @click="showModal(index)"
       >
         <img
           :src="preview.image"
@@ -22,59 +22,50 @@
       </div>
     </div>
   </div>
-  <div v-if="modal === true" class="modal">
-    <div class="modal-content">
-      <Carousel ref="myCarousel">
-        <Slide v-for="slide in cardData" :key="slide.id">
-          <button @click="closeModal" class="close-button">x</button>
-          <h2>{{ slide.title }}</h2>
-          <a :href="slide.pageLink" target="_blank">
-            <img
-              :src="slide.image"
-              :alt="'A homepage screenshot of ' + slide.title"
-            />
-          </a>
-          <p>{{ slide.blurb }}</p>
-        </Slide>
-
-        <template #addons>
-          <Navigation />
-        </template>
-      </Carousel>
+  <div v-if="isModalShown" class="modal" @click="closeModal">
+    <div class="modal-content" @click.stop>
+      <button @click="closeModal" class="close-button">x</button>
+      <h2>{{ currentCard.title }}</h2>
+      <a :href="currentCard.pageLink" target="_blank">
+        <img
+          :src="currentCard.image"
+          :alt="'A homepage screenshot of ' + currentCard.title"
+        />
+      </a>
+      <p>{{ currentCard.blurb }}</p>
     </div>
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, ref } from "vue";
+import { defineComponent } from "vue";
 import { cardData } from "@/components/data/portfolioImages.js";
-import { Carousel, Navigation, Slide } from "vue3-carousel";
-import "vue3-carousel/dist/carousel.css";
+
+interface Card {
+  id: number;
+  title: string;
+  image: string;
+  blurb: string;
+  pageLink: string;
+}
 
 export default defineComponent({
   name: "PortfolioView",
-  components: { Carousel, Navigation, Slide },
-  onMounted() {
-    const myCarousel = ref(null);
-    const openModal = (previewIndex: number) => {
-      this.$refs.myCarousel.slideTo(previewIndex);
-      modal.value = true;
-    };
-    const modal = ref(false);
+  components: {},
+  data() {
     return {
-      myCarousel,
-      openModal,
+      cardData,
+      isModalShown: false,
+      currentCard: cardData as Card,
     };
   },
-  setup(modal) {
-    const closeModal = () => {
-      // modal.value = false;
-    };
-
-    return {
-      closeModal,
-      modal,
-      cardData,
-    };
+  methods: {
+    closeModal() {
+      this.isModalShown = false;
+    },
+    showModal(id: number) {
+      this.currentCard = this.cardData[id];
+      this.isModalShown = true;
+    },
   },
 });
 </script>
@@ -123,32 +114,11 @@ export default defineComponent({
   justify-content: center;
   z-index: 998;
   transition: all 2ms ease;
+  text-transform: inherit;
 }
-
-.carousel {
+.modal-background {
   width: 100%;
-}
-.carousel__item {
-  min-height: 200px;
-  width: 100%;
-  background-color: var(--primary-a-9);
-  font-size: 20px;
-  border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.carousel__slide {
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-}
-
-.carousel__prev,
-.carousel__next {
-  box-sizing: content-box;
-  border: 5px solid white;
+  height: 100%;
 }
 .modal-content {
   display: flex;
@@ -157,11 +127,11 @@ export default defineComponent({
   justify-content: center;
   position: relative;
   z-index: 999;
-  width: 100%;
+  max-width: 572px;
 }
 
 .modal h2 {
-  margin: 2rem 0;
+  margin: 2.1rem 0 2rem 0;
 }
 
 .modal img {
@@ -171,6 +141,8 @@ export default defineComponent({
 
 .modal p {
   margin-top: 1rem;
+  padding: 1rem 2rem;
+  text-align: justify;
 }
 
 .modal .close-button {
@@ -178,5 +150,6 @@ export default defineComponent({
   top: 0;
   right: 0;
   border-color: var(--primary-color);
+  padding: 2rem;
 }
 </style>

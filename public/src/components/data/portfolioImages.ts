@@ -16,7 +16,7 @@ import hillsboroPeriodontics from "@/assets/portfolio-screenshots/HillsboroPerio
 const customBlurb =
   "I developed this custom website from a design mockup using our proprietary custom WordPress theme. Building these sites helped me hone my HTML, CSS, Javascript, and PHP skills.";
 const semiCustomBlurb =
-  "I developed this semi-custom WordPress theme from a design mockup. Clients can use our custom WordPress admin to upload their own images, fonts, and colors. They can further customize their site by choosing content from our robust pre-built components which I helped create.";
+  "I developed this semi-custom WordPress theme from a design mockup. From this boilerplate theme clients can use our custom WordPress admin to upload their own images, fonts, and colors. They can further customize their site by choosing content from our robust pre-built components which I helped create.";
 
 export interface Card {
   id: number;

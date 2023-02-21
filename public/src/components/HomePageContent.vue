@@ -3,6 +3,7 @@
     <div class="title-wrap">
       <h1>Nicholas Wolch</h1>
       <h5>Web Developer</h5>
+      <ThemeSwitcher />
       <HomepageNavigation
         selectedView="selectedView"
         @update:selectedView="updateSelectedView"
@@ -12,7 +13,6 @@
     <transition name="fade">
       <div class="blurb" v-html="selectedViewBlurb"></div>
     </transition>
-    <ThemeSwitcher />
   </main>
 </template>
 
@@ -84,14 +84,6 @@ h1 {
 
 .title-wrap h1 {
   margin-bottom: 1rem;
-}
-
-.title-wrap h5 {
-  margin-bottom: 2rem;
-}
-
-h5 {
-  margin-bottom: 5px;
 }
 
 .blurb {

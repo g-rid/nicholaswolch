@@ -46,7 +46,6 @@ nav {
   width: 100%;
   text-align: left;
   font-size: 1.2rem;
-  margin-top: 3rem;
 }
 
 .nav-items {
@@ -61,7 +60,7 @@ nav a.router-link-exact-active {
 }
 
 nav li {
-  padding: 0.8rem 0.8rem 0.8rem 0;
+  padding: 0.5rem 0.5rem 0.5rem 0;
 }
 
 nav a {
