@@ -3,9 +3,7 @@
     <nav>
       <ul class="nav-items">
         <li v-for="item in items" :key="item.id">
-          <RouterLink :to="item.path" @click="updateSelectedView(item.name)">{{
-            item.name
-          }}</RouterLink>
+          <RouterLink :to="item.path">{{ item.name }}</RouterLink>
         </li>
       </ul>
     </nav>
@@ -17,12 +15,6 @@ import { RouterLink } from "vue-router";
 export default {
   name: "HomepageNavigation",
   components: { RouterLink },
-  props: {
-    selectedView: {
-      type: String,
-      required: true,
-    },
-  },
   data() {
     return {
       items: [
@@ -32,11 +24,6 @@ export default {
         { id: 4, name: "Contact", path: "/contact" },
       ],
     };
-  },
-  methods: {
-    updateSelectedView(view: string) {
-      this.$emit("update:selectedView", view);
-    },
   },
 };
 </script>
