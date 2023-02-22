@@ -60,7 +60,7 @@ export default {
     flex-direction: column;
   }
   .view-frame {
-    min-height: calc(100vh - 153px);
+    min-height: calc(100vh - 106px);
     margin-top: 0;
   }
 }

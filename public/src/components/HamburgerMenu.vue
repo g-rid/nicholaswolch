@@ -17,7 +17,7 @@
   </div>
 </template>
 <script lang="ts">
-import { ref, onMounted, onUnmounted, Ref } from "vue";
+import { ref, onMounted, onUnmounted, Ref, nextTick } from "vue";
 import HomepageNavigation from "./HomepageNavigation.vue";
 
 interface MenuState {
@@ -32,20 +32,27 @@ export default {
       showMenu: ref(false),
     };
 
+    const menuList = ref<HTMLElement | null>(null);
+
     function toggleMenu() {
       state.showMenu.value = !state.showMenu.value;
     }
 
     function closeMenuOnClickOutside(event: MouseEvent) {
+      console.log(event, "event");
+      console.log(menuList.value, "menuList.value");
       if (menuList.value && !menuList.value.contains(event.target as Node)) {
         state.showMenu.value = false;
         document.removeEventListener("click", closeMenuOnClickOutside);
       }
     }
 
-    const menuList = ref<HTMLElement | null>(null);
-
     onMounted(() => {
+      document.addEventListener("click", closeMenuOnClickOutside);
+      console.log(state.showMenu);
+      nextTick(() => {
+        menuList.value = document.querySelector(".menu-list");
+      });
       document.addEventListener("click", closeMenuOnClickOutside);
     });
 

@@ -62,8 +62,8 @@ main {
   align-items: flex-start;
   justify-content: space-between;
   flex-direction: column;
-  padding: calc(var(--gutter-spacing) + 1rem) var(--gutter-spacing)
-    var(--gutter-spacing) var(--gutter-spacing);
+  padding: calc(var(--gutter-spacing) + 1rem) 0 var(--gutter-spacing)
+    var(--gutter-spacing);
 }
 
 a {
@@ -96,5 +96,12 @@ h1 {
 .fade-enter,
 .fade-leave-to {
   opacity: 0;
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: calc(var(--gutter-spacing) + 1rem) var(--gutter-spacing)
+      var(--gutter-spacing) var(--gutter-spacing);
+  }
 }
 </style>
