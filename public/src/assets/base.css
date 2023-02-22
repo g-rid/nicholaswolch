@@ -49,7 +49,6 @@ html {
   --mouse-y: 0deg;
   --rotate-speed: 30s;
 }
-
 /* semantic color variables for this project */
 :root {
   --color-background: var(--vt-c-white);

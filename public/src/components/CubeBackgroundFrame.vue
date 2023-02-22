@@ -98,7 +98,7 @@ export default {
       removeClickIndicator();
     });
 
-    // Add click indicator 20 seconds after page one time
+    // Add click indicator 20 seconds after page loads one time
     setTimeout(addClickIndicator, 20000);
   },
 };

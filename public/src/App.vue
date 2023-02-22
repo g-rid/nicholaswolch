@@ -38,6 +38,20 @@ export default {
 .view-frame {
   border: 1px solid var(--secondary-color);
   margin: var(--gutter-spacing);
+  height: calc(100vh - 2 * var(--gutter-spacing));
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+  width: 1rem;
+  background-color: var(--primary-a-3);
+}
+::-webkit-scrollbar-track {
+  background-color: var(--primary-a-3);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--secondary-color);
 }
 
 @media (max-width: 768px) {
