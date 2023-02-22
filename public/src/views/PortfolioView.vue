@@ -93,7 +93,7 @@ export default defineComponent({
   width: 100%;
   height: auto;
   filter: grayscale(100%);
-  transition: filter 0.2s ease;
+  transition: filter 500ms ease;
 }
 
 .preview img:hover {
@@ -113,7 +113,7 @@ export default defineComponent({
   align-items: center;
   justify-content: center;
   z-index: 998;
-  transition: all 2ms ease;
+  transition: all 500ms ease;
   text-transform: inherit;
 }
 .modal-background {

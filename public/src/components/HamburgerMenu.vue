@@ -9,33 +9,57 @@
       <span></span>
       <span></span>
     </button>
-    <ul class="menu-list" :class="{ active: showMenu }">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
+    <HomepageNavigation
+      class="menu-list"
+      :class="{ active: showMenu }"
+      ref="menuList"
+    />
   </div>
 </template>
+<script lang="ts">
+import { ref, onMounted, onUnmounted, Ref } from "vue";
+import HomepageNavigation from "./HomepageNavigation.vue";
 
-<script>
-import { defineComponent, reactive } from "vue";
+interface MenuState {
+  showMenu: Ref<boolean>;
+}
 
-export default defineComponent({
+export default {
+  name: "HamburgerMenu",
+  components: { HomepageNavigation },
   setup() {
-    const state = reactive({
-      showMenu: false,
+    const state: MenuState = {
+      showMenu: ref(false),
+    };
+
+    function toggleMenu() {
+      state.showMenu.value = !state.showMenu.value;
+    }
+
+    function closeMenuOnClickOutside(event: MouseEvent) {
+      if (menuList.value && !menuList.value.contains(event.target as Node)) {
+        state.showMenu.value = false;
+        document.removeEventListener("click", closeMenuOnClickOutside);
+      }
+    }
+
+    const menuList = ref<HTMLElement | null>(null);
+
+    onMounted(() => {
+      document.addEventListener("click", closeMenuOnClickOutside);
     });
 
-    const toggleMenu = () => {
-      state.showMenu = !state.showMenu;
-    };
+    onUnmounted(() => {
+      document.removeEventListener("click", closeMenuOnClickOutside);
+    });
 
     return {
-      state,
+      ...state,
       toggleMenu,
+      menuList,
     };
   },
-});
+};
 </script>
 
 <style>
@@ -52,18 +76,22 @@ export default defineComponent({
   padding: 0;
   position: relative;
   z-index: 1;
-  transition: transform 0.5s ease;
+  transition: all 500ms ease;
 }
 
 .hamburger span {
-  background-color: #333;
+  background-color: var(--secondary-color);
   border-radius: 2px;
   display: block;
   height: 2px;
   margin: 5px auto;
   position: relative;
-  transition: transform 0.5s ease;
+  transition: transform 500ms ease;
   width: 20px;
+}
+
+.hamburger.is-active {
+  background-color: var(--secondary-color);
 }
 
 .hamburger span:first-child {
@@ -74,9 +102,14 @@ export default defineComponent({
   transform-origin: 0 100%;
 }
 
+.hamburger.is-active span {
+  background-color: var(--primary-color);
+}
+
 .hamburger.is-active span:first-child {
   transform: rotate(45deg);
   top: 50%;
+  left: 3px;
 }
 
 .hamburger.is-active span:nth-child(2) {
@@ -86,38 +119,46 @@ export default defineComponent({
 .hamburger.is-active span:last-child {
   transform: rotate(-45deg);
   bottom: 50%;
+  left: 3px;
 }
 
-.menu-list {
+.mobile-nav .menu-list {
   display: none;
   list-style: none;
   margin: 0;
   padding: 0;
   position: absolute;
   top: 100%;
-  left: 0;
-  z-index: 0;
-  background-color: #333;
-  width: 100%;
+  right: 0;
+  background-color: var(--primary-color);
+  border: 1px solid var(--secondary-color);
+  z-index: 2;
+  opacity: 0;
+  transition: all 500ms ease;
 }
 
-.menu-list li {
+.mobile-nav .menu-list li {
   margin: 0;
+  padding: 0.5rem;
 }
 
-.menu-list a {
-  color: #fff;
+.mobile-nav .menu-list a {
   display: block;
-  font-size: 18px;
-  padding: 15px 20px;
+  font-size: 1.6rem;
+  padding: 1.2rem 2.3rem;
   text-decoration: none;
 }
 
-.menu-list a:hover {
-  background-color: #666;
+.mobile-nav .menu-list.active {
+  display: block;
+  opacity: 1;
 }
 
-.menu-list.active {
-  display: block;
+.mobile-nav nav a.router-link-exact-active {
+  margin-left: 0;
+}
+
+.mobile-nav .theme-switcher {
+  padding: 1.7rem 2.8rem 2.8rem 2.8rem;
 }
 </style>

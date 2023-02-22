@@ -6,15 +6,17 @@
           <RouterLink :to="item.path">{{ item.name }}</RouterLink>
         </li>
       </ul>
+      <ThemeSwitcher />
     </nav>
   </div>
 </template>
 
 <script lang="ts">
 import { RouterLink } from "vue-router";
+import ThemeSwitcher from "./ThemeSwitcher.vue";
 export default {
   name: "HomepageNavigation",
-  components: { RouterLink },
+  components: { RouterLink, ThemeSwitcher },
   data() {
     return {
       items: [
@@ -53,7 +55,19 @@ nav li {
 nav a {
   display: block;
   text-decoration: none;
-  transition: all 0.2s ease-in-out;
+  transition: all 500ms ease-in-out;
   color: var(--secondary-a-7);
+}
+
+@media (min-width: 768px) {
+  .nav-container .theme-switcher {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .nav-container .theme-switcher {
+    display: block;
+  }
 }
 </style>

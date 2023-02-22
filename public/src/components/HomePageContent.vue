@@ -91,7 +91,7 @@ h1 {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.5s;
+  transition: opacity 500ms;
 }
 .fade-enter,
 .fade-leave-to {

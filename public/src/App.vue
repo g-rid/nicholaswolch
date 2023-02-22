@@ -35,15 +35,19 @@ export default {
   padding: 0;
 }
 
+.view-frame {
+  border: 1px solid var(--secondary-color);
+  margin: var(--gutter-spacing);
+}
+
 @media (max-width: 768px) {
   #app {
     display: flex;
     flex-direction: column;
   }
-}
-
-.view-frame {
-  border: 1px solid var(--secondary-color);
-  margin: var(--gutter-spacing);
+  .view-frame {
+    min-height: calc(100vh - 153px);
+    margin-top: 0;
+  }
 }
 </style>

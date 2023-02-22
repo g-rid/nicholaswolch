@@ -23,12 +23,6 @@
   flex-direction: column;
 }
 
-.purple {
-  text-decoration: none;
-  color: var(--purple);
-  transition: 0.4s;
-}
-
 @media (min-width: 641px) {
   body {
     display: flex;

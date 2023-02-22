@@ -7,18 +7,13 @@
   transition: 0.4s;
 }
 
-.active,
-.accordion__buton:hover {
-  background-color: grey;
-}
-
 .accordion__panel {
   display: none;
   overflow: hidden;
   padding: 0 1.8rem;
   background-color: var(--secondary-color);
   max-height: 0;
-  transition: max-height 0.2s ease-out;
+  transition: max-height 500ms ease-out;
 }
 
 /* normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -269,11 +264,11 @@ input[type=button] {
   text-decoration: none;
   font-weight: 500;
   font-size: 2rem;
-  transition: all 200ms ease;
+  transition: all 500ms ease;
 }
-a.button:hover:not(.theme-switcher, .carousel), a.button:focus:not(.theme-switcher, .carousel),
-button:hover:not(.theme-switcher, .carousel),
-button:focus:not(.theme-switcher, .carousel),
+a.button:hover:not(.theme-switcher, .carousel, .hamburger), a.button:focus:not(.theme-switcher, .carousel, .hamburger),
+button:hover:not(.theme-switcher, .carousel, .hamburger),
+button:focus:not(.theme-switcher, .carousel, .hamburger),
 input[type=button]:hover,
 input[type=button]:focus {
   color: var(--primary-color);
@@ -303,7 +298,7 @@ select {
 
 .hidden,
 .displayed {
-  transition: all 200ms ease;
+  transition: all 500ms ease;
 }
 
 .hidden {

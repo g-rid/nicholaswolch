@@ -67,7 +67,7 @@ export default defineComponent({
   flex-shrink: 0;
   border: 1px solid var(--secondary-a-7);
   background-color: grey;
-  transition: border-color 0.25s, background-color 0.25s;
+  transition: border-color 500ms, background-color 0.25s;
 }
 
 .toggle-circle {
@@ -76,7 +76,7 @@ export default defineComponent({
   border-radius: 50%;
   background-color: var(--primary-color);
   position: relative;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 500ms ease-in-out;
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
 }
 
