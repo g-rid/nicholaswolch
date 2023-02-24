@@ -85,8 +85,8 @@ export default defineComponent({
   margin: 2rem;
 }
 .preview {
-  max-width: 220px;
-  padding: 10px;
+  max-width: 200px;
+  padding: 5px;
 }
 
 .preview img {
@@ -99,7 +99,6 @@ export default defineComponent({
 .preview img:hover {
   filter: grayscale(0);
 }
-
 .modal {
   position: fixed;
   top: 50%;

@@ -36,16 +36,3 @@ const app = createApp(App);
 app.use(router, VueApexCharts, Vuex, createStore);
 app.component("font-awesome-icon", FontAwesomeIcon);
 app.mount("#app");
-
-const store = createStore({
-  state: {
-    blurb: String,
-  },
-  mutations: {
-    // increment(state) {
-    //   state.blurb = "Hello World";
-    // },
-  },
-});
-
-console.log("blurb", store.state.blurb);

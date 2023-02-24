@@ -1,5 +1,5 @@
 <template>
-  <div class="menu">
+  <div class="menu" ref="menu">
     <button
       class="hamburger"
       :class="{ 'is-active': showMenu }"
@@ -17,7 +17,7 @@
   </div>
 </template>
 <script lang="ts">
-import { ref, onMounted, onUnmounted, Ref, nextTick } from "vue";
+import { ref, onMounted, onUnmounted, Ref } from "vue";
 import HomepageNavigation from "./HomepageNavigation.vue";
 
 interface MenuState {
@@ -32,34 +32,32 @@ export default {
       showMenu: ref(false),
     };
 
+    const menu = ref<HTMLElement | null>(null);
     const menuList = ref<HTMLElement | null>(null);
 
     function toggleMenu() {
       state.showMenu.value = !state.showMenu.value;
     }
 
-    function closeMenuOnClickOutside(event: MouseEvent) {
-      console.log(event, "event");
-      console.log(menuList.value, "menuList.value");
-      if (menuList.value && !menuList.value.contains(event.target as Node)) {
+    function handleDocumentClick(event: MouseEvent) {
+      if (
+        state.showMenu.value &&
+        menu.value &&
+        !menu.value.contains(event.target as Node)
+      ) {
         state.showMenu.value = false;
-        document.removeEventListener("click", closeMenuOnClickOutside);
       }
     }
 
     onMounted(() => {
-      document.addEventListener("click", closeMenuOnClickOutside);
-      console.log(state.showMenu);
-      nextTick(() => {
-        menuList.value = document.querySelector(".menu-list");
-      });
-      document.addEventListener("click", closeMenuOnClickOutside);
+      document.addEventListener("click", handleDocumentClick);
+      menu.value = document.querySelector(".menu");
+      menuList.value = document.querySelector(".menu-list");
     });
 
     onUnmounted(() => {
-      document.removeEventListener("click", closeMenuOnClickOutside);
+      document.removeEventListener("click", handleDocumentClick);
     });
-
     return {
       ...state,
       toggleMenu,
