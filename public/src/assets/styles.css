@@ -94,13 +94,13 @@ a:not(button) {
   background-color: transparent;
   font-weight: 400;
   color: var(--secondary-a-7);
-    text-decoration-color: var(--secondary-a-7);
+  text-decoration-color: var(--secondary-a-7);
+  transition: all 300ms ease;
 }
 
 a:hover:not(button) {
-  font-weight: 500;
   color: var(--secondary-color);
-  text-decoration-color: var(--secondary-color)
+  text-decoration-color: var(--secondary-color);
 }
 
 

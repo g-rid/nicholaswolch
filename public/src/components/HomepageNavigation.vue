@@ -31,6 +31,10 @@ export default {
 </script>
 
 <style>
+.nav-container {
+  padding: 2rem 0;
+}
+
 nav {
   width: 100%;
   text-align: left;

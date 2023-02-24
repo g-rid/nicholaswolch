@@ -14,9 +14,9 @@ import goldmanOrthodontics from "@/assets/portfolio-screenshots/GoldmanOrthodont
 import hillsboroPeriodontics from "@/assets/portfolio-screenshots/HillsboroPerio.jpg";
 
 const customBlurb =
-  "I developed this custom website from a design mockup using our proprietary custom WordPress theme. Building these sites helped me hone my HTML, CSS, Javascript, and PHP skills.";
+  "I developed this custom website from a design mockup using our proprietary custom WordPress theme. Building these custom sites helped me hone my HTML, CSS, Javascript, and PHP skills.";
 const semiCustomBlurb =
-  "I developed this semi-custom WordPress theme from a design mockup. Clients can use our custom WordPress admin to upload their own images, fonts, and colors. They can further customize their site by choosing content from our robust pre-built components which I helped create.";
+  "I developed this semi-custom WordPress theme from a design mockup. Clients can choose this theme and then use our custom WordPress admin to upload their own images, fonts, and colors. They can further customize their site by choosing content from our robust pre-built components which I helped create.";
 
 export const cardData = [
   {

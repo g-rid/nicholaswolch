@@ -1,9 +1,10 @@
 <template>
   <div class="portfolio-section">
-    <p>
-      For the past four years I worked with the tight knit team at
-      <a href="https://www.pbhs.com" target="_blank">PBHS/RevenueWell</a>.<br />
-      Here are some examples of sites that were designed by our design team and
+    <p class="portfolio-intro">
+      For the past four years I worked as a Web Developer with the tight knit
+      team at
+      <a href="https://www.pbhs.com" target="_blank">PBHS/RevenueWell</a>. Here
+      are some examples of sites that were designed by our design team and
       developed by yours truly.
     </p>
   </div>
@@ -72,7 +73,7 @@ export default defineComponent({
 <style scoped>
 .portfolio-section {
   text-align: center;
-  margin: 4rem 4rem 0 4rem;
+  margin: 3rem 3rem 0 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -82,11 +83,15 @@ export default defineComponent({
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  margin: 2rem;
+}
+
+.portfolio-intro {
+  max-width: 60rem;
+  margin: 0 auto;
 }
 .preview {
-  max-width: 200px;
-  padding: 5px;
+  max-width: 215px;
+  padding: 10px;
 }
 
 .preview img {
@@ -142,6 +147,7 @@ export default defineComponent({
   margin-top: 1rem;
   padding: 1rem 2rem;
   text-align: justify;
+  max-width: 70rem;
 }
 
 .modal .close-button {
@@ -150,5 +156,18 @@ export default defineComponent({
   right: 0;
   border-color: var(--primary-color);
   padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .portfolio-section {
+    margin: 2rem 2rem 0 2rem;
+    text-align: justify;
+  }
+  .portfolio-grid {
+    margin: 1rem;
+  }
+  .preview {
+    max-width: 100%;
+  }
 }
 </style>

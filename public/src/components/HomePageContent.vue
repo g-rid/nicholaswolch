@@ -6,8 +6,8 @@
         <h5>Web Developer</h5>
       </div>
       <div class="desktop-nav">
-        <ThemeSwitcher />
         <HomepageNavigation />
+        <ThemeSwitcher />
       </div>
       <div class="mobile-nav">
         <HamburgerMenu />
@@ -28,33 +28,6 @@ export default {
 </script>
 
 <style>
-@media (min-width: 769px) {
-  .desktop-nav {
-    display: block;
-  }
-  .mobile-nav,
-  .flex-grow {
-    display: none;
-  }
-}
-
-@media (max-width: 768px) {
-  body main {
-    display: block;
-  }
-  .desktop-nav {
-    display: none;
-  }
-  .mobile-nav {
-    display: block;
-  }
-  .title-wrap {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-  }
-}
-
 main {
   position: relative;
   height: 100%;
@@ -98,10 +71,32 @@ h1 {
   opacity: 0;
 }
 
+@media (min-width: 769px) {
+  .desktop-nav {
+    display: block;
+  }
+  .mobile-nav,
+  .flex-grow {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
-  main {
+  body main {
+    display: block;
     padding: calc(var(--gutter-spacing) + 1rem) var(--gutter-spacing)
       var(--gutter-spacing) var(--gutter-spacing);
+  }
+  .desktop-nav {
+    display: none;
+  }
+  .mobile-nav {
+    display: block;
+  }
+  .title-wrap {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
   }
 }
 </style>

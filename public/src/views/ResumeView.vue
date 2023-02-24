@@ -3,32 +3,43 @@
     <section class="resume-header">
       <h1>Nicholas Wolch</h1>
       <blockquote>
-        Santa Rosa, CA |
-        <a href="mailto:hey@nicholaswolch.com">hey@nicholaswolch.com</a> |
-        <a href="https://www.linkedin.com/in/nicholaswolch/" target="_blank"
-          >LinkedIn</a
+        <span>Santa Rosa, CA <strong> | </strong> </span>
+        <span
+          ><a href="mailto:hey@nicholaswolch.com">hey@nicholaswolch.com</a>
+          <strong> | </strong>
+        </span>
+        <span
+          ><a href="https://www.linkedin.com/in/nicholaswolch/" target="_blank"
+            >LinkedIn</a
+          >
+          <strong> | </strong>
+        </span>
+        <span
+          ><a href="https://github.com/g-rid" target="_blank">GitHub</a></span
         >
       </blockquote>
     </section>
     <section>
       <h2>Skills</h2>
-      <p>
-        Front-End Web Developer with experience in HTML, CSS, SCSS, JavaScript,
-        TypeScript, VueJs, PHP, and Git
-      </p>
-      <p>
-        Graphic Design background with training in Adobe Photoshop and
-        Illustrator
-      </p>
-      <p>Automated testing experience with the Cypress testing framework</p>
-      <p>UX/UI Specialist focused on Human Centered Design</p>
-      <p>Experience with Agile project management methodologies</p>
-      <p>
-        Excellent communication skills, with a knack for explaining complex
-        technical concepts
-      </p>
-      <p>Adaptable and flexible team player, with a sense of humor</p>
-      <p>Extremely organized, with excellent time management skills</p>
+      <ul>
+        <li>
+          Front-End Web Developer with experience in HTML, CSS, SCSS,
+          JavaScript, TypeScript, VueJs, PHP, and Git
+        </li>
+        <li>
+          Graphic Design background with training in Adobe Photoshop and
+          Illustrator
+        </li>
+        <li>Automated testing experience with the Cypress testing framework</li>
+        <li>UX/UI Specialist focused on Human Centered Design</li>
+        <li>Experience with Agile project management methodologies</li>
+        <li>
+          Excellent communication skills, with a knack for explaining complex
+          technical concepts
+        </li>
+        <li>Adaptable and flexible team player, with a sense of humor</li>
+        <li>Extremely organized, with excellent time management skills</li>
+      </ul>
     </section>
     <section>
       <h2>Experience</h2>
@@ -131,7 +142,8 @@ h2 {
   font-size: 2.5rem;
 }
 
-h2 + .experience-title {
+h2 + .experience-title,
+h2 + ul {
   padding-top: 0;
 }
 
@@ -143,6 +155,7 @@ h2,
 h3 {
   text-align: left;
   font-weight: 500;
+  line-height: 1.3;
 }
 
 h1,
@@ -155,10 +168,30 @@ blockquote {
 ul {
   padding-top: 1.5rem;
   padding-inline-start: 3rem;
+  list-style-type: circle;
 }
 
 p,
 li {
   font-size: 1.4rem;
+}
+
+@media (max-width: 768px) {
+  .resume-container {
+    padding: 2rem;
+  }
+  blockquote span {
+    display: block;
+  }
+  blockquote strong {
+    display: none;
+  }
+  h2,
+  h3 {
+    text-align: center;
+  }
+  ul {
+    padding-inline-start: 1rem;
+  }
 }
 </style>
