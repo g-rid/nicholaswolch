@@ -6,6 +6,7 @@
   </section>
 </template>
 <script lang="ts">
+// @ts-ignore
 import headshot from "@/assets/images/headshot.jpg";
 export default {
   name: "ContactView",

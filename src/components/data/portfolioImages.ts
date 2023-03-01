@@ -1,16 +1,30 @@
+// @ts-ignore
 import sc2146 from "@/assets/portfolio-screenshots/2146.webp";
+// @ts-ignore
 import sc2152 from "@/assets/portfolio-screenshots/2152.webp";
+// @ts-ignore
 import sc2153 from "@/assets/portfolio-screenshots/2153.webp";
+// @ts-ignore
 import sc2154 from "@/assets/portfolio-screenshots/2154.webp";
+// @ts-ignore
 import sc2156 from "@/assets/portfolio-screenshots/2156.webp";
+// @ts-ignore
 import sc2157 from "@/assets/portfolio-screenshots/2157.webp";
+// @ts-ignore
 import drBonacci from "@/assets/portfolio-screenshots/drbonacci.jpg";
+// @ts-ignore
 import neImplant from "@/assets/portfolio-screenshots/neimplant.jpg";
+// @ts-ignore
 import evergreenOralSurgery from "@/assets/portfolio-screenshots/EvergreenOralSurgery.webp";
+// @ts-ignore
 import sleepyHollow from "@/assets/portfolio-screenshots/SleepyHollowDentalArts.webp";
+// @ts-ignore
 import visage from "@/assets/portfolio-screenshots/VisageFacialSurgery.webp";
+// @ts-ignore
 import ambanes from "@/assets/portfolio-screenshots/Ambanes.jpg";
+// @ts-ignore
 import goldmanOrthodontics from "@/assets/portfolio-screenshots/GoldmanOrthodonticArts.jpg";
+// @ts-ignore
 import hillsboroPeriodontics from "@/assets/portfolio-screenshots/HillsboroPerio.jpg";
 
 const customBlurb =

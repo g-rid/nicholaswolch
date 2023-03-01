@@ -8,6 +8,7 @@ import CubeContainerView from "../views/CubeContainerView.vue";
 import ContactView from "../views/ContactView.vue";
 
 const router = createRouter({
+  // @ts-ignore
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {

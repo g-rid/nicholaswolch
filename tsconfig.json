@@ -6,7 +6,11 @@
       "module": "es2022",
       "target": "ESNext",
       "types": ["vite/client"],
-      "moduleResolution": "Node"
+      "moduleResolution": "Node",
+      "baseUrl": ".",
+      "paths": {
+        "@/*": ["./*"]
+      },
     },
     "references": [
       {
@@ -19,5 +23,6 @@
         "path": "./tsconfig.cypress-ct.json"
       }
     ]
+    
   }
   

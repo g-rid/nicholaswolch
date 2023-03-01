@@ -17,7 +17,8 @@
   </div>
 </template>
 <script lang="ts">
-import { ref, onMounted, onUnmounted, Ref } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
+import type { Ref } from "vue";
 import HomepageNavigation from "./HomepageNavigation.vue";
 
 interface MenuState {

@@ -90,6 +90,7 @@ export default {
       pageNumber: 1,
     });
     const loading = ref(false);
+    // @ts-ignore
     const apiKey = import.meta.env.VITE_USDA_API_KEY;
 
     // Define a method to perform the search

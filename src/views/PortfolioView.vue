@@ -56,7 +56,7 @@ export default defineComponent({
     return {
       cardData,
       isModalShown: false,
-      currentCard: cardData as Card,
+      currentCard: cardData[0] as Card,
     };
   },
   methods: {
