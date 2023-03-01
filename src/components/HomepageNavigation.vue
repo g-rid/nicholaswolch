@@ -22,6 +22,7 @@ export default {
       items: [
         { id: 1, name: "Home", path: "/" },
         { id: 2, name: "Portfolio", path: "/portfolio" },
+        { id: 2, name: "Nutrition Planner", path: "/nutrition-app" },
         { id: 3, name: "Resume", path: "/resume" },
         { id: 4, name: "Contact", path: "/contact" },
       ],
