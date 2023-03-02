@@ -2,7 +2,7 @@
   <div class="food-search-wrapper">
     <button @click="debug">Debug</button>
     <span>Search all USDA registered food:</span>
-    <div>
+    <div class="input-wrapper">
       <input v-model="state.query" @keyup.enter="search" type="text" />
       <button @click="search">Search</button>
       <p v-if="state.results.length > 0">
@@ -38,7 +38,7 @@
               </button>
             </td>
             <td v-if="result.brandName">{{ capitalize(result.brandName) }}</td>
-            <td v-if="result.foodNutrients">{{ result.foodNutrients }} KCal</td>
+            <td v-if="result.foodNutrients">{{ result.foodNutrients[3].value }} KCal</td>
           </tr>
         </tbody>
       </table>
@@ -103,7 +103,7 @@ export default {
         );
         loading.value = false;
         // Update the search results in the reactive state object
-        console.log("Search Response Object:", response.data);
+        console.log("Search Response Object:", response.data.foods);
         state.results = response.data.foods;
         totalHits.number = response.data.totalHits;
         if (state.results.length === 0) {
@@ -164,6 +164,13 @@ export default {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  height: 100vh;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .loading svg {

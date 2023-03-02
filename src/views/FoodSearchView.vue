@@ -9,9 +9,9 @@ export default {
 </script>
 
 <template>
-  <main>
     <FoodSearch />
-  </main>
 </template>
 
-<style></style>
+<style>
+
+</style>

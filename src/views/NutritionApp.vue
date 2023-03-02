@@ -8,11 +8,9 @@ import AppNavigation from "../components/AppNavigation.vue";
   <header>
     <div class="nav-wrapper">
       <NavTitle msg="Nutrition Planner" />
-      <AppNavigation />
+      <!-- <AppNavigation /> -->
     </div>
   </header>
-
-  <RouterView />
 </template>
 
 <style scoped>
