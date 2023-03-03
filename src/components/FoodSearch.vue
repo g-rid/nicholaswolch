@@ -38,7 +38,13 @@
               </button>
             </td>
             <td v-if="result.brandName">{{ capitalize(result.brandName) }}</td>
-            <td v-if="result.foodNutrients">{{ result.foodNutrients[3].value }} KCal</td>
+            <td v-if="result.foodNutrients">
+              {{
+                result.foodNutrients
+              }}
+              Kcal
+            </td>
+            <!-- <td v-if="result.foodNutrients">{{ result.foodNutrients[].value }} KCal</td> -->
           </tr>
         </tbody>
       </table>
@@ -64,7 +70,7 @@ import FoodSearchModal from "./FoodSearchModal.vue";
 export default {
   name: "FoodSearch",
   components: { FoodSearchModal },
-  data() {
+  setup() {
     const totalHits = reactive({
       number: Number,
     });
@@ -81,6 +87,7 @@ export default {
       score: number;
       foodNutrients: Array<Object>;
       brandName: string;
+      nutrientId: number;
       result: ObjectConstructor;
     }
     // Define a reactive state object to store the search query and search results
@@ -164,7 +171,7 @@ export default {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
 }
 
 .input-wrapper {
