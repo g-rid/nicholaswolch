@@ -12,7 +12,7 @@
     <div v-if="loading" class="loading">
       <font-awesome-icon icon="fa-solid fa-spinner" />
     </div>
-    <div v-if="state.results.length > 0">
+    <div v-if="state.results.length > 0" class="results">
       <div>
         <button @click="previousPage">Previous Page</button>
         <button @click="nextPage">Next Page</button>
@@ -40,11 +40,10 @@
             <td v-if="result.brandName">{{ capitalize(result.brandName) }}</td>
             <td v-if="result.foodNutrients">
               {{
-                result.foodNutrients
+                result.foodNutrients.find(nutrient => nutrient.nutrientName === "Energy")?.value
               }}
               Kcal
             </td>
-            <!-- <td v-if="result.foodNutrients">{{ result.foodNutrients[].value }} KCal</td> -->
           </tr>
         </tbody>
       </table>
@@ -147,7 +146,10 @@ export default {
     //   return calories ? calories.value : "0";
     // },
     debug() {
-      console.log("State Results", this.state.results);
+      this.state.results.forEach(result => {
+        console.log(result.foodNutrients);
+      });
+      // console.log("State Results", this.state.results);
     },
     nextPage() {
       this.state.pageNumber++;
@@ -171,7 +173,7 @@ export default {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 100%;
+  /* height: 100%; */
 }
 
 .input-wrapper {
@@ -188,11 +190,20 @@ export default {
   animation: fa-spin 2s infinite linear;
 }
 
+.results {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2.0rem
+}
+
 table {
-  border: 1px solid #b3adad;
-  border-collapse: collapse;
-  padding: 5px;
+  border: 1px solid var(--color-primary);
+  border-collapse: inherit;
+  padding: 1.0rem;
   min-width: 60rem;
+  border-radius: 0;
 }
 
 table th {
