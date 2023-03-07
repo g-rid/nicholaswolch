@@ -56,7 +56,6 @@
               {{ result.servingSizeUnit }}
             </td>
             <td v-else>No Serving Size Available</td>
-            <td @click="something"></td>a<td @click="something"></td>
           </tr>
         </tbody>
       </table>
