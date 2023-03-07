@@ -3,8 +3,10 @@
     <button @click="debug">Debug</button>
     <span>Search all USDA registered food:</span>
     <div class="input-wrapper">
-      <input v-model="state.query" @keyup.enter="search" type="text" />
-      <button @click="search">Search</button>
+      <div class="search">
+        <input v-model="state.query" @keyup.enter="search" type="text" />
+        <button @click="search">Search</button>
+      </div>
       <p v-if="state.results.length > 0">
         Total Results: {{ totalHits.number }}
       </p>
@@ -23,13 +25,14 @@
             <th>Food Description:</th>
             <th>Brand:</th>
             <th>Calories:</th>
+            <th>Serving Size:</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="result in state.results" :key="result.fdcId">
             <td>
               <button
-                @click="(showModal = true), (selectedItem = result)"
+                @click="showModal = true, (selectedItem = result)"
                 role="button"
               >
                 <span v-if="result.description">{{
@@ -38,12 +41,21 @@
               </button>
             </td>
             <td v-if="result.brandName">{{ capitalize(result.brandName) }}</td>
+            <td v-else>No Brand Available</td>
             <td v-if="result.foodNutrients">
               {{
-                result.foodNutrients.find(nutrient => nutrient.nutrientName === "Energy")?.value
+                Math.round(result.foodNutrients.find(nutrient => nutrient.nutrientName === "Energy")?.value)
               }}
               Kcal
             </td>
+            <td v-else>No Calories Available</td>
+            <td v-if="result.servingSize">
+              {{
+                Math.round(result.servingSize)
+              }}
+              {{ result.servingSizeUnit }}
+            </td>
+            <td v-else>No Serving Size Available</td>
           </tr>
         </tbody>
       </table>
@@ -66,6 +78,31 @@
 import { reactive, ref } from "vue";
 import axios from "axios";
 import FoodSearchModal from "./FoodSearchModal.vue";
+
+interface Nutrient {
+  type: string;
+  value: number;
+  nutrientName: string;
+}
+
+interface Result {
+  fdcId: number;
+  description: string;
+  dataType: string;
+  gtinUpc: string;
+  publishedDate: string;
+  brandOwner: string;
+  ingredients: string;
+  allHighlightFields: string;
+  score: number;
+  foodNutrients: Nutrient[];
+  brandName: string;
+  nutrientId: number;
+  servingSize: number;
+  servingSizeUnit: string;
+  result: ObjectConstructor;
+}
+
 export default {
   name: "FoodSearch",
   components: { FoodSearchModal },
@@ -74,21 +111,6 @@ export default {
       number: Number,
     });
 
-    interface Result {
-      fdcId: number;
-      description: string;
-      dataType: string;
-      gtinUpc: string;
-      publishedDate: string;
-      brandOwner: string;
-      ingredients: string;
-      allHighlightFields: string;
-      score: number;
-      foodNutrients: Array<Object>;
-      brandName: string;
-      nutrientId: number;
-      result: ObjectConstructor;
-    }
     // Define a reactive state object to store the search query and search results
     const state = reactive({
       query: "",
@@ -139,17 +161,8 @@ export default {
         return text.toLowerCase().replace(/\b(\w)/g, (x) => x.toUpperCase());
       }
     },
-    // displayCalories(nutrients?: Array<Object>) {
-    //   const calories = nutrients.find(
-    //     (nutreint) => nutreint.nutrientId === 1008
-    //   );
-    //   return calories ? calories.value : "0";
-    // },
     debug() {
-      this.state.results.forEach(result => {
-        console.log(result.foodNutrients);
-      });
-      // console.log("State Results", this.state.results);
+      console.log("Show Modal", this.showModal);
     },
     nextPage() {
       this.state.pageNumber++;
@@ -180,6 +193,12 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column
+}
+
+.search {
+  display:flex;
+  flex-direction: row;
 }
 
 .loading svg {
