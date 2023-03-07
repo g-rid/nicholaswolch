@@ -56,6 +56,7 @@
               {{ result.servingSizeUnit }}
             </td>
             <td v-else>No Serving Size Available</td>
+            <td @click="something"></td>a<td @click="something"></td>
           </tr>
         </tbody>
       </table>
@@ -193,7 +194,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column
+  flex-direction: column;
 }
 
 .search {
