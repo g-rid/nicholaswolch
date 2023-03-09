@@ -89,7 +89,7 @@ export default {
 
 <style>
 .modal {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -99,6 +99,10 @@ export default {
   padding: 2rem;
   overflow-y: scroll;
   text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 .modal-header {
   display: flex;
@@ -113,7 +117,7 @@ export default {
 h2,
 h3 {
   text-align: left;
-  font-weight: 6s00;
+  font-weight: 600;
 }
 .ingredients {
   font-size: 1.2rem;
