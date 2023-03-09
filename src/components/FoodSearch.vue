@@ -110,6 +110,7 @@ export default {
     const totalHits = reactive({
       number: Number,
     });
+    const showModal = ref(false);
 
     // Define a reactive state object to store the search query and search results
     const state = reactive({
@@ -147,10 +148,10 @@ export default {
     return {
       state,
       search,
-      showModal: false,
       selectedItem,
       loading,
       totalHits,
+      showModal,
     };
   },
   methods: {
