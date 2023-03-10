@@ -22,7 +22,6 @@
       <table>
         <thead>
           <tr>
-            <th>Food Description:</th>
             <th>Brand:</th>
             <th>Calories:</th>
             <th>Serving Size:</th>
@@ -35,16 +34,14 @@
                 @click="showModal = true, (selectedItem = result)"
                 role="button"
               >
-                <span v-if="result.description">{{
-                  capitalize(result.description)
-                }}</span>
+              <span v-if="result.brandName && result.description">{{ capitalize(result.brandName) }} - {{capitalize(result.description) }}</span>
+              <span v-else-if="result.brandName && !result.description">{{ capitalize(result.brandName) }} - (no description)</span>
+              <span v-else-if="!result.brandName && result.description">{{ capitalize(result.description) }} - (no brand name)</span>
               </button>
             </td>
-            <td v-if="result.brandName">{{ capitalize(result.brandName) }}</td>
-            <td v-else>No Brand Available</td>
             <td v-if="result.foodNutrients">
               {{
-                Math.round(result.foodNutrients.find(nutrient => nutrient.nutrientName === "Energy")?.value)
+                Math.round(result.foodNutrients.find(nutrient => nutrient.nutrientId === 1008)?.value)
               }}
               Kcal
             </td>
@@ -82,7 +79,7 @@ import FoodSearchModal from "./FoodSearchModal.vue";
 interface Nutrient {
   type: string;
   value: number;
-  nutrientName: string;
+  nutrientId: number;
 }
 
 interface Result {
@@ -240,6 +237,10 @@ table td {
   padding: 5px;
   background: #ffffff;
   color: #313030;
+}
+
+.results button {
+  text-align: left;
 }
 
 .modal-backdrop {
