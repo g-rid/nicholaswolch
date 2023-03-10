@@ -1,13 +1,12 @@
 <template>
   <div v-if="show" class="modal">
-    <div class="modal-header">
+    <button @click="debug">Debug</button>
+    <div class="modal-wrapper">
+      <div class="modal-header">
       <div class="modal-title-wrapper">
-        <h2 v-if="selectedItem && selectedItem.description">
-          {{ selectedItem.description }}
+        <h2 v-if="selectedItem && selectedItem.brandName && selectedItem.description ">
+          {{ selectedItem.brandName }} - {{ selectedItem.description }}
         </h2>
-        <h3 v-if="selectedItem && selectedItem.brandName">
-          Brand Name: {{ selectedItem.brandName }}
-        </h3>
         <h3 v-if="selectedItem.dataType === 'SR Legacy'">
           Data Source: <strong>USDA</strong> based on Standard Reference
           originally available via the USDA National Nutrient Database (NNDB)
@@ -20,9 +19,14 @@
           {{ selectedItem.servingSizeUnit }}
         </h3>
         <h3>
-          Total Calories:
-          <!-- {{ displaySelectedCalories() }} -->
+          Calories Per Serving:
+          {{ 
+          Math.round(selectedItem.foodNutrients.find(nutrient => nutrient.nutrientId === 1008).value)
+          }}
           kcal
+        </h3>
+        <h3 v-if="selectedItem.packageWeight">
+          Package Weight: {{ selectedItem.packageWeight }}
         </h3>
         <h3 v-if="selectedItem.ingredients">
           Ingredients:
@@ -31,13 +35,14 @@
           </div>
         </h3>
       </div>
-      <button @click="closeModal">
+      </div>
+      <div class="modal-body">
+        <FoodNutrients :selected-item="selectedItem" />
+      </div>
+    </div>
+    <button @click="closeModal">
         <font-awesome-icon icon="fa-solid fa-xmark" />
       </button>
-    </div>
-    <div class="modal-body">
-      <FoodNutrients :selected-item="selectedItem" />
-    </div>
   </div>
 </template>
 
@@ -62,7 +67,7 @@ export default {
       required: false,
     },
   },
-  data() {
+  setup() {
     // Split up the nutrients into different types based on nutrientFilter
     const nutrientTypes = {
       macronutrients: [],
@@ -77,17 +82,14 @@ export default {
     closeModal() {
       this.$emit("close");
     },
-    // displaySelectedCalories() {
-    //   const calories = this.selectedItem.foodNutrients.find(
-    //     (nutreint: Object) => nutreint.nutrientId === 1008
-    //   );
-    //   return calories ? calories.value : "0";
-    // },
+    debug() {
+      console.log("Selected Item", this.selectedItem);
+    },
   },
 };
 </script>
 
-<style>
+<style scoped>
 .modal {
   position: fixed;
   top: 50%;
@@ -100,10 +102,11 @@ export default {
   overflow-y: scroll;
   text-transform: capitalize;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: row;
 }
+
 .modal-header {
   display: flex;
   align-items: flex-start;
