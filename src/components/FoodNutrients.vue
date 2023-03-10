@@ -1,8 +1,6 @@
 <template>
-  <div>Placeholder</div>
-</template>
-<!-- <template>
   <div class="nutrient-graph">
+    TEsting
     <button @click="debug">Debug</button>
     <div v-for="(defaultNutrient, key) in defaultNutrients" :key="key">
       <ul>
@@ -72,8 +70,9 @@ export default {
       return nutrientTypes;
     },
   },
-  data() {
-    const selectedItemFdcId: string = this.selectedItem.fdcId;
+  setup(props) {
+    const selectedItemFdcId: string = props.selectedItem.fdcId;
+    console.log("Selected Item FdcId:", selectedItemFdcId);
     let displayObject = reactive({
       nutrients: [] as any,
     });
@@ -140,7 +139,12 @@ export default {
       displayObject,
     };
   },
+  methods: {
+    debug() {
+      console.log("Display Object:", this.displayObject);
+    },
+  }
 };
 </script>
 
-<style></style> -->
+<style></style>
