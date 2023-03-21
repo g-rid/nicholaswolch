@@ -23,8 +23,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="nutrient in nutrientGroup" :key="nutrient.nutrientName">
-          <td>{{ nutrient.nutrientName }}</td>
+        <tr v-for="nutrient in nutrientGroup" :key="nutrient.name">
+          <td>{{ nutrient.name }}</td>
           <td>{{ nutrient.nutrientValue }}</td>
           <td>{{ nutrient.whatItDoes }}</td>
           <td>{{ nutrient.whereItsFound }}</td>
@@ -118,8 +118,9 @@ export default {
         );
         loading.value = false;
         // Update the search results in the reactive state object
-        console.log("Selected Food Object:", response.data);
-        selectedFoodData.results = response.data.labelNutrients;
+        console.log("Selected Food OG object:", response.data);
+        console.log("Selected Food labelNutrients:", response.data[0].labelNutrients)
+        selectedFoodData.results = response.data[0].labelNutrients;
         constructDisplayObject();
         if (response.data.length === 0) {
           alert(
@@ -141,7 +142,8 @@ export default {
   },
   methods: {
     debug() {
-      console.log("Display Object:", this.displayObject);
+      console.log("Display Object:", this.displayObject.nutrients);
+      console.log("Display Object:", this.defaultNutrients);
     },
   }
 };

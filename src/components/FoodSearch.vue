@@ -187,6 +187,10 @@ export default {
   height: 100%;
 }
 
+.food-search-wrapper:has(.results) {
+  height: auto;
+}
+
 .input-wrapper {
   display: flex;
   align-items: center;
