@@ -1,73 +1,73 @@
 <template>
   <div class="food-search-wrapper">
-    <button @click="debug">Debug</button>
-    <span>Search all USDA registered food:</span>
-    <div class="input-wrapper">
-      <div class="search">
-        <input v-model="state.query" @keyup.enter="search" type="text" />
-        <button @click="search">Search</button>
+      <button @click="debug">Debug</button>
+      <span>Search all USDA registered food:</span>
+      <div class="input-wrapper">
+        <div class="search">
+          <input v-model="state.query" @keyup.enter="search" type="text" />
+          <button @click="search">Search</button>
+        </div>
+        <p v-if="state.results.length > 0">
+          Total Results: {{ totalHits.number }}
+        </p>
       </div>
-      <p v-if="state.results.length > 0">
-        Total Results: {{ totalHits.number }}
-      </p>
-    </div>
-    <div v-if="loading" class="loading">
-      <font-awesome-icon icon="fa-solid fa-spinner" />
-    </div>
-    <div v-if="state.results.length > 0" class="results">
-      <div>
-        <button @click="previousPage">Previous Page</button>
-        <button @click="nextPage">Next Page</button>
+      <div v-if="loading" class="loading">
+        <font-awesome-icon icon="fa-solid fa-spinner" />
       </div>
-      <table>
-        <thead>
-          <tr>
-            <th>Brand:</th>
-            <th>Calories:</th>
-            <th>Serving Size:</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="result in state.results" :key="result.fdcId">
-            <td>
-              <button
-                @click="showModal = true, (selectedItem = result)"
-                role="button"
-              >
-              <span v-if="result.brandName && result.description">{{ capitalize(result.brandName) }} - {{capitalize(result.description) }}</span>
-              <span v-else-if="result.brandName && !result.description">{{ capitalize(result.brandName) }} - (no description)</span>
-              <span v-else-if="!result.brandName && result.description">{{ capitalize(result.description) }} - (no brand name)</span>
-              </button>
-            </td>
-            <td v-if="result.foodNutrients">
-              {{
-                Math.round(result.foodNutrients.find(nutrient => nutrient.nutrientId === 1008)?.value)
-              }}
-              Kcal
-            </td>
-            <td v-else>No Calories Available</td>
-            <td v-if="result.servingSize">
-              {{
-                Math.round(result.servingSize)
-              }}
-              {{ result.servingSizeUnit }}
-            </td>
-            <td v-else>No Serving Size Available</td>
-          </tr>
-        </tbody>
-      </table>
-      <div>
-        <button @click="previousPage">Previous Page</button>
-        <button @click="nextPage">Next Page</button>
+      <div v-if="state.results.length > 0" class="results">
+        <div>
+          <button @click="previousPage">Previous Page</button>
+          <button @click="nextPage">Next Page</button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Brand:</th>
+              <th>Calories:</th>
+              <th>Serving Size:</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="result in state.results" :key="result.fdcId">
+              <td>
+                <button
+                  @click="showModal = true, (selectedItem = result)"
+                  role="button"
+                >
+                <span v-if="result.brandName && result.description">{{ capitalize(result.brandName) }} - {{capitalize(result.description) }}</span>
+                <span v-else-if="result.brandName && !result.description">{{ capitalize(result.brandName) }} - (no description)</span>
+                <span v-else-if="!result.brandName && result.description">{{ capitalize(result.description) }} - (no brand name)</span>
+                </button>
+              </td>
+              <td v-if="result.foodNutrients">
+                {{
+                  Math.round(result.foodNutrients.find(nutrient => nutrient.nutrientId === 1008)?.value)
+                }}
+                Kcal
+              </td>
+              <td v-else>No Calories Available</td>
+              <td v-if="result.servingSize">
+                {{
+                  Math.round(result.servingSize)
+                }}
+                {{ result.servingSizeUnit }}
+              </td>
+              <td v-else>No Serving Size Available</td>
+            </tr>
+          </tbody>
+        </table>
+        <div>
+          <button @click="previousPage">Previous Page</button>
+          <button @click="nextPage">Next Page</button>
+        </div>
       </div>
-    </div>
-    <FoodSearchModal
-      v-if="showModal"
-      :show="showModal"
-      @close="showModal = false"
-      :selected-item="selectedItem"
-      :capitalize="capitalize"
-    />
+      <FoodSearchModal
+        v-if="showModal"
+        :show="showModal"
+        @close="showModal = false"
+        :selected-item="selectedItem"
+        :capitalize="capitalize"
+      />
   </div>
 </template>
 
@@ -184,7 +184,8 @@ export default {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 100%;
+  padding: 2rem 0;
+  height: auto;
 }
 
 .food-search-wrapper:has(.results) {
