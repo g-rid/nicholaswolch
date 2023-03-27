@@ -2,8 +2,7 @@
   <div class="nutrient-graph">
     <button @click="debug">Debug</button>
     <h2>Label Nutrients</h2>
-    <table
-    >
+    <table v-if="combinedNutrientData">
       <thead>
         <tr>
           <th>Nutrient:</th>
@@ -14,20 +13,23 @@
       <tbody>
         <tr v-for="(nutrient, key) in combinedNutrientData"
       :key="key">
-          <td>{{ nutrient.name }} <button @click="showInfoModal = true"><font-awesome-icon :icon="['fas', 'circle-info']" /></button></td>
+          <td>{{ nutrient.name }} <button @click="showSelectedModal(nutrient)"><font-awesome-icon :icon="['fas', 'circle-info']" /></button></td>
           <td>{{ nutrient.type }}</td>
           <td>{{ nutrient.value }} {{ nutrient.unit }}</td>
-          <div class="nutrient-info-modal" v-if="showInfoModal">
-            <div class="nutrient-info-modal-content">
-              <h3>{{ nutrient.name }}</h3>
-              <button @click="showInfoModal = false">X</button>
-              {{ nutrient.whatItDoes }}
-              {{ nutrient.whereItsFound }}
-            </div>
-          </div>
         </tr>
       </tbody>
     </table>
+    <div class="nutrient-info-modal" v-if="showSelectedModal">
+            <div class="nutrient-info-modal-content">
+              <h3>{{ modalItem.name }}</h3>
+              <button @click="closeModal">X</button>
+              <div v-html="modalItem.whatItDoes"></div>
+              <div v-html="modalItem.whereItsFound"></div>
+            </div>
+          </div>
+    <div v-else>
+      <p>No Nutrients Found</p>
+    </div>
   </div>
 </template>
 
@@ -53,11 +55,12 @@ export default {
   setup(props) {
     const selectedItem = props.selectedItem;
       
-    function combineNutrientData(selectedInfo, defaultInfo) {
+    function combineNutrientData(selectedInfo: any[], defaultInfo: any = {}) 
+    {
     if (!Array.isArray(selectedInfo)) {
       selectedInfo = [selectedInfo];
     }
-    const combinedData = selectedInfo.map(nutrient => {
+    const combinedData = selectedInfo.map((nutrient: any) => {
     const nutrientName = nutrientMap[nutrient.nutrientName];
     const nutrientInfo = defaultInfo[nutrientName];
     return {
@@ -74,11 +77,25 @@ export default {
   const combinedNutrientData = combineNutrientData(selectedItem.foodNutrients, defaultNutrients);
   console.log("combinedNutrientData", combinedNutrientData);
 
-  const showInfoModal = ref(false);
+  const showModal = ref(false);
+  const modalItem = ref({ name: null, whatItDoes: null, whereItsFound: null });
+
+  function showSelectedModal(item: any) {
+    showModal.value = true;
+    modalItem.value = item;
+  }
+
+  function closeModal() {
+    showModal.value = false;
+    modalItem.value = null;
+  }
 
     return {
       combinedNutrientData,
-      showInfoModal,
+      showModal,
+      modalItem,
+      showSelectedModal,
+      closeModal,
     };
   },
   methods: {
