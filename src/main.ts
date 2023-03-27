@@ -16,6 +16,7 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { faMoon } from "@fortawesome/free-solid-svg-icons";
 import { faSun } from "@fortawesome/free-solid-svg-icons";
+import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 library.add(
   faUtensils,
   faUser,
@@ -23,7 +24,8 @@ library.add(
   faXmark,
   faSpinner,
   faMoon,
-  faSun
+  faSun,
+  faCircleInfo
 );
 
 // Import Apex Charts
