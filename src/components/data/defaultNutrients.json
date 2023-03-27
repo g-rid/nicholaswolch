@@ -28,6 +28,131 @@
       }
     }
   },
+  "calories": {
+    "whatItDoes": "PLACEHOLDER"
+  },
+  "choline": {
+    "name": "Choline",
+    "type": "vitiman",
+    "dailyValue": {
+      "value": 550,
+      "unit": "mg"
+    },
+    "dri": {
+      "unit": "(mg/d)g",
+      "maleValues": {
+        "nineToThirteenYears": 375,
+        "fourteenToEighteenYears": 550,
+        "ninteenToThirtyYears": 550,
+        "thirtyOneToFiftyYears": 550,
+        "fiftyOneToSeventyYears": 550,
+        "seventyOnePlus": 550
+      },
+      "femaleValues": {
+        "nineToThirteenYears": 375,
+        "fourteenToEighteenYears": 400,
+        "ninteenToThirtyYears": 425,
+        "thirtyOneToFiftyYears": 425,
+        "fiftyOneToSeventyYears": 425,
+        "seventyOnePlus": 425
+      }
+    },
+    "whatItDoes": "<li>Brain development</li><li>Cell signaling</li><li>Lipid (fat) transport and metabolism</li><li>Liver function</li><li>Muscle movement</li><li>Nerve Function</li><li>Normal metabolism</li>",
+    "whereItsFound": "<li>Beans and peas</li><li>Egg yolks</li><li>Fish (e.g., cod and salmon)</li><li>Liver (e.g., beef and chicken)</li><li>Milk</li><li>Nuts</li><li>Salmon</li><li>Soy Foods</li><li>Vegtables (e.g., broccoli, cauliflower, spinach)</li>"
+  },
+  "calcium": {
+    "whatItDoes": "PLACEHOLDER"
+  },
+  "cholesterol": {
+    "whatItDoes": "PLACEHOLDER"
+  },
+  "chloride": {
+    "name": "Chloride",
+    "type": "mineral",
+    "dailyValue": {
+      "unit": "mg",
+      "value": 2300
+    },
+    "whatItDoes": "<li>Acid-base balance</li><li>Conversion of food into energy</li><li>Digestion</li><li>Fluid balance</li><li>Nervous system function</li>",
+    "whereItsFound": "<li>Olives</li><li>Rye</li><li>Salt substitutes</li><li>Seaweeds (e.g., dulse and kelp)</li><li>Table salt and sea salt</li><li>Vegetables (e.g., celery, lettuce, and tomatoes)</li>",
+    "dri": {
+      "unit": "(g/d)",
+      "maleValues": {
+        "nineToThirteenYears": 2.3,
+        "fourteenToEighteenYears": 2.3,
+        "ninteenToThirtyYears": 2.3,
+        "thirtyOneToFiftyYears": 2.3,
+        "fiftyOneToSeventyYears": 2.0,
+        "seventyOnePlus": 1.8
+      },
+      "femaleValues": {
+        "nineToThirteenYears": 2.3,
+        "fourteenToEighteenYears": 2.3,
+        "ninteenToThirtyYears": 2.3,
+        "thirtyOneToFiftyYears": 2.3,
+        "fiftyOneToSeventyYears": 2.0,
+        "seventyOnePlus": 1.8
+      }
+    }
+  },
+  "chromium": {
+    "name": "Chromium",
+    "type": "mineral",
+    "dailyValue": {
+      "unit": "mcg",
+      "value": 35
+    },
+    "whatItDoes": "<li>Insulin function</li><li>Protein, carbohydrate, and fat metabolism</li>",
+    "whereItsFound": "<li>Broccoli</li><li>Fruits (e.g., apples and bananas)</li><li>Juices (e.g., grape and orange)</li><li>Meat</li><li>Spices (e.g., garlic and basil)</li><li>Turkey</li><li>Whole grains</li>",
+    "dri": {
+      "unit": "(ug/d)",
+      "maleValues": {
+        "nineToThirteenYears": 25,
+        "fourteenToEighteenYears": 35,
+        "ninteenToThirtyYears": 35,
+        "thirtyOneToFiftyYears": 35,
+        "fiftyOneToSeventyYears": 30,
+        "seventyOnePlus": 30
+      },
+      "femaleValues": {
+        "nineToThirteenYears": 21,
+        "fourteenToEighteenYears": 24,
+        "ninteenToThirtyYears": 25,
+        "thirtyOneToFiftyYears": 25,
+        "fiftyOneToSeventyYears": 20,
+        "seventyOnePlus": 20
+      }
+    }
+  },
+  "copper": {
+    "name": "Copper",
+    "type": "mineral",
+    "dailyValue": {
+      "unit": "mg",
+      "value": 0.9
+    },
+    "whatItDoes": "<li>Antioxidant</li><li>Bone formation</li><li>Collagen and connective tissue formation</li><li>Energy production</li><li>Iron metabolism</li><li>Nervous system function</li>",
+    "whereItsFound": "<li>Chocolate and cocoa</li><li>Crustaceans and shellfish</li><li>Lentils</li><li>Nuts and seeds</li><li>Organ meats (e.g., liver)</li><li>Whole grains</li>",
+    "dri": {
+      "unit": "(ug/d)",
+      "maleValues": {
+        "nineToThirteenYears": 700,
+        "fourteenToEighteenYears": 890,
+        "ninteenToThirtyYears": 900,
+        "thirtyOneToFiftyYears": 900,
+        "fiftyOneToSeventyYears": 900,
+        "seventyOnePlus": 900
+      },
+      "femaleValues": {
+        "nineToThirteenYears": 700,
+        "fourteenToEighteenYears": 890,
+        "ninteenToThirtyYears": 900,
+        "thirtyOneToFiftyYears": 900,
+        "fiftyOneToSeventyYears": 900,
+        "seventyOnePlus": 900
+      }
+    }
+  },
   "fat": {
     "name": "Total Lipid (Fat)",
     "type": "macronutrient",
@@ -116,35 +241,6 @@
     },
     "whatItDoes": "<li>Energy storage</li><li>Protein, carbohdrate and fat matabolism</li>",
     "whereItsFound": "<li>Avocados</li><li>Cauliflower</li><li>Eggs</li><li>Fruits (e.g., Rasperries)</li><li>Liver</li><li>Pork</li><li>Salmon</li><li>Whole grains</li>"
-  },
-  "choline": {
-    "name": "Choline",
-    "type": "vitiman",
-    "dailyValue": {
-      "value": 550,
-      "unit": "mg"
-    },
-    "dri": {
-      "unit": "(mg/d)g",
-      "maleValues": {
-        "nineToThirteenYears": 375,
-        "fourteenToEighteenYears": 550,
-        "ninteenToThirtyYears": 550,
-        "thirtyOneToFiftyYears": 550,
-        "fiftyOneToSeventyYears": 550,
-        "seventyOnePlus": 550
-      },
-      "femaleValues": {
-        "nineToThirteenYears": 375,
-        "fourteenToEighteenYears": 400,
-        "ninteenToThirtyYears": 425,
-        "thirtyOneToFiftyYears": 425,
-        "fiftyOneToSeventyYears": 425,
-        "seventyOnePlus": 425
-      }
-    },
-    "whatItDoes": "<li>Brain development</li><li>Cell signaling</li><li>Lipid (fat) transport and metabolism</li><li>Liver function</li><li>Muscle movement</li><li>Nerve Function</li><li>Normal metabolism</li>",
-    "whereItsFound": "<li>Beans and peas</li><li>Egg yolks</li><li>Fish (e.g., cod and salmon)</li><li>Liver (e.g., beef and chicken)</li><li>Milk</li><li>Nuts</li><li>Salmon</li><li>Soy Foods</li><li>Vegtables (e.g., broccoli, cauliflower, spinach)</li>"
   },
   "folate": {
     "name": "Folate/Folic Acid",
@@ -290,6 +386,279 @@
         "seventyOnePlus": 1.1
       }
     }
+  },
+  "iodine": {
+    "name": "Iodine",
+    "type": "mineral",
+    "dailyValue": {
+      "unit": "mcg",
+      "value": 150
+    },
+    "whatItDoes": "<li>Growth and development</li><li>Metabolism</li><li>Reproduction</li><li>Thyroid hormone production</li>",
+    "whereItsFound": "<li>Breads and cereals</li><li>Dairy products</li><li>Iodized salt</li><li>Potatoes</li><li>Seafood</li><li>Seaweed</li><li>Turkey</li>",
+    "dri": {
+      "unit": "(ug/d)",
+      "maleValues": {
+        "nineToThirteenYears": 120,
+        "fourteenToEighteenYears": 150,
+        "ninteenToThirtyYears": 150,
+        "thirtyOneToFiftyYears": 150,
+        "fiftyOneToSeventyYears": 150,
+        "seventyOnePlus": 150
+      },
+      "femaleValues": {
+        "nineToThirteenYears": 120,
+        "fourteenToEighteenYears": 150,
+        "ninteenToThirtyYears": 150,
+        "thirtyOneToFiftyYears": 150,
+        "fiftyOneToSeventyYears": 150,
+        "seventyOnePlus": 1500
+      }
+    }
+  },
+  "iron": {
+    "name": "Iron",
+    "type": "mineral",
+    "dailyValue": {
+      "unit": "mg",
+      "value": 18
+    },
+    "whatItDoes": "<li>Energy production</li><li>Growth and development</li><li>Immune function</li><li>Red blood cell formation</li><li>Reproduction</li><li>Wound healing</li>",
+    "whereItsFound": "<li>Beans, peas, and lentils</li><li>Eggs</li><li>Fruits (e.g., raisins and cantaloupe)</li><li>Green vegetables (e.g., asparagus, beet greens, broccoli, spinach, and swiss chard)</li><li>Meat</li><li>Nuts</li><li>Organ meats (e.g., liver)</li><li>Poultry</li><li>Seafood (e.g., crab, clams, sardines, shrimp, and oysters)</li><li>Seeds</li><li>Soy products (e.g., tofu)</li><li>Whole grain, enriched, and fortified breads, cereals, pasta, and rice</li>",
+    "dri": {
+      "unit": "(mg/d)",
+      "maleValues": {
+        "nineToThirteenYears": 8,
+        "fourteenToEighteenYears": 11,
+        "ninteenToThirtyYears": 8,
+        "thirtyOneToFiftyYears": 8,
+        "fiftyOneToSeventyYears": 8,
+        "seventyOnePlus": 8
+      },
+      "femaleValues": {
+        "nineToThirteenYears": 8,
+        "fourteenToEighteenYears": 15,
+        "ninteenToThirtyYears": 18,
+        "thirtyOneToFiftyYears": 18,
+        "fiftyOneToSeventyYears": 8,
+        "seventyOnePlus": 8
+      }
+    }
+  },
+  "magnesium": {
+    "name": "Magnesium",
+    "type": "mineral",
+    "dailyValue": {
+      "unit": "mg",
+      "value": 420
+    },
+    "whatItDoes": "<li>Blood pressure regulation</li><li>Blood sugar regulation</li><li>Bone formation</li><li>Energy production</li><li>Hormone secretion</li><li>Immune function</li><li>Muscle contraction</li><li>Nervous system function</li><li>Normal heart rhythm</li><li>Protein formation</li>",
+    "whereItsFound": "<li>Avocados</li><li>Beans and peas</li><li>Dairy products</li><li>Fruits (e.g., bananas and raisins)</li><li>Green leafy vegetables (e.g.,spinach)</li><li>Nuts and pumpkin seeds</li><li>Potatoes</li><li>Whole grains</li>",
+    "dri": {
+      "unit": "(mg/d)",
+      "maleValues": {
+        "nineToThirteenYears": 240,
+        "fourteenToEighteenYears": 410,
+        "ninteenToThirtyYears": 400,
+        "thirtyOneToFiftyYears": 420,
+        "fiftyOneToSeventyYears": 420,
+        "seventyOnePlus": 420
+      },
+      "femaleValues": {
+        "nineToThirteenYears": 240,
+        "fourteenToEighteenYears": 360,
+        "ninteenToThirtyYears": 310,
+        "thirtyOneToFiftyYears": 320,
+        "fiftyOneToSeventyYears": 320,
+        "seventyOnePlus": 320
+      }
+    }
+  },
+  "manganese": {
+    "name": "Manganese",
+    "type": "mineral",
+    "dailyValue": {
+      "unit": "mg",
+      "value": 2.3
+    },
+    "whatItDoes": "<li>Carbohydrate, protein, and cholesterol metabolism</li><li>Cartilage and bone formation</li><li>Wound healing</li>",
+    "whereItsFound": "<li>Beans</li><li>Nuts</li><li>Pineapple</li><li>Spinach</li><li>Sweet potato</li><li>Whole grains</li>",
+    "dri": {
+      "unit": "(mg/d)",
+      "maleValues": {
+        "nineToThirteenYears": 1.9,
+        "fourteenToEighteenYears": 2.2,
+        "ninteenToThirtyYears": 2.3,
+        "thirtyOneToFiftyYears": 2.3,
+        "fiftyOneToSeventyYears": 2.3,
+        "seventyOnePlus": 2.3
+      },
+      "femaleValues": {
+        "nineToThirteenYears": 1.6,
+        "fourteenToEighteenYears": 1.6,
+        "ninteenToThirtyYears": 1.8,
+        "thirtyOneToFiftyYears": 1.8,
+        "fiftyOneToSeventyYears": 1.8,
+        "seventyOnePlus": 1.8
+      }
+    }
+  },
+  "molybdenum": {
+    "name": "Molybdenum",
+    "type": "mineral",
+    "dailyValue": {
+      "unit": "mcg",
+      "value": 45
+    },
+    "whatItDoes": "<li>Enzyme production</li>",
+    "whereItsFound": "<li>Beans and peas</li><li>Nuts</li><li>Whole grains</li>",
+    "dri": {
+      "unit": "(ug/d)",
+      "maleValues": {
+        "nineToThirteenYears": 34,
+        "fourteenToEighteenYears": 43,
+        "ninteenToThirtyYears": 45,
+        "thirtyOneToFiftyYears": 45,
+        "fiftyOneToSeventyYears": 45,
+        "seventyOnePlus": 45
+      },
+      "femaleValues": {
+        "nineToThirteenYears": 34,
+        "fourteenToEighteenYears": 43,
+        "ninteenToThirtyYears": 45,
+        "thirtyOneToFiftyYears": 45,
+        "fiftyOneToSeventyYears": 45,
+        "seventyOnePlus": 45
+      }
+    }
+  },
+  "phosphorus": {
+    "name": "Phosphorus",
+    "type": "mineral",
+    "dailyValue": {
+      "unit": "mg",
+      "value": 1250
+    },
+    "whatItDoes": "<li>Acid-base balance</li><li>Bone formation</li><li>Energy production and storage</li><li>Hormone activation</li>",
+    "whereItsFound": "<li>Beans and peas</li><li>Dairy products</li><li>Meat</li><li>Nuts and seeds</li><li>Poultry</li><li>Seafood</li><li>Whole grain, enriched, and fortified cereals and breads</li>",
+    "dri": {
+      "unit": "(ug/d)",
+      "maleValues": {
+        "nineToThirteenYears": 1250,
+        "fourteenToEighteenYears": 1250,
+        "ninteenToThirtyYears": 700,
+        "thirtyOneToFiftyYears": 700,
+        "fiftyOneToSeventyYears": 700,
+        "seventyOnePlus": 700
+      },
+      "femaleValues": {
+        "nineToThirteenYears": 1250,
+        "fourteenToEighteenYears": 1250,
+        "ninteenToThirtyYears": 700,
+        "thirtyOneToFiftyYears": 700,
+        "fiftyOneToSeventyYears": 700,
+        "seventyOnePlus": 700
+      }
+    }
+  },
+  "potassium": {
+    "name": "Potassium",
+    "type": "mineral",
+    "dailyValue": {
+      "unit": "mg",
+      "value": 4700
+    },
+    "whatItDoes": "<li>Blood pressure regulation</li><li>Carbohydrate metabolism</li><li>Fluid balance</li><li>Growth and development</li><li>Heart function</li><li>Muscle contraction</li><li>Nervous system function</li><li>Protein formation</li>",
+    "whereItsFound": "<li>Beans</li><li>Dairy products (e.g., milk and yogurt)</li><li>Fruits (e.g., apricots, bananas, kiwifruit, cantaloupe, and grapefruit)</li><li>Juices (e.g., carrot and other vegetables juices, orange, pomegranate, and prune)</li><li>Seafood (e.g., clams, pollock, and trout)</li><li>Tomato products</li><li>Vegetables (e.g., potatoes, sweet potatoes, beet greens, and spinach)</li>",
+    "dri": {
+      "unit": "(g/d)",
+      "maleValues": {
+        "nineToThirteenYears": 4.5,
+        "fourteenToEighteenYears": 4.7,
+        "ninteenToThirtyYears": 4.7,
+        "thirtyOneToFiftyYears": 4.7,
+        "fiftyOneToSeventyYears": 4.7,
+        "seventyOnePlus": 4.7
+      },
+      "femaleValues": {
+        "nineToThirteenYears": 4.5,
+        "fourteenToEighteenYears": 4.7,
+        "ninteenToThirtyYears": 4.7,
+        "thirtyOneToFiftyYears": 4.7,
+        "fiftyOneToSeventyYears": 4.7,
+        "seventyOnePlus": 4.7
+      }
+    }
+  },
+  "protein": {
+    "whatItDoes": "PLACEHOLDER"
+  },
+  "selenium": {
+    "name": "selenium",
+    "type": "mineral",
+    "dailyValue": {
+      "unit": "mcg",
+      "value": 55
+    },
+    "whatItDoes": "<li>Antioxidant</li><li>Immune function</li><li>Reproduction</li><li>Thyroid function</li>",
+    "whereItsFound": "<li>Eggs</li><li>Enriched pasta and rice</li><li>Meat</li><li>Nuts (e.g., Brazil nuts) and seeds</li><li>Poultry</li><li>Seafood</li><li>Whole grains</li>",
+    "dri": {
+      "unit": "(ug/d)",
+      "maleValues": {
+        "nineToThirteenYears": 40,
+        "fourteenToEighteenYears": 55,
+        "ninteenToThirtyYears": 55,
+        "thirtyOneToFiftyYears": 55,
+        "fiftyOneToSeventyYears": 55,
+        "seventyOnePlus": 55
+      },
+      "femaleValues": {
+        "nineToThirteenYears": 40,
+        "fourteenToEighteenYears": 55,
+        "ninteenToThirtyYears": 55,
+        "thirtyOneToFiftyYears": 55,
+        "fiftyOneToSeventyYears": 55,
+        "seventyOnePlus": 55
+      }
+    }
+  },
+  "sugar": {
+    "whatItDoes": "PLACEHOLDER"
+  },
+  "sodium": {
+    "name": "Sodium",
+    "type": "mineral",
+    "dailyValue": {
+      "unit": "mg",
+      "value": 2300
+    },
+    "whatItDoes": "<li>Acid-base balance</li><li>Blood pressure regulation</li><li>Fluid balance</li><li>Muscle contraction</li><li>Nervous system function</li>",
+    "whereItsFound": "<li>Deli meat sandwiches</li><li>Pizza</li><li>Burritos and tacos</li><li>Soups</li><li>Savory snacks (e.g., chips, crackers, popcorn)</li><li>Poultry</li><li>Pasta mixed dishes</li><li>Burgers</li><li>Egg dishes and omelets</li>",
+    "dri": {
+      "unit": "(g/d)",
+      "maleValues": {
+        "nineToThirteenYears": 1.5,
+        "fourteenToEighteenYears": 1.5,
+        "ninteenToThirtyYears": 1.5,
+        "thirtyOneToFiftyYears": 1.5,
+        "fiftyOneToSeventyYears": 1.3,
+        "seventyOnePlus": 1.2
+      },
+      "femaleValues": {
+        "nineToThirteenYears": 1.5,
+        "fourteenToEighteenYears": 1.5,
+        "ninteenToThirtyYears": 1.5,
+        "thirtyOneToFiftyYears": 1.5,
+        "fiftyOneToSeventyYears": 1.3,
+        "seventyOnePlus": 1.2
+      }
+    }
+  },
+  "saturatedFat": {
+    "whatItDoes": "PLACEHOLDER"
+  },
+  "transFat": {
+    "whatItDoes": "PLACEHOLDER"
   },
   "vitimanA": {
     "name": "Vitiman A",
@@ -522,354 +891,6 @@
     },
     "whatItDoes": "<li>Blood Clotting</li><li>Bone and teeth formation</li><li>Constriction and relaxation of blood vessles</li><li>Hormone secretion</li><li>Muscle contraction</li><li>Nervous system function</li>",
     "whereItsFound": "<li>Canned seafood with bones (e.g., salmon and sardines)</li><li>Dairy products</li><li>Fortified orange juice</li><li>Fortified soy beverages</li><li>Fortified ready-to-eat cereals</li><li>Green vegetables (e.g., kale, broccoli, and collard greens)</li><li>Tofu (made with calcium sulfate)</li>"
-  },
-  "chloride": {
-    "name": "Chloride",
-    "type": "mineral",
-    "dailyValue": {
-      "unit": "mg",
-      "value": 2300
-    },
-    "whatItDoes": "<li>Acid-base balance</li><li>Conversion of food into energy</li><li>Digestion</li><li>Fluid balance</li><li>Nervous system function</li>",
-    "whereItsFound": "<li>Olives</li><li>Rye</li><li>Salt substitutes</li><li>Seaweeds (e.g., dulse and kelp)</li><li>Table salt and sea salt</li><li>Vegetables (e.g., celery, lettuce, and tomatoes)</li>",
-    "dri": {
-      "unit": "(g/d)",
-      "maleValues": {
-        "nineToThirteenYears": 2.3,
-        "fourteenToEighteenYears": 2.3,
-        "ninteenToThirtyYears": 2.3,
-        "thirtyOneToFiftyYears": 2.3,
-        "fiftyOneToSeventyYears": 2.0,
-        "seventyOnePlus": 1.8
-      },
-      "femaleValues": {
-        "nineToThirteenYears": 2.3,
-        "fourteenToEighteenYears": 2.3,
-        "ninteenToThirtyYears": 2.3,
-        "thirtyOneToFiftyYears": 2.3,
-        "fiftyOneToSeventyYears": 2.0,
-        "seventyOnePlus": 1.8
-      }
-    }
-  },
-  "chromium": {
-    "name": "Chromium",
-    "type": "mineral",
-    "dailyValue": {
-      "unit": "mcg",
-      "value": 35
-    },
-    "whatItDoes": "<li>Insulin function</li><li>Protein, carbohydrate, and fat metabolism</li>",
-    "whereItsFound": "<li>Broccoli</li><li>Fruits (e.g., apples and bananas)</li><li>Juices (e.g., grape and orange)</li><li>Meat</li><li>Spices (e.g., garlic and basil)</li><li>Turkey</li><li>Whole grains</li>",
-    "dri": {
-      "unit": "(ug/d)",
-      "maleValues": {
-        "nineToThirteenYears": 25,
-        "fourteenToEighteenYears": 35,
-        "ninteenToThirtyYears": 35,
-        "thirtyOneToFiftyYears": 35,
-        "fiftyOneToSeventyYears": 30,
-        "seventyOnePlus": 30
-      },
-      "femaleValues": {
-        "nineToThirteenYears": 21,
-        "fourteenToEighteenYears": 24,
-        "ninteenToThirtyYears": 25,
-        "thirtyOneToFiftyYears": 25,
-        "fiftyOneToSeventyYears": 20,
-        "seventyOnePlus": 20
-      }
-    }
-  },
-  "copper": {
-    "name": "Copper",
-    "type": "mineral",
-    "dailyValue": {
-      "unit": "mg",
-      "value": 0.9
-    },
-    "whatItDoes": "<li>Antioxidant</li><li>Bone formation</li><li>Collagen and connective tissue formation</li><li>Energy production</li><li>Iron metabolism</li><li>Nervous system function</li>",
-    "whereItsFound": "<li>Chocolate and cocoa</li><li>Crustaceans and shellfish</li><li>Lentils</li><li>Nuts and seeds</li><li>Organ meats (e.g., liver)</li><li>Whole grains</li>",
-    "dri": {
-      "unit": "(ug/d)",
-      "maleValues": {
-        "nineToThirteenYears": 700,
-        "fourteenToEighteenYears": 890,
-        "ninteenToThirtyYears": 900,
-        "thirtyOneToFiftyYears": 900,
-        "fiftyOneToSeventyYears": 900,
-        "seventyOnePlus": 900
-      },
-      "femaleValues": {
-        "nineToThirteenYears": 700,
-        "fourteenToEighteenYears": 890,
-        "ninteenToThirtyYears": 900,
-        "thirtyOneToFiftyYears": 900,
-        "fiftyOneToSeventyYears": 900,
-        "seventyOnePlus": 900
-      }
-    }
-  },
-  "iodine": {
-    "name": "Iodine",
-    "type": "mineral",
-    "dailyValue": {
-      "unit": "mcg",
-      "value": 150
-    },
-    "whatItDoes": "<li>Growth and development</li><li>Metabolism</li><li>Reproduction</li><li>Thyroid hormone production</li>",
-    "whereItsFound": "<li>Breads and cereals</li><li>Dairy products</li><li>Iodized salt</li><li>Potatoes</li><li>Seafood</li><li>Seaweed</li><li>Turkey</li>",
-    "dri": {
-      "unit": "(ug/d)",
-      "maleValues": {
-        "nineToThirteenYears": 120,
-        "fourteenToEighteenYears": 150,
-        "ninteenToThirtyYears": 150,
-        "thirtyOneToFiftyYears": 150,
-        "fiftyOneToSeventyYears": 150,
-        "seventyOnePlus": 150
-      },
-      "femaleValues": {
-        "nineToThirteenYears": 120,
-        "fourteenToEighteenYears": 150,
-        "ninteenToThirtyYears": 150,
-        "thirtyOneToFiftyYears": 150,
-        "fiftyOneToSeventyYears": 150,
-        "seventyOnePlus": 1500
-      }
-    }
-  },
-  "iron": {
-    "name": "Iron",
-    "type": "mineral",
-    "dailyValue": {
-      "unit": "mg",
-      "value": 18
-    },
-    "whatItDoes": "<li>Energy production</li><li>Growth and development</li><li>Immune function</li><li>Red blood cell formation</li><li>Reproduction</li><li>Wound healing</li>",
-    "whereItsFound": "<li>Beans, peas, and lentils</li><li>Eggs</li><li>Fruits (e.g., raisins and cantaloupe)</li><li>Green vegetables (e.g., asparagus, beet greens, broccoli, spinach, and swiss chard)</li><li>Meat</li><li>Nuts</li><li>Organ meats (e.g., liver)</li><li>Poultry</li><li>Seafood (e.g., crab, clams, sardines, shrimp, and oysters)</li><li>Seeds</li><li>Soy products (e.g., tofu)</li><li>Whole grain, enriched, and fortified breads, cereals, pasta, and rice</li>",
-    "dri": {
-      "unit": "(mg/d)",
-      "maleValues": {
-        "nineToThirteenYears": 8,
-        "fourteenToEighteenYears": 11,
-        "ninteenToThirtyYears": 8,
-        "thirtyOneToFiftyYears": 8,
-        "fiftyOneToSeventyYears": 8,
-        "seventyOnePlus": 8
-      },
-      "femaleValues": {
-        "nineToThirteenYears": 8,
-        "fourteenToEighteenYears": 15,
-        "ninteenToThirtyYears": 18,
-        "thirtyOneToFiftyYears": 18,
-        "fiftyOneToSeventyYears": 8,
-        "seventyOnePlus": 8
-      }
-    }
-  },
-  "magnesium": {
-    "name": "Magnesium",
-    "type": "mineral",
-    "dailyValue": {
-      "unit": "mg",
-      "value": 420
-    },
-    "whatItDoes": "<li>Blood pressure regulation</li><li>Blood sugar regulation</li><li>Bone formation</li><li>Energy production</li><li>Hormone secretion</li><li>Immune function</li><li>Muscle contraction</li><li>Nervous system function</li><li>Normal heart rhythm</li><li>Protein formation</li>",
-    "whereItsFound": "<li>Avocados</li><li>Beans and peas</li><li>Dairy products</li><li>Fruits (e.g., bananas and raisins)</li><li>Green leafy vegetables (e.g.,spinach)</li><li>Nuts and pumpkin seeds</li><li>Potatoes</li><li>Whole grains</li>",
-    "dri": {
-      "unit": "(mg/d)",
-      "maleValues": {
-        "nineToThirteenYears": 240,
-        "fourteenToEighteenYears": 410,
-        "ninteenToThirtyYears": 400,
-        "thirtyOneToFiftyYears": 420,
-        "fiftyOneToSeventyYears": 420,
-        "seventyOnePlus": 420
-      },
-      "femaleValues": {
-        "nineToThirteenYears": 240,
-        "fourteenToEighteenYears": 360,
-        "ninteenToThirtyYears": 310,
-        "thirtyOneToFiftyYears": 320,
-        "fiftyOneToSeventyYears": 320,
-        "seventyOnePlus": 320
-      }
-    }
-  },
-  "manganese": {
-    "name": "Manganese",
-    "type": "mineral",
-    "dailyValue": {
-      "unit": "mg",
-      "value": 2.3
-    },
-    "whatItDoes": "<li>Carbohydrate, protein, and cholesterol metabolism</li><li>Cartilage and bone formation</li><li>Wound healing</li>",
-    "whereItsFound": "<li>Beans</li><li>Nuts</li><li>Pineapple</li><li>Spinach</li><li>Sweet potato</li><li>Whole grains</li>",
-    "dri": {
-      "unit": "(mg/d)",
-      "maleValues": {
-        "nineToThirteenYears": 1.9,
-        "fourteenToEighteenYears": 2.2,
-        "ninteenToThirtyYears": 2.3,
-        "thirtyOneToFiftyYears": 2.3,
-        "fiftyOneToSeventyYears": 2.3,
-        "seventyOnePlus": 2.3
-      },
-      "femaleValues": {
-        "nineToThirteenYears": 1.6,
-        "fourteenToEighteenYears": 1.6,
-        "ninteenToThirtyYears": 1.8,
-        "thirtyOneToFiftyYears": 1.8,
-        "fiftyOneToSeventyYears": 1.8,
-        "seventyOnePlus": 1.8
-      }
-    }
-  },
-  "molybdenum": {
-    "name": "Molybdenum",
-    "type": "mineral",
-    "dailyValue": {
-      "unit": "mcg",
-      "value": 45
-    },
-    "whatItDoes": "<li>Enzyme production</li>",
-    "whereItsFound": "<li>Beans and peas</li><li>Nuts</li><li>Whole grains</li>",
-    "dri": {
-      "unit": "(ug/d)",
-      "maleValues": {
-        "nineToThirteenYears": 34,
-        "fourteenToEighteenYears": 43,
-        "ninteenToThirtyYears": 45,
-        "thirtyOneToFiftyYears": 45,
-        "fiftyOneToSeventyYears": 45,
-        "seventyOnePlus": 45
-      },
-      "femaleValues": {
-        "nineToThirteenYears": 34,
-        "fourteenToEighteenYears": 43,
-        "ninteenToThirtyYears": 45,
-        "thirtyOneToFiftyYears": 45,
-        "fiftyOneToSeventyYears": 45,
-        "seventyOnePlus": 45
-      }
-    }
-  },
-  "phosphorus": {
-    "name": "Phosphorus",
-    "type": "mineral",
-    "dailyValue": {
-      "unit": "mg",
-      "value": 1250
-    },
-    "whatItDoes": "<li>Acid-base balance</li><li>Bone formation</li><li>Energy production and storage</li><li>Hormone activation</li>",
-    "whereItsFound": "<li>Beans and peas</li><li>Dairy products</li><li>Meat</li><li>Nuts and seeds</li><li>Poultry</li><li>Seafood</li><li>Whole grain, enriched, and fortified cereals and breads</li>",
-    "dri": {
-      "unit": "(ug/d)",
-      "maleValues": {
-        "nineToThirteenYears": 1250,
-        "fourteenToEighteenYears": 1250,
-        "ninteenToThirtyYears": 700,
-        "thirtyOneToFiftyYears": 700,
-        "fiftyOneToSeventyYears": 700,
-        "seventyOnePlus": 700
-      },
-      "femaleValues": {
-        "nineToThirteenYears": 1250,
-        "fourteenToEighteenYears": 1250,
-        "ninteenToThirtyYears": 700,
-        "thirtyOneToFiftyYears": 700,
-        "fiftyOneToSeventyYears": 700,
-        "seventyOnePlus": 700
-      }
-    }
-  },
-  "potassium": {
-    "name": "Potassium",
-    "type": "mineral",
-    "dailyValue": {
-      "unit": "mg",
-      "value": 4700
-    },
-    "whatItDoes": "<li>Blood pressure regulation</li><li>Carbohydrate metabolism</li><li>Fluid balance</li><li>Growth and development</li><li>Heart function</li><li>Muscle contraction</li><li>Nervous system function</li><li>Protein formation</li>",
-    "whereItsFound": "<li>Beans</li><li>Dairy products (e.g., milk and yogurt)</li><li>Fruits (e.g., apricots, bananas, kiwifruit, cantaloupe, and grapefruit)</li><li>Juices (e.g., carrot and other vegetables juices, orange, pomegranate, and prune)</li><li>Seafood (e.g., clams, pollock, and trout)</li><li>Tomato products</li><li>Vegetables (e.g., potatoes, sweet potatoes, beet greens, and spinach)</li>",
-    "dri": {
-      "unit": "(g/d)",
-      "maleValues": {
-        "nineToThirteenYears": 4.5,
-        "fourteenToEighteenYears": 4.7,
-        "ninteenToThirtyYears": 4.7,
-        "thirtyOneToFiftyYears": 4.7,
-        "fiftyOneToSeventyYears": 4.7,
-        "seventyOnePlus": 4.7
-      },
-      "femaleValues": {
-        "nineToThirteenYears": 4.5,
-        "fourteenToEighteenYears": 4.7,
-        "ninteenToThirtyYears": 4.7,
-        "thirtyOneToFiftyYears": 4.7,
-        "fiftyOneToSeventyYears": 4.7,
-        "seventyOnePlus": 4.7
-      }
-    }
-  },
-  "selenium": {
-    "name": "selenium",
-    "type": "mineral",
-    "dailyValue": {
-      "unit": "mcg",
-      "value": 55
-    },
-    "whatItDoes": "<li>Antioxidant</li><li>Immune function</li><li>Reproduction</li><li>Thyroid function</li>",
-    "whereItsFound": "<li>Eggs</li><li>Enriched pasta and rice</li><li>Meat</li><li>Nuts (e.g., Brazil nuts) and seeds</li><li>Poultry</li><li>Seafood</li><li>Whole grains</li>",
-    "dri": {
-      "unit": "(ug/d)",
-      "maleValues": {
-        "nineToThirteenYears": 40,
-        "fourteenToEighteenYears": 55,
-        "ninteenToThirtyYears": 55,
-        "thirtyOneToFiftyYears": 55,
-        "fiftyOneToSeventyYears": 55,
-        "seventyOnePlus": 55
-      },
-      "femaleValues": {
-        "nineToThirteenYears": 40,
-        "fourteenToEighteenYears": 55,
-        "ninteenToThirtyYears": 55,
-        "thirtyOneToFiftyYears": 55,
-        "fiftyOneToSeventyYears": 55,
-        "seventyOnePlus": 55
-      }
-    }
-  },
-  "sodium": {
-    "name": "Sodium",
-    "type": "mineral",
-    "dailyValue": {
-      "unit": "mg",
-      "value": 2300
-    },
-    "whatItDoes": "<li>Acid-base balance</li><li>Blood pressure regulation</li><li>Fluid balance</li><li>Muscle contraction</li><li>Nervous system function</li>",
-    "whereItsFound": "<li>Deli meat sandwiches</li><li>Pizza</li><li>Burritos and tacos</li><li>Soups</li><li>Savory snacks (e.g., chips, crackers, popcorn)</li><li>Poultry</li><li>Pasta mixed dishes</li><li>Burgers</li><li>Egg dishes and omelets</li>",
-    "dri": {
-      "unit": "(g/d)",
-      "maleValues": {
-        "nineToThirteenYears": 1.5,
-        "fourteenToEighteenYears": 1.5,
-        "ninteenToThirtyYears": 1.5,
-        "thirtyOneToFiftyYears": 1.5,
-        "fiftyOneToSeventyYears": 1.3,
-        "seventyOnePlus": 1.2
-      },
-      "femaleValues": {
-        "nineToThirteenYears": 1.5,
-        "fourteenToEighteenYears": 1.5,
-        "ninteenToThirtyYears": 1.5,
-        "thirtyOneToFiftyYears": 1.5,
-        "fiftyOneToSeventyYears": 1.3,
-        "seventyOnePlus": 1.2
-      }
-    }
   },
   "zinc": {
     "name": "Zinc",
