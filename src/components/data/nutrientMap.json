@@ -1,0 +1,16 @@
+{
+    "Protein": "protein",
+    "Total lipid (fat)": "fat",
+    "Carbohydrate, by difference": "carbohydrates",
+    "Energy": "calories",
+    "Sugars, total including NLEA": "sugar",
+    "Fiber, total dietary": "fiber",
+    "Calcium, Ca": "calcium",
+    "Iron, Fe": "iron",
+    "Sodium, Na": "sodium",
+    "Vitamin C, total ascorbic acid": "vitimanC",
+    "Vitamin A, IU": "vitimanA",
+    "Cholesterol": "cholesterol",
+    "Fatty acids, total trans": "transFat",
+    "Fatty acids, total saturated": "saturatedFat"
+}
