@@ -13,17 +13,19 @@
       <tbody>
         <tr v-for="(nutrient, key) in combinedNutrientData"
       :key="key">
-          <td>{{ nutrient.name }} <button @click="showSelectedModal(nutrient)"><font-awesome-icon :icon="['fas', 'circle-info']" /></button></td>
+          <td>{{ nutrient.name }}  <button @click="showSelectedModal(nutrient)" class="nutrient-info-button"><font-awesome-icon :icon="['fas', 'circle-info']" /></button></td>
           <td>{{ nutrient.type }}</td>
           <td>{{ nutrient.value }} {{ nutrient.unit }}</td>
         </tr>
       </tbody>
     </table>
-    <div class="nutrient-info-modal" v-if="showSelectedModal">
+    <div class="nutrient-info-modal" v-if="showModal">
             <div class="nutrient-info-modal-content">
-              <h3>{{ modalItem.name }}</h3>
               <button @click="closeModal">X</button>
+              <h3>{{ modalItem.name }}</h3>
+              <h3>What It Does:</h3>
               <div v-html="modalItem.whatItDoes"></div>
+              <h3>Where It's Found:</h3>
               <div v-html="modalItem.whereItsFound"></div>
             </div>
           </div>
@@ -83,11 +85,12 @@ export default {
   function showSelectedModal(item: any) {
     showModal.value = true;
     modalItem.value = item;
+    console.log("modalItem", modalItem.value);
   }
 
   function closeModal() {
     showModal.value = false;
-    modalItem.value = null;
+    modalItem.value = { name: null, whatItDoes: null, whereItsFound: null };
   }
 
     return {
@@ -107,12 +110,20 @@ export default {
 </script>
 
 <style scoped>
+.nutrient-info-button {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border: none;
+  cursor: pointer;
+  font-size: 1.3rem;
+  padding: 0;
+}
 .nutrient-info-modal {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -121,6 +132,19 @@ export default {
 .nutrient-info-modal-content {
   background-color: var(--secondary-color);
   color: var(--primary-color);
-  padding: 20px;
+  padding: 5.5rem 4.0rem 4.0rem 4.0rem;
+}
+
+h3 {
+  text-align: left;
+  padding-top: 1.0rem;
+  padding-bottom: 1.0rem;
+  font-weight: 700;
+}
+
+.nutrient-info-modal-content button{
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
 }
 </style>
