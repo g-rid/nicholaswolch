@@ -1,4 +1,14 @@
 {
+  "sources": {
+    "dri": {
+      "url": "https://www.dietaryguidelines.gov/",
+      "name": "Dietary Reference Intakes"
+    },
+    "interactiveNutritionFacts": {
+      "url": "",
+      "name": "Interactive Nutrition Facts Label PDF"
+    }
+  },
   "carbohydrates": {
     "name": "Total Carbohydrates, By Difference",
     "type": "macronutrient",
@@ -29,7 +39,33 @@
     }
   },
   "calories": {
-    "whatItDoes": "PLACEHOLDER"
+    "name": "Energy",
+    "type": "energy",
+    "dailyValue": {
+      "unit": "g",
+      "value": 2000
+    },
+    "whatItDoes": "PLACEHOLDER",
+    "whereItsFound": "PLACEHOLDER",
+    "dri": {
+      "unit": "(g/d)",
+      "maleValues": {
+        "nineToThirteenYears": 2000,
+        "fourteenToEighteenYears": 2600,
+        "ninteenToThirtyYears": 2700,
+        "thirtyOneToFiftyYears": 2500,
+        "fiftyOneToSeventyYears": 2400,
+        "seventyOnePlus": 2400
+      },
+      "femaleValues": {
+        "nineToThirteenYears": 1800,
+        "fourteenToEighteenYears": 2100,
+        "ninteenToThirtyYears": 2100,
+        "thirtyOneToFiftyYears": 2000,
+        "fiftyOneToSeventyYears": 1800,
+        "seventyOnePlus": 1800
+      }
+    }
   },
   "choline": {
     "name": "Choline",
@@ -61,10 +97,63 @@
     "whereItsFound": "<li>Beans and peas</li><li>Egg yolks</li><li>Fish (e.g., cod and salmon)</li><li>Liver (e.g., beef and chicken)</li><li>Milk</li><li>Nuts</li><li>Salmon</li><li>Soy Foods</li><li>Vegtables (e.g., broccoli, cauliflower, spinach)</li>"
   },
   "calcium": {
-    "whatItDoes": "PLACEHOLDER"
+    "name": "cholesterol",
+    "type": "mineral",
+    "dailyValue": {
+      "unit": "mg",
+      "value": 1300
+    },
+    "whatItDoes": "<ul><li>Blood clotting</li><li>Bone and teeth formation</li><li>Constriction and relaxation of blood vessels</li><li>Hormone secretion</li><li>Muscle contraction</li><li>Nervous system function</li></ul>",
+    "whereItsFound": "<ul><li>Canned seafood with bones (e.g., salmon and sardines)</li><li>Dairy products</li><li>Fortified orange juice</li><li>Fortified soy beverages</li><li>Fortified ready-to-eat cereals</li><li>Green vegetables (e.g., kale, broccoli, and collard greens)</li><li>Tofu (made with calcium sulfate)</li></ul>",
+    "dri": {
+      "unit": "mg",
+      "maleValues": {
+        "nineToThirteenYears": 1300,
+        "fourteenToEighteenYears": 1300,
+        "ninteenToThirtyYears": 1000,
+        "thirtyOneToFiftyYears": 1000,
+        "fiftyOneToSeventyYears": 1000,
+        "seventyOnePlus": 1000
+      },
+      "femaleValues": {
+        "nineToThirteenYears": 1300,
+        "fourteenToEighteenYears": 1300,
+        "ninteenToThirtyYears": 1000,
+        "thirtyOneToFiftyYears": 1000,
+        "fiftyOneToSeventyYears": 1200,
+        "seventyOnePlus": 1200
+      }
+    }
   },
   "cholesterol": {
-    "whatItDoes": "PLACEHOLDER"
+    "name": "cholesterol",
+    "type": "energy",
+    "dailyValue": {
+      "unit": "mg",
+      "value": 300
+    },
+    "whatItIs": "<p>Cholesterol is a <strong>waxy, fat-like substance found in all cells of the body</strong>. Cholesterol is produced by the body (primarily by the liver) and is also consumed from food, referred to as 'dietary cholesterol.'</p><p>The human body makes all the cholesterol that it needs, so it is not necessary to get cholesterol from food.</p>",
+    "whatItDoes": "<ul><li>Cholesterol is a structural component of cell membranes.</li><li>Cholesterol is necessary for the production of bile, a fluid made by the liver that aids in the digestion of fat in the intestine.</li><li>Cholesterol is used to make vitamin D and certain hormones, like estrogen and testosterone.</li></ul>",
+    "whereItsFound": "Dietary cholesterol is found <strong>only in animal products</strong>, including:<ul><li>Beef fat (tallow and suet), chicken fat, and pork fat (lard)</li><li>Dairy products (such as milk, cheese, and yogurt)</li><li>Egg yolks</li><li>Meats and poultry</li><li>Processed meat and poultry products (such as bacon, hot dogs, jerky, some luncheon meats, and sausages)</li><li>Shellfish (such as lobster and shrimp)</li><li>Spreads (such as butter, cream cheese, and sour cream)</li></ul>",
+    "dri": {
+      "unit": "mg",
+      "maleValues": {
+        "nineToThirteenYears": 300,
+        "fourteenToEighteenYears": 300,
+        "ninteenToThirtyYears": 300,
+        "thirtyOneToFiftyYears": 300,
+        "fiftyOneToSeventyYears": 300,
+        "seventyOnePlus": 300
+      },
+      "femaleValues": {
+        "nineToThirteenYears": 300,
+        "fourteenToEighteenYears": 300,
+        "ninteenToThirtyYears": 300,
+        "thirtyOneToFiftyYears": 300,
+        "fiftyOneToSeventyYears": 300,
+        "seventyOnePlus": 300
+      }
+    }
   },
   "chloride": {
     "name": "Chloride",
@@ -591,7 +680,34 @@
     }
   },
   "protein": {
-    "whatItDoes": "PLACEHOLDER"
+    "name": "Protein",
+    "type": "macronutrient",
+    "dailyValue": {
+      "unit": "grams",
+      "value": 50
+    },
+    "whatItIs": "<p>Protein is found in foods from both <strong>plants and animals</strong>.  Protein is made up of hundreds or thousands of smaller units, called <strong>amino acids</strong>, which are linked to one another in long chains. The sequence of amino acids determines each protein’s unique structure and its specific function.</p> <p>There are 20 different amino acids that can be combined to make every type of protein in the body. These amino acids fall into <strong>two categories</strong>:</p> ",
+    "whatItDoes": "<li>Protein provides calories, or “energy” for the body. Each gram of protein provides 4 calories.</li> <li>Protein is a component of every cell in the human body and is necessary for proper growth and development, especially during childhood, adolescence, and pregnancy.</li> <li>Protein helps your body build and repair cells and body tissue.</li> <li>Protein is a major part of your skin, hair, nails, muscle, bone, and internal organs. Protein is also found in almost all body fluids.</li> <li>Protein is important for many body processes, such as blood clotting, fluid balance, immune response, vision, and production of hormones, antibodies, and enzymes.</li>",
+    "whereItsFound": "Protein is found in a variety of foods, including:  <li>Beans, peas, and lentils</li><li>Dairy products (such as milk, cheese, and yogurt)</li><li>Eggs</li><li>Meats and poultry</li><li>Nuts and seeds</li><li>Seafood (fish and shellfish)</li><li>Soy products</li><il>Whole grains and vegetables (these generally provide less protein than is found in other sources)</li>",
+    "dri": {
+      "unit": "g",
+      "maleValues": {
+        "nineToThirteenYears": 34,
+        "fourteenToEighteenYears": 52,
+        "ninteenToThirtyYears": 56,
+        "thirtyOneToFiftyYears": 56,
+        "fiftyOneToSeventyYears": 56,
+        "seventyOnePlus": 56
+      },
+      "femaleValues": {
+        "nineToThirteenYears": 34,
+        "fourteenToEighteenYears": 46,
+        "ninteenToThirtyYears": 46,
+        "thirtyOneToFiftyYears": 46,
+        "fiftyOneToSeventyYears": 46,
+        "seventyOnePlus": 46
+      }
+    }
   },
   "selenium": {
     "name": "selenium",
@@ -623,7 +739,34 @@
     }
   },
   "sugar": {
-    "whatItDoes": "PLACEHOLDER"
+    "name": "Total Sugar",
+    "type": "macronutrient",
+    "dailyValue": {
+      "unit": "grams",
+      "value": 50
+    },
+    "whatItIs": "<p>Sugars are the <strong>smallest</strong> and simplest type of <strong>carbohydrate</strong>. They are easily digested and absorbed by the body. Total Sugars on the Nutrition Facts label includes:</p><li><strong>Sugars naturally present</strong> in many nutritious foods and beverages, such as sugar in milk and fruit.</li><li><strong>Added sugars</strong>, which include sugars that are added during the processing of foods (such as sucrose or dextrose), foods packaged as sweeteners (such as table sugar), sugars from syrups and honey, and sugars from concentrated fruit or vegetable juices.<li>",
+    "whatItDoes": "<ul><li>All sugars provide calories, or “energy,” for the body. Each gram of sugar provides <strong>4 calories</strong>. The human body breaks down sugars and other carbohydrates into glucose. Glucose in the blood (often referred to as blood sugar) is the primary energy source for the body’s cells, tissues, and organs (such as the brain and muscles). Glucose can be used immediately or stored in the liver and muscles for later use.</li><li>Sugars are also used to sweeten, preserve, and improve the functional attributes of foods and beverages (such as viscosity, texture, body, color, and browning capability).</li>",
+    "whereItsFound": "Sugars are found in a variety of foods, including: <strong>Sugars naturally present in food</strong> <ul><li>Dairy products (such as milk and yogurt)</li><li>Fruit (fresh, frozen, dried, and canned in 100% fruit juice)</li><li>100% fruit and vegetable juice</li><li>Vegetables</li></ul><strong>Added sugars</strong><ul><li>Baked goods (such as cakes, cookies, pastries, and pies)</li><li>Desserts (such as ice cream and puddings)</li><li>Salad dressings, sauces, spreads, condiments, and gravies</li><li>Sugar-sweetened beverages (such as energy drinks, fruit drinks, regular soda, sports drinks, sweetened waters, and sweetened coffee and tea)</li><li>Sweetened breakfast cereal</li><li>Sweets (such as candies, jams, sweet toppings, and syrups)</li><li>Single-ingredient sugars (such as table sugar, maple syrup, or honey)</li><ul>",
+    "dri": {
+      "unit": "(ug/d)a",
+      "maleValues": {
+        "nineToThirteenYears": 50,
+        "fourteenToEighteenYears": 50,
+        "ninteenToThirtyYears": 50,
+        "thirtyOneToFiftyYears": 50,
+        "fiftyOneToSeventyYears": 50,
+        "seventyOnePlus": 50
+      },
+      "femaleValues": {
+        "nineToThirteenYears": 50,
+        "fourteenToEighteenYears": 50,
+        "ninteenToThirtyYears": 50,
+        "thirtyOneToFiftyYears": 50,
+        "fiftyOneToSeventyYears": 50,
+        "seventyOnePlus": 50
+      }
+    }
   },
   "sodium": {
     "name": "Sodium",
@@ -655,10 +798,64 @@
     }
   },
   "saturatedFat": {
-    "whatItDoes": "PLACEHOLDER"
+    "name": "Saturated Fat",
+    "type": "macronutrient",
+    "dailyValue": {
+      "unit": "g",
+      "value": 20
+    },
+    "whatItIs": "<p>Saturated fat is found in higher proportions in <strong>animal products</strong> and is usually <strong>solid at room temperature</strong>. An exception is seafood, which is generally low in saturated fat.</p><p>The human body makes all the saturated fat that it needs, so it is not necessary to get saturated fat from food.</p>",
+    "whatItDoes": "Like all fats, saturated fat provides calories or “energy” for the body, helps the body absorb certain vitamins, and supports many body processes.",
+    "whereItsFound": "Saturated fat is found in a variety of foods, including:<ul><li>Beef fat (tallow and suet), chicken fat, pork fat (lard), and vegetable shortening</li><li>Baked goods (such as brownies, cakes, cookies, doughnuts, pastries, and pies)</li><li>Condiments, gravies, and salad dressings</li><li>Dairy products (such as whole and 2% reduced-fat milk, cheese, and yogurt)</li><li>Desserts (such as ice cream, other frozen desserts, and puddings)</li><li>Meats and poultry</li><li>Processed meats and poultry products (such as bacon, hot dogs, jerky, some luncheon meats, and sausages)</li><li>Pizza</li><li>Sandwiches (such as burgers, burritos, deli sandwiches, hot dogs, and tacos)</li><li>Snack foods (such as chips, crackers, microwave popcorn, and pretzels)</li><li>Spreads (such as butter, stick margarine, cream cheese, and sour cream)</li><li>Sweets (such as chocolate candies)</li><li>Tropical plant oils (such as coconut, palm, and palm kernel oils)</li></ul>",
+    "dri": {
+      "unit": "g",
+      "maleValues": {
+        "nineToThirteenYears": 20,
+        "fourteenToEighteenYears": 20,
+        "ninteenToThirtyYears": 20,
+        "thirtyOneToFiftyYears": 20,
+        "fiftyOneToSeventyYears": 20,
+        "seventyOnePlus": 20
+      },
+      "femaleValues": {
+        "nineToThirteenYears": 20,
+        "fourteenToEighteenYears": 20,
+        "ninteenToThirtyYears": 20,
+        "thirtyOneToFiftyYears": 20,
+        "fiftyOneToSeventyYears": 20,
+        "seventyOnePlus": 20
+      }
+    }
   },
   "transFat": {
-    "whatItDoes": "PLACEHOLDER"
+    "name": "Trans Fat",
+    "type": "macronutrient",
+    "dailyValue": {
+      "unit": "g",
+      "value": 0
+    },
+    "whatItIs": "<p>Trans fat is an unsaturated fat. Trans fat occurs naturally in some animal foods but is not essential in the diet. Partially hydrogenated oils contain artificial trans fats and were the major source of trans fats in foods. Trans fat has <strong>detrimental health effects</strong> and partially hydrogenated oils are no longer added to foods.</p>There are <strong>two sources</strong> of trans fat: <ul><li><strong>Trans fat formed naturally</strong> is produced in the stomach of ruminant animals (such as cattle and sheep).</li><li><strong>Trans fat formed artificially during food processing</strong> is created during a manufacturing process called “partial hydrogenation” in which hydrogen is added to liquid vegetable oil to make it more solid, and therefore more resistant to becoming spoiled or rancid. The process generally does not make the oil completely solid, resulting in “partially” hydrogenated oils.</li></ul>",
+    "whatItDoes": "<p><strong>Partially hydrogenated oils</strong> were used by food manufacturers to improve the texture, shelf life, and flavor stability of foods. Partially hydrogenated oils should not be confused with “fully hydrogenated oils,” which are solid fats that contain very low levels of trans fat.</p>",
+    "whereItsFound": "<p><strong>Trans fat formed naturally</strong> is found in small amounts in some animal products, such as dairy products, beef, and lamb.</p><p><strong>Trans fat formed artificially during food processing</strong> is found in partially hydrogenated oils, which were used in a variety of foods.  As of 2018, most uses of partially hydrogenated oils have been phased out. Refined vegetable oils may contain a small amount of trans fat as an unintentional byproduct of their manufacturing process.</p>",
+    "dri": {
+      "unit": "g",
+      "maleValues": {
+        "nineToThirteenYears": 20,
+        "fourteenToEighteenYears": 20,
+        "ninteenToThirtyYears": 20,
+        "thirtyOneToFiftyYears": 20,
+        "fiftyOneToSeventyYears": 20,
+        "seventyOnePlus": 20
+      },
+      "femaleValues": {
+        "nineToThirteenYears": 20,
+        "fourteenToEighteenYears": 20,
+        "ninteenToThirtyYears": 20,
+        "thirtyOneToFiftyYears": 20,
+        "fiftyOneToSeventyYears": 20,
+        "seventyOnePlus": 20
+      }
+    }
   },
   "vitimanA": {
     "name": "Vitiman A",
