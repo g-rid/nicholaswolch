@@ -8,6 +8,7 @@
           <th>Nutrient:</th>
           <th>Type:</th>
           <th>Units:</th>
+          <th>% of Daily Value:</th>
         </tr>
       </thead>
       <tbody>
@@ -16,6 +17,7 @@
           <td>{{ nutrient.name }}  <button @click="showSelectedModal(nutrient)" class="nutrient-info-button"><font-awesome-icon :icon="['fas', 'circle-info']" /></button></td>
           <td>{{ nutrient.type }}</td>
           <td>{{ nutrient.value }} {{ nutrient.unit }}</td>
+          <td>{{ nutrient.dailyValue }}%</td>
         </tr>
       </tbody>
     </table>
@@ -65,6 +67,8 @@ export default {
     const combinedData = selectedInfo.map((nutrient: any) => {
     const nutrientName = nutrientMap[nutrient.nutrientName];
     const nutrientInfo = defaultInfo[nutrientName];
+    const totalDailyValue = nutrientInfo.dailyValue.value;
+    const dailyValue = totalDailyValue === 0 ? 0 : Math.round((nutrient.value / totalDailyValue) * 100);
     return {
       name: nutrient.nutrientName,
       value: nutrient.value,
@@ -72,6 +76,7 @@ export default {
       whereItsFound: nutrientInfo?.whereItsFound,
       whatItDoes: nutrientInfo?.whatItDoes,
       type: nutrientInfo?.type,
+      dailyValue: dailyValue,
     };
   });
     return combinedData;
@@ -103,7 +108,7 @@ export default {
   },
   methods: {
     debug() {
-      console.log(this.selectedItem);
+      console.log(this.totalDailyValue);
     },
   }
 };
