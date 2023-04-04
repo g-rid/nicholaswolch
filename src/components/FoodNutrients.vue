@@ -1,6 +1,5 @@
 <template>
   <div class="nutrient-graph">
-    <button @click="debug">Debug</button>
     <h2>Label Nutrients</h2>
     <table v-if="combinedNutrientData">
       <thead>
@@ -106,11 +105,6 @@ export default {
       closeModal,
     };
   },
-  methods: {
-    debug() {
-      console.log(this.totalDailyValue);
-    },
-  }
 };
 </script>
 

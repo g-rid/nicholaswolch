@@ -1,6 +1,5 @@
 <template>
   <div class="food-search-wrapper">
-      <button @click="debug">Debug</button>
       <span>Search all USDA registered food:</span>
       <div class="input-wrapper">
         <div class="search">
@@ -158,9 +157,6 @@ export default {
       } else {
         return text.toLowerCase().replace(/\b(\w)/g, (x) => x.toUpperCase());
       }
-    },
-    debug() {
-      console.log("Show Modal", this.showModal);
     },
     nextPage() {
       this.state.pageNumber++;

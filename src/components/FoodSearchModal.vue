@@ -1,6 +1,5 @@
 <template>
   <div v-if="show" class="modal">
-    <button @click="debug">Debug</button>
     <div class="modal-wrapper">
       <div class="modal-header">
       <div class="modal-title-wrapper">
@@ -15,7 +14,7 @@
           Brand Owner: {{ selectedItem.brandOwner }}
         </h3>
         <h3 v-if="selectedItem.servingSize">
-          Serving Size: {{ selectedItem.servingSize }}
+          Serving Size: {{ Math.round(selectedItem.servingSize) }}
           {{ selectedItem.servingSizeUnit }}
         </h3>
         <h3>
@@ -82,9 +81,6 @@ export default {
     closeModal() {
       this.$emit("close");
     },
-    debug() {
-      console.log("Selected Item", this.selectedItem);
-    },
   },
 };
 </script>
@@ -105,6 +101,10 @@ export default {
   align-items: flex-start;
   justify-content: space-between;
   flex-direction: row;
+}
+
+.modal-wrapper {
+  margin: auto;
 }
 
 .modal-header {
