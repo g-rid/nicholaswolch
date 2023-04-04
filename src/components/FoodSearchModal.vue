@@ -95,7 +95,7 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 90%;
+  width: 95%;
   height: 90%;
   background-color: var(--vt-c-black);
   padding: 2rem;
