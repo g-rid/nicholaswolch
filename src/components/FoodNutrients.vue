@@ -17,22 +17,19 @@
           <td>{{ nutrient.name }}  <button @click="showSelectedModal(nutrient)" class="nutrient-info-button"><font-awesome-icon :icon="['fas', 'circle-info']" /></button></td>
           <td>{{ nutrient.type }}</td>
           <td>{{ nutrient.value }} {{ nutrient.unit }}</td>
-          <td>{{ nutrient.dailyValue }}%</td>
+          <td><ProgressBar :percentage="nutrient.dailyValue"/></td>
         </tr>
       </tbody>
     </table>
     <div class="nutrient-info-modal" v-if="showModal">
-            <div class="nutrient-info-modal-content">
-              <button @click="closeModal">X</button>
-              <h3>{{ modalItem.name }}</h3>
-              <h3>What It Does:</h3>
-              <div v-html="modalItem.whatItDoes"></div>
-              <h3>Where It's Found:</h3>
-              <div v-html="modalItem.whereItsFound"></div>
-            </div>
-          </div>
-    <div v-else>
-      <p>No Nutrients Found</p>
+      <div class="nutrient-info-modal-content">
+        <button @click="closeModal">X</button>
+        <h3>{{ modalItem.name }}</h3>
+        <h3>What It Does:</h3>
+        <div v-html="modalItem.whatItDoes"></div>
+        <h3>Where It's Found:</h3>
+        <div v-html="modalItem.whereItsFound"></div>
+      </div>
     </div>
   </div>
 </template>
@@ -42,10 +39,13 @@ import type { PropType } from "vue";
 import { ref } from "vue";
 import defaultNutrients from "./data/defaultNutrients.json";
 import nutrientMap from "./data/nutrientMap.json";
+import ProgressBar from './ProgressBar.vue';
 
 export default {
   name: "FoodNutrients",
-  components: {},
+  components: {
+    ProgressBar
+  },
   props: {
     selectedItem: {
       type: Object,
