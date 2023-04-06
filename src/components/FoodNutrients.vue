@@ -1,5 +1,5 @@
 <template>
-  <div class="nutrient-graph">
+  <div class="nutrient-table">
     <h2>Label Nutrients</h2>
     <table v-if="combinedNutrientData">
       <thead>
@@ -109,6 +109,9 @@ export default {
 </script>
 
 <style scoped>
+.nutrient-table {
+  margin: auto;
+}
 .nutrient-info-button {
   background-color: var(--secondary-color);
   color: var(--primary-color);
