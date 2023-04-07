@@ -1,6 +1,6 @@
 <template>
   <div class="nutrient-table">
-    <h2>Label Nutrients</h2>
+    <h2>Label Nutrients:</h2>
     <table v-if="combinedNutrientData">
       <thead>
         <tr>
@@ -112,6 +112,12 @@ export default {
 .nutrient-table {
   margin: auto;
 }
+
+table {
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+}
 .nutrient-info-button {
   background-color: var(--secondary-color);
   color: var(--primary-color);
@@ -135,6 +141,13 @@ export default {
   background-color: var(--secondary-color);
   color: var(--primary-color);
   padding: 5.5rem 4.0rem 4.0rem 4.0rem;
+  z-index: 2;
+}
+
+h2 {
+  text-align: left;
+  padding-top: 2.0rem;
+  padding-bottom: 2.0rem;
 }
 
 h3 {

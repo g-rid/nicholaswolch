@@ -29,9 +29,9 @@
         </h3>
         <h3 v-if="selectedItem.ingredients">
           Ingredients:
-          <div class="ingredients">
+          <span class="ingredients">
             {{ selectedItem.ingredients }}
-          </div>
+          </span>
         </h3>
       </div>
       </div>
@@ -112,15 +112,15 @@ export default {
   align-items: flex-start;
   justify-content: space-between;
 }
-.modal-body {
-  display: grid;
-  grid-template-columns: 70% 30%;
-  padding: 0;
-}
 h2,
 h3 {
   text-align: left;
   font-weight: 600;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+h2 {
+  padding-top: 4.0rem;
 }
 .ingredients {
   font-size: 1.2rem;
