@@ -117,6 +117,7 @@ table {
   padding-left: 0;
   padding-right: 0;
   width: 100%;
+  margin: auto;
 }
 .nutrient-info-button {
   background-color: var(--secondary-color);
