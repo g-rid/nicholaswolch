@@ -181,7 +181,7 @@ export default {
   justify-content: center;
   flex-direction: column;
   padding: 2rem 0;
-  height: auto;
+  height: 100%;
 }
 
 .food-search-wrapper:has(.results) {
