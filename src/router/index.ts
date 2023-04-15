@@ -1,10 +1,17 @@
 import { createRouter, createWebHistory } from "vue-router";
+// @ts-ignore
 import FoodSearchView from "../views/FoodSearchView.vue";
+// @ts-ignore
 import ResumeView from "../views/ResumeView.vue";
+// @ts-ignore
 import NutritionApp from "../views/NutritionApp.vue";
+// @ts-ignore
 import NutritionAppHome from "../views/NutritionAppHome.vue";
+// @ts-ignore
 import PortfolioView from "../views/PortfolioView.vue";
+// @ts-ignore
 import CubeContainerView from "../views/CubeContainerView.vue";
+// @ts-ignore
 import ContactView from "../views/ContactView.vue";
 
 const router = createRouter({
