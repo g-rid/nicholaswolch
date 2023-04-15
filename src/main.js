@@ -15,16 +15,7 @@ import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { faMoon } from "@fortawesome/free-solid-svg-icons";
 import { faSun } from "@fortawesome/free-solid-svg-icons";
 import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
-library.add(
-  faUtensils,
-  faUser,
-  faScrewdriverWrench,
-  faXmark,
-  faSpinner,
-  faMoon,
-  faSun,
-  faCircleInfo
-);
+library.add(faUtensils, faUser, faScrewdriverWrench, faXmark, faSpinner, faMoon, faSun, faCircleInfo);
 // Import Apex Charts
 // import ApexCharts from "apexcharts";
 import VueApexCharts from "vue3-apexcharts";
