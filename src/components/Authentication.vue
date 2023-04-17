@@ -1,9 +1,12 @@
 <template>
   <div class="authentication" v-if="!isAuthenticated">
     <h1>Please sign in</h1>
+    <h3>Email Address:</h3>
     <input type="email" v-model="email" placeholder="Email" />
+    <h3>Password:</h3>
     <input type="password" v-model="password" placeholder="Password" />
-    <button @click="handleSignIn">Sign in with email and password</button>
+    <button @click="handleSignIn">Sign in</button>
+    New to Nutrition Planner? <a class="a-link" @click="handleSignUp">Create a new account</a>
   </div>
   <div v-else>
     <h1>Welcome, {{ userDisplayName }}</h1>
@@ -13,7 +16,7 @@
 
 <script lang="ts">
 import { defineComponent, computed, ref, onMounted, watch } from 'vue';
-import { user, isAuthenticated, signIn, signOut } from '../auth';
+import { user, isAuthenticated, signIn, signUp, signOut } from '../auth';
 
 export default defineComponent({
   setup(_, { emit }) {
@@ -26,6 +29,10 @@ export default defineComponent({
 
     const handleSignIn = async () => {
       await signIn(email.value, password.value);
+    };
+
+    const handleSignUp = async () => {
+      await signUp(email.value, password.value);
     };
 
     const updateAuthenticationState = () => {
@@ -46,13 +53,14 @@ export default defineComponent({
       userDisplayName,
       isAuthenticated: isUserAuthenticated,
       handleSignIn,
+      handleSignUp,
       signOut,
     };
   },
 });
 </script>
 
-<style scoped> 
+<style scoped>
   .authentication {
     display: flex;
     align-items: center;

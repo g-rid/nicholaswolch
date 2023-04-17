@@ -1,6 +1,6 @@
 import { ref } from 'vue';
 import { auth } from './firebase';
-import { onAuthStateChanged, signInWithEmailAndPassword, signOut as firebaseSignOut, } from 'firebase/auth';
+import { onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut as firebaseSignOut, } from 'firebase/auth';
 const user = ref(null);
 onAuthStateChanged(auth, (currentUser) => {
     user.value = currentUser;
@@ -22,4 +22,12 @@ const signOut = async () => {
         console.error('Sign out error:', error);
     }
 };
-export { user, isAuthenticated, signIn, signOut };
+const signUp = async (email, password) => {
+    try {
+        await createUserWithEmailAndPassword(auth, email, password);
+    }
+    catch (error) {
+        console.error('Sign up error:', error);
+    }
+};
+export { user, isAuthenticated, signIn, signOut, signUp };
