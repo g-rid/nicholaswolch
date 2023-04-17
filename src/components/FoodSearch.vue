@@ -175,18 +175,6 @@ export default {
 </script>
 
 <style>
-.food-search-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 2rem 0;
-  height: 100%;
-}
-
-.food-search-wrapper:has(.results) {
-  height: auto;
-}
 
 .input-wrapper {
   display: flex;
