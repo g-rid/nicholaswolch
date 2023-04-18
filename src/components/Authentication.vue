@@ -1,6 +1,6 @@
 <template>
   <div class="authentication" v-if="!isAuthenticated">
-    <h1>Please sign in</h1>
+    <h2>Please sign in</h2>
     <h3>Email Address:</h3>
     <input type="email" v-model="email" placeholder="Email" />
     <h3>Password:</h3>

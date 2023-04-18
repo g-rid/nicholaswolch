@@ -1,18 +1,21 @@
 <template>
   <div class="view-wrapper">
-    <FoodSearch v-if="isAuthenticated" />
-    <Authentication @auth-state-changed="handleAuthStateChanged" />
+    <NutritionPlannerIntro />
+    <FoodSearch />
+    <!-- <Authentication @auth-state-changed="handleAuthStateChanged" /> -->
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
+import NutritionPlannerIntro from "../components/NutritionPlannerIntro.vue";
 import FoodSearch from "../components/FoodSearch.vue";
 import Authentication from "../components/Authentication.vue";
 
 export default defineComponent({
   name: "FoodSearchView",
   components: {
+    NutritionPlannerIntro,
     FoodSearch,
     Authentication,
   },
