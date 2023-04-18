@@ -1,4 +1,3 @@
-<!-- FoodSearchView.vue -->
 <template>
   <div class="view-wrapper">
     <FoodSearch v-if="isAuthenticated" />

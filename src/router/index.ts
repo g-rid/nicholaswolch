@@ -4,9 +4,9 @@ import FoodSearchView from "../views/FoodSearchView.vue";
 // @ts-ignore
 import ResumeView from "../views/ResumeView.vue";
 // @ts-ignore
-import NutritionApp from "../views/NutritionApp.vue";
+import NutritionPlannerView from "../views/NutritionPlannerView.vue";
 // @ts-ignore
-import NutritionAppHome from "../views/NutritionAppHome.vue";
+import NutritionAppHome from "../views/NutritionGraphViews.vue";
 // @ts-ignore
 import PortfolioView from "../views/PortfolioView.vue";
 // @ts-ignore
@@ -39,19 +39,9 @@ const router = createRouter({
       component: ContactView,
     },
     {
-      path: "/nutrition-app",
-      name: "nutritionApp",
-      component: NutritionApp,
-    },
-    {
-      path: "/nutrition-app-home",
-      name: "nutritionAppHome",
-      component: NutritionAppHome,
-    },
-    {
-      path: "/nutrition-app/food-search",
-      name: "foodSearch",
-      component: FoodSearchView,
+      path: "/nutrition-planner",
+      name: "nutritionPlanner",
+      component: NutritionPlannerView,
     },
   ],
 });
