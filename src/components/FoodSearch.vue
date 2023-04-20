@@ -1,7 +1,7 @@
 <template>
   <div class="food-search-wrapper">
-      <span>Search all USDA registered food:</span>
       <div class="input-wrapper">
+        <span>Search all USDA registered food:</span>
         <div class="search">
           <input v-model="state.query" @keyup.enter="search" type="text" />
           <button @click="search">Search</button>
@@ -9,9 +9,9 @@
         <p v-if="state.results.length > 0">
           Total Results: {{ totalHits.number }}
         </p>
-      </div>
-      <div v-if="loading" class="loading">
-        <font-awesome-icon icon="fa-solid fa-spinner" />
+        <div v-if="loading" class="loading">
+          <font-awesome-icon icon="fa-solid fa-spinner" />
+        </div>
       </div>
       <div v-if="state.results.length > 0" class="results">
         <div>
@@ -175,7 +175,6 @@ export default {
 </script>
 
 <style>
-
 .input-wrapper {
   display: flex;
   align-items: center;
