@@ -97,7 +97,7 @@
     "whereItsFound": "<li>Beans and peas</li><li>Egg yolks</li><li>Fish (e.g., cod and salmon)</li><li>Liver (e.g., beef and chicken)</li><li>Milk</li><li>Nuts</li><li>Salmon</li><li>Soy Foods</li><li>Vegtables (e.g., broccoli, cauliflower, spinach)</li>"
   },
   "calcium": {
-    "name": "cholesterol",
+    "name": "Calcium",
     "type": "mineral",
     "dailyValue": {
       "unit": "mg",
@@ -126,7 +126,7 @@
     }
   },
   "cholesterol": {
-    "name": "cholesterol",
+    "name": "Cholesterol",
     "type": "energy",
     "dailyValue": {
       "unit": "mg",
@@ -864,7 +864,7 @@
       "unit": "micrograms",
       "value": 900
     },
-    "whatItDoes": "<li>Growth and development</li><li>Immune function</li><li>Red blood cellformation<li><li>Reproduction</li><li>Skin and bone formation</li>",
+    "whatItDoes": "<li>Growth and development</li><li>Immune function</li><li>Red blood cellformation</li><li>Reproduction</li><li>Skin and bone formation</li>",
     "whereItsFound": "<li>Cantaloupe</li><li>Carrots</li><li>Dairy products</li><li>Eggs</li><li>Fortified cereals</li><li>Green leafy vegetables (e.g., spinach and broccoli)</li><li>Pumpkin</li><li>Red peppers</li><li>Sweet potatoes</li>",
     "dri": {
       "unit": "(ug/d)a",
