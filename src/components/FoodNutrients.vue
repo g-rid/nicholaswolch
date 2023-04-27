@@ -64,10 +64,11 @@ export default {
       selectedInfo = [selectedInfo];
     }
     const combinedData = selectedInfo.map((nutrient: any) => {
+    const nutrientValue= nutrient.value === 0 ? 0 : Math.round(nutrient.value);
     const nutrientName = nutrientMap[nutrient.nutrientName];
     const nutrientInfo = defaultInfo[nutrientName];
     const totalDailyValue = nutrientInfo.dailyValue.value;
-    const dailyValue = totalDailyValue === 0 ? 0 : Math.round((nutrient.value / totalDailyValue) * 100);
+    const dailyValue = totalDailyValue === 0 ? 0 : Math.round((nutrientValue / totalDailyValue) * 100);
     return {
       name: nutrient.nutrientName,
       value: nutrient.value,
