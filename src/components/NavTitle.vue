@@ -20,7 +20,7 @@ defineProps<{
 <style scoped>
 h1 {
   font-weight: 500;
-  font-size: 2.1rem;
+  font-size: 2.2rem;
 }
 
 h3 {
