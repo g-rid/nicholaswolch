@@ -25,7 +25,7 @@ h1 {
 
 h3 {
   font-weight: 300;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
 }
 
 .nav-title-wrapper {
